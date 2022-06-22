@@ -1,0 +1,18 @@
+/* Global CSS */
+
+body {
+  background-color: hsl(0, 0%, 97%);
+}
+
+@media (min-width: 1400px) {
+
+  main,
+  header,
+  #main-navbar {
+    padding-left: 240px;
+  }
+}
+
+.text-light {
+  color: #9FA6B2 !important;
+}
