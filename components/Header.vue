@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
           <form class="d-none d-md-flex input-group w-auto my-auto">
             <input autocomplete="off" type="search" class="form-control rounded"
-              placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px;">
+              placeholder='Search (ctrl + "/" to focus)' style="width: 525px;">
             <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
           </form>
         </div>

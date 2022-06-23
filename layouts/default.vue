@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main class="mb-5" style="margin-top: -55px;">
+    <main class="mb-5" style="margin-top: -35px;">
       <nuxt />
     </main>
     <Footer />
