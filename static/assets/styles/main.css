@@ -4,6 +4,11 @@ body {
   background-color: hsl(0, 0%, 97%);
 }
 
+main {
+    margin-top: 5% !important;
+    position: relative !important;
+}
+
 @media (min-width: 1400px) {
 
   main,
@@ -15,4 +20,14 @@ body {
 
 .text-light {
   color: #9FA6B2 !important;
+}
+
+/* Header CSS */
+
+nav .fa-bell, nav .fa-user-circle {
+    font-size: 20px;
+}
+
+.navbar-brand {
+    padding-left: 20px;
 }

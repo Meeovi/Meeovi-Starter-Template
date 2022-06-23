@@ -22,7 +22,8 @@ export default {
     script: [
       { src: '/assets/scripts/main.js', mode: 'client'},
       { src: '/assets/mdb/plugins/all.min.js', mode: 'client'},
-      { src: '/assets/mdb/js/mdb.min.js', mode: 'client'}
+      { src: '/assets/mdb/js/mdb.min.js', mode: 'client'},
+      { src: 'https://kit.fontawesome.com/5f36ca3a3b.js', crossorigin: 'anonymous', mode: 'client'}
     ]
   },
 

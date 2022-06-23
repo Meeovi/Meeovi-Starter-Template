@@ -1,9 +1,7 @@
 <template>
   <div class="row">
+    <div class="col-lg-6">
     <div class="form-group mx-auto">
-      <label>Set the chart title (reactively)</label>
-      <input v-model="title" class="form-control text-center">
-
       <button class="btn btn-primary" @click="points.push(Math.random()*10)">
         Append random data
       </button>
@@ -14,6 +12,20 @@
       :update="watchers"
       style="width:100%;"
     />
+  </div>
+  <div class="col-lg-6">
+    <div class="form-group mx-auto">
+      <button class="btn btn-primary" @click="points.push(Math.random()*10)">
+        Append random data
+      </button>
+    </div>
+    <highchart
+      :options="chartOptions"
+      :modules="['exporting']"
+      :update="watchers"
+      style="width:100%;"
+    />
+  </div>
   </div>
 </template>
 
