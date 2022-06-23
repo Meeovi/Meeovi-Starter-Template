@@ -5,6 +5,11 @@
     <nav id="sidenav-1" class="sidenav" data-mdb-hidden="false">
       <ul class="sidenav-menu">
         <li class="sidenav-item">
+          <a class="navbar-brand" href="#">
+            LOGO
+          </a>
+        </li>
+        <li class="sidenav-item">
           <a class="sidenav-link">
             <i class="far fa-smile fa-fw me-3"></i><span>Link 1</span></a>
         </li>
