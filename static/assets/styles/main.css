@@ -4,15 +4,31 @@ body {
   background-color: hsl(0, 0%, 97%);
 }
 
+main {
+    margin-top: 5% !important;
+    position: relative !important;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 1400px) {
 
-  main,
-  header,
   #main-navbar {
     padding-left: 240px;
+    padding-right: 240px;
   }
 }
 
 .text-light {
   color: #9FA6B2 !important;
+}
+
+/* Header CSS */
+
+nav .fa-bell, nav .fa-user-circle {
+    font-size: 20px;
+}
+
+.navbar-brand {
+    padding-left: 20px;
 }

@@ -14,7 +14,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
       {rel: 'stylesheet', href: '/assets/styles/main.css'},
       {rel: 'stylesheet', href: '/assets/mdb/plugins/css/all.min.css'},
       {rel: 'stylesheet', href: '/assets/mdb/css/mdb.min.css'},
@@ -22,7 +22,8 @@ export default {
     script: [
       { src: '/assets/scripts/main.js', mode: 'client'},
       { src: '/assets/mdb/plugins/all.min.js', mode: 'client'},
-      { src: '/assets/mdb/js/mdb.min.js', mode: 'client'}
+      { src: '/assets/mdb/js/mdb.min.js', mode: 'client'},
+      { src: 'https://kit.fontawesome.com/5f36ca3a3b.js', crossorigin: 'anonymous', mode: 'client'}
     ]
   },
 
