@@ -11,11 +11,20 @@ main {
     margin-bottom: 10px;
 }
 
+#main-navbar {
+  z-index: 9999 !important;
+}
+
+.sidenav-menu {
+  top: 70px !important;
+  position: relative !important;
+}
+
 @media (min-width: 1400px) {
 
   #main-navbar {
-    padding-left: 240px;
-    padding-right: 240px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
