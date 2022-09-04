@@ -84,7 +84,7 @@
       </div>
 
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © {{ new Date().getFullYear() }} Copyright: <a href="https://phonetool.amazon.com/users/sehilton" target="_blank">sehilton</a>
+        © {{ new Date().getFullYear() }} Copyright: <a href="/" target="_blank">Sebastian</a>
         <a class="text-dark" href="/">Alternate Dashboard Starter Template</a>
       </div>
 
