@@ -32,7 +32,7 @@
     "graphql-tag": "^2.12.6",
     "jest": "^27.4.4",
     "nuxt-highcharts": "^2.0.4",
-    "vue": "^2.6.6",
+    "vue": "^3.2.38",
     "vue-jest": "^3.0.4",
     "vue-server-renderer": "^2.6.6",
     "vue-template-compiler": "^2.6.6"
