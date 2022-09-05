@@ -18,7 +18,7 @@
     "@tinymce/tinymce-vue": "^3.2.8",
     "core-js": "^3.19.3",
     "jquery": "^3.6.1",
-    "mdb-ui-kit": "^4.2.0",
+    "mdb-ui-kit": "^5.0.0",
     "nuxt": "^2.15.8",
     "sass": "^1.54.8",
     "webpack": "^4.46.0"
