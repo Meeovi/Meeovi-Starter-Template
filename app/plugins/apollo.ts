@@ -8,11 +8,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig()
 
   const primaryHttpLink = createHttpLink({
-    uri: config.public.commerceGraphql,
+    uri: config.public.directus.url,
   })
 
   const secondaryHttpLink = createHttpLink({
-    uri: config.public.directus.url, // Replace with your secondary endpoint
+    //uri: config.public.commerceGraphql, // Replace with your secondary endpoint
   })
 
   const thirdHttpLink = createHttpLink({
@@ -23,7 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     return {
       headers: {
         ...headers,
-        'Authorization': `Bearer ${config.public.commerceApiToken}`,
+        'Authorization': `Bearer ${config.public.directus.auth.token}`,
       }
     }
   })
@@ -32,7 +32,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     return {
       headers: {
         ...headers,
-        'authorization': `Bearer ${config.public.directus.auth.token}`, // Replace with your secondary auth token
+        'authorization': `Bearer ${config.public.commerceApiToken}`, // Replace with your secondary auth token
       }
     }
   })
