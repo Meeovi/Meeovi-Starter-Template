@@ -56,110 +56,25 @@
         "../node_modules/vite/client"
       ],
       "vue-i18n": [
-        "../node_modules/vue-i18n/dist/vue-i18n",
         "../node_modules/vue-i18n"
       ],
       "@intlify/shared": [
-        "../node_modules/@intlify/shared/dist/shared",
         "../node_modules/@intlify/shared"
       ],
       "@intlify/message-compiler": [
-        "../node_modules/@intlify/message-compiler/dist/message-compiler",
         "../node_modules/@intlify/message-compiler"
       ],
       "@intlify/core-base": [
-        "../node_modules/@intlify/core-base/dist/core-base",
         "../node_modules/@intlify/core-base"
       ],
       "@intlify/core": [
-        "../node_modules/@intlify/core/dist/core.node",
         "../node_modules/@intlify/core"
       ],
       "@intlify/utils/h3": [
-        "../node_modules/@intlify/utils/dist/h3",
         "../node_modules/@intlify/utils"
       ],
       "ufo": [
-        "../node_modules/ufo/dist/index",
         "../node_modules/ufo"
-      ],
-      "~": [
-        "../app"
-      ],
-      "~/*": [
-        "../app/*"
-      ],
-      "@": [
-        "../app"
-      ],
-      "@/*": [
-        "../app/*"
-      ],
-      "~~": [
-        ".."
-      ],
-      "~~/*": [
-        "../*"
-      ],
-      "@@": [
-        ".."
-      ],
-      "@@/*": [
-        "../*"
-      ],
-      "#shared": [
-        "../shared"
-      ],
-      "#shared/*": [
-        "../shared/*"
-      ],
-      "#app": [
-        "../node_modules/nuxt/dist/app"
-      ],
-      "#app/*": [
-        "../node_modules/nuxt/dist/app/*"
-      ],
-      "vue-demi": [
-        "../node_modules/nuxt/dist/app/compat/vue-demi"
-      ],
-      "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
-      ],
-      "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
-      ],
-      "#i18n": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index"
-      ],
-      "#i18n-kit": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
-      ],
-      "#i18n-kit/*": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit/*"
-      ],
-      "#internal-i18n-types": [
-        "../node_modules/@nuxtjs/i18n/dist/types"
-      ],
-      "#vue-router": [
-        "../node_modules/vue-router"
-      ],
-      "#unhead/composables": [
-        "../node_modules/nuxt/dist/head/runtime/composables"
-      ],
-      "#imports": [
-        "./imports"
-      ],
-      "#app-manifest": [
-        "./manifest/meta/a9be86e4-803e-4908-95e3-b44815e52172"
-      ],
-      "#components": [
-        "./components"
-      ],
-      "#build": [
-        "."
-      ],
-      "#build/*": [
-        "./*"
       ]
     },
     "esModuleInterop": true,
@@ -176,14 +91,6 @@
     "noImplicitOverride": true,
     "module": "ESNext",
     "noEmit": true,
-    "lib": [
-      "ESNext",
-      "dom",
-      "dom.iterable",
-      "webworker"
-    ],
-    "jsx": "preserve",
-    "jsxImportSource": "vue",
     "types": [],
     "moduleResolution": "Bundler",
     "useDefineForClassFields": true,
@@ -191,17 +98,6 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "../i18n/**/*",
-    "./nuxt.d.ts",
-    "../app/**/*",
-    "../modules/*/runtime/**/*",
-    "../layers/*/app/**/*",
-    "../layers/*/modules/*/runtime/**/*",
-    "../shared/**/*.d.ts",
-    "../modules/*/shared/**/*.d.ts",
-    "../layers/*/shared/**/*.d.ts",
-    "../*.d.ts",
-    "../layers/*/*.d.ts",
     "./nuxt.node.d.ts",
     "../modules/*.*",
     "../nuxt.config.*",
@@ -209,13 +105,8 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
-    "../shared/**/*",
-    "../modules/*/shared/**/*",
-    "../layers/*/shared/**/*",
-    "../node_modules/runtime",
-    "../node_modules/dist/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
+    "../nuxt.schema.*",
+    "../layers/*/nuxt.schema.*"
   ],
   "exclude": [
     "../node_modules",
@@ -230,12 +121,16 @@
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
     "../.data",
+    "../app/**/*",
+    "../modules/*/runtime/**/*",
+    "../layers/*/app/**/*",
+    "../layers/*/modules/*/runtime/**/*",
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
-    "../node_modules/runtime/server",
-    "../node_modules/dist/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server"
+    "../node_modules/runtime",
+    "../node_modules/dist/runtime",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
   ]
 }

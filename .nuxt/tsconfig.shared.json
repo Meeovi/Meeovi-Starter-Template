@@ -128,9 +128,6 @@
       "#image/*": [
         "../node_modules/@nuxt/image/dist/runtime/*"
       ],
-      "#i18n": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index"
-      ],
       "#i18n-kit": [
         "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
       ],
@@ -151,9 +148,6 @@
       ],
       "#app-manifest": [
         "./manifest/meta/a9be86e4-803e-4908-95e3-b44815e52172"
-      ],
-      "#components": [
-        "./components"
       ],
       "#build": [
         "."
@@ -176,14 +170,6 @@
     "noImplicitOverride": true,
     "module": "ESNext",
     "noEmit": true,
-    "lib": [
-      "ESNext",
-      "dom",
-      "dom.iterable",
-      "webworker"
-    ],
-    "jsx": "preserve",
-    "jsxImportSource": "vue",
     "types": [],
     "moduleResolution": "Bundler",
     "useDefineForClassFields": true,
@@ -191,51 +177,12 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "../i18n/**/*",
-    "./nuxt.d.ts",
-    "../app/**/*",
-    "../modules/*/runtime/**/*",
-    "../layers/*/app/**/*",
-    "../layers/*/modules/*/runtime/**/*",
-    "../shared/**/*.d.ts",
-    "../modules/*/shared/**/*.d.ts",
-    "../layers/*/shared/**/*.d.ts",
-    "../*.d.ts",
-    "../layers/*/*.d.ts",
-    "./nuxt.node.d.ts",
-    "../modules/*.*",
-    "../nuxt.config.*",
-    "../.config/nuxt.*",
-    "../layers/*/nuxt.config.*",
-    "../layers/*/.config/nuxt.*",
-    "../layers/*/modules/**/*",
+    "./nuxt.shared.d.ts",
     "../shared/**/*",
     "../modules/*/shared/**/*",
     "../layers/*/shared/**/*",
-    "../node_modules/runtime",
-    "../node_modules/dist/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
+    "../*.d.ts",
+    "../layers/*/*.d.ts"
   ],
-  "exclude": [
-    "../node_modules",
-    "../node_modules/nuxt/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
-    "../node_modules/@logto/nuxt/node_modules",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/@nuxt/devtools/node_modules",
-    "../node_modules/@nuxt/telemetry/node_modules",
-    "../dist",
-    "../.data",
-    "../modules/*/runtime/server/**/*",
-    "../layers/*/server/**/*",
-    "../layers/*/modules/*/runtime/server/**/*",
-    "../node_modules/runtime/server",
-    "../node_modules/dist/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server"
-  ]
+  "exclude": []
 }

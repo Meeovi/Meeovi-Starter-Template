@@ -201,21 +201,7 @@
     "../modules/*/shared/**/*.d.ts",
     "../layers/*/shared/**/*.d.ts",
     "../*.d.ts",
-    "../layers/*/*.d.ts",
-    "./nuxt.node.d.ts",
-    "../modules/*.*",
-    "../nuxt.config.*",
-    "../.config/nuxt.*",
-    "../layers/*/nuxt.config.*",
-    "../layers/*/.config/nuxt.*",
-    "../layers/*/modules/**/*",
-    "../shared/**/*",
-    "../modules/*/shared/**/*",
-    "../layers/*/shared/**/*",
-    "../node_modules/runtime",
-    "../node_modules/dist/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime"
+    "../layers/*/*.d.ts"
   ],
   "exclude": [
     "../node_modules",
@@ -233,9 +219,21 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
+    "../modules/*.*",
+    "../nuxt.config.*",
+    "../.config/nuxt.*",
+    "../layers/*/nuxt.config.*",
+    "../layers/*/.config/nuxt.*",
+    "../layers/*/modules/**/*",
     "../node_modules/runtime/server",
     "../node_modules/dist/runtime/server",
+    "../node_modules/*.*",
+    "../node_modules/dist/*.*",
     "../../../../../../../../../AppData/Roaming/npm/node_modules/runtime/server",
-    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server"
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/runtime/server",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/*.*",
+    "../../../../../../../../../AppData/Roaming/npm/node_modules/dist/*.*",
+    "../.output",
+    "../server"
   ]
 }

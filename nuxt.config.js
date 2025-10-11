@@ -1,12 +1,3 @@
-import graphql from '@rollup/plugin-graphql'
-import {
-  defineNuxtConfig
-} from "nuxt/config"
-import vuetify, {
-  transformAssetUrls
-} from 'vite-plugin-vuetify'
-
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   experimental: {
     watcher: 'parcel'
@@ -69,14 +60,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     "nuxt-security",
     '@logto/nuxt',
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({
-          autoImport: true
-        }))
-      })
-    },
   ],
 
   security: {
@@ -88,6 +71,25 @@ export default defineNuxtConfig({
       crossOriginOpenerPolicy: false,
       crossOriginEmbedderPolicy: false,
       permissionsPolicy: false
+    }
+  },
+
+  vuetify: {
+    vuetifyOptions: {
+      icons: {
+        defaultSet: 'fa-svg',
+        svg: {
+          fa: {
+            libraries: [
+              [ /* default export? */ false, /* export name */ 'fas', /* library */ '@fortawesome/free-solid-svg-icons']
+            ]
+          }
+        },
+        sets: [{
+          name: 'mdi',
+          cdn: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css'
+        }]
+      }
     }
   },
 
@@ -200,13 +202,8 @@ export default defineNuxtConfig({
     ssr: {
       noExternal: ['vuetify']
     },
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
-    },
     logLevel: 'info',
-    plugins: [graphql()]
+    plugins: []
   },
 
   nitro: {
