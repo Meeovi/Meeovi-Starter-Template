@@ -1,0 +1,90 @@
+/********************** Main CSS *************/
+
+body {
+    margin: 0;
+}
+
+#topnav {
+    width: 100% !important;
+}
+
+.logobrand {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logobrand, .logotext {
+    display: inline-block;
+}
+
+.logotext {
+    top: 5px;
+    position: relative;
+}
+
+.item-wrapper .v-avatar {
+    text-align: center;
+    width: 350px;
+    height: 100%;
+}
+
+/******************* Main Section CSS *********/
+
+#mainSection {
+    top: 0px !important;
+    margin-bottom: 50vh !important;
+    position: relative !important;
+    left: 5px;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#mainWebsite {
+    top: 0px !important;
+    position: relative !important;
+    left: 0px;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.footer2 a {
+    color: white !important;
+}
+/******************** Sidebar CSS *************/
+
+#sidebarNav {
+    height: 100vh !important;
+    left: 0px;
+    float: left;
+    position: fixed;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.v-navigation-drawer {
+    min-width: 70px !important;
+}
+
+.mainbar {
+    width: 100px !important;
+}
+
+.sidebarmenu {
+    width: 300px;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    height: 100% !important;
+    left: 100px !important;
+    margin: 0px !important;
+}
+
+.mainbar li {
+    list-style-type: none;
+    padding-bottom: 25px !important;
+}
+
+.sidebarmenu .v-overlay__content {
+    max-height: calc(100%) !important;
+}
+

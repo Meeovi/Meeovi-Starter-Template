@@ -1,0 +1,15 @@
+/*************** Main Mobile CSS **************/
+
+@media screen and (max-width: 590px) {
+    /* Increase specificity to avoid being overridden by other styles */
+    .rightAddBtn,
+    #minSearch .rightAddBtn,
+    .header .rightAddBtn {
+        display: none !important;
+    }
+
+    #minSearch {
+        top: -15px;
+        position: relative;
+    }
+}
