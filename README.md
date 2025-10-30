@@ -1,4 +1,4 @@
-## This Application is in Alpha Release ##
+## This Application is in Beta Release ##
 
 # Starter Template
 
