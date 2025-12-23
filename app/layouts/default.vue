@@ -49,21 +49,7 @@
       <v-card>
         <v-layout>
           <v-navigation-drawer v-model="drawer" temporary>
-            <v-list-item title="Home" href="/"></v-list-item>
-            <v-expansion-panels variant="accordion">
-              <v-expansion-panel title="Departments" expand-icon="fas fa-plus" collapse-icon="fas fa-minus"
-                elevation="0">
-                <v-expansion-panel-text>
-                  <div>
-                    <v-list-item title="departments.name" value="departments.name"
-                      href="`/departments/${departments.slug}`">
-                    </v-list-item>
-                  </div>
-                </v-expansion-panel-text>
-              </v-expansion-panel>
-            </v-expansion-panels>
-            <v-list-item title="" href="/projects/"></v-list-item>
-            <v-list-item title="" href="/lists/"></v-list-item>
+            <sidebarnav />
             <v-spacer></v-spacer>
           </v-navigation-drawer>
 
@@ -87,6 +73,7 @@
   import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
   import LayoutNotifications from '~/components/menus/layoutNotifications.vue'
   import mobilesearch from '~/components/menus/mobilesearch.vue'
+  import sidebarnav from '~/components/menus/sidebarnav.vue'
   import { ref, onMounted, watch, computed } from 'vue';
   import { useTheme } from 'vuetify'
 

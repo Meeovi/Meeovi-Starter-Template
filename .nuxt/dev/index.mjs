@@ -3167,7 +3167,7 @@ const _UfLcVtYrl_L2_wI0u4PDgnKgOnLXkPYx5E7GhhJDC7Y = defineNitroPlugin(async (ni
   await nitroApp.hooks.callHook("nuxt-security:ready");
 });
 
-const sriHashes = {"/_nuxt/builds/meta/9789230e-8140-4a6f-b9dc-a28bcdaad57c.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-8Ofz5qhvdLNHjKUe1B+j1yWgH1PlDxeeOr8JKhcwaUyORDQNRVhi58To1G4D6YR1","/_nuxt/builds/latest.json":"sha384-zmaZSgAh1r78FOxtzjA3chnHBuAyTIbYZ208k6r2WR1v/b/WwWs8aBYh1h8FjROq","/_robots.txt":"sha384-BgP/Fsypf0v7aBp0G7SgrJwYcN0568VyTy8YmI8xJBjp+aKdtfDSrvy187QMd0E8","/favicon.ico":"sha384-vzbz+7u2igubihE5wsiFTFtK3X/HjogcZOaHfsnC1n+xPtYNLevLl+NRDk/C3rtl","/logo.svg":"sha384-+BuKCMBo397XNFUKODY0egGt8/fiStijQ1xZ4zbFrO5OqumbkPxttykHiZIlv9Qb"};
+const sriHashes = {"/_nuxt/builds/meta/9789230e-8140-4a6f-b9dc-a28bcdaad57c.json":"sha384-0qI7x4Pjqjj0AeE8dIhQUTfElUp/2IMx8Vl8X/cREdyAfHNwpbKCxtpUHFbt5p8w","/_nuxt/builds/meta/dev.json":"sha384-r2fDj7poQcufOG/YZNUDtkq+UqNKrirg2AUmibIW9bLxhcX1Sb84JFSOWnPoiLTF","/_nuxt/builds/latest.json":"sha384-YCJ1LEDe1ufhRHx2ZpgmdW3yrNJalYGjJ0IslLeJ1+QjeQOKH3V1BJMwGt7H0FsR","/_robots.txt":"sha384-BgP/Fsypf0v7aBp0G7SgrJwYcN0568VyTy8YmI8xJBjp+aKdtfDSrvy187QMd0E8","/favicon.ico":"sha384-vzbz+7u2igubihE5wsiFTFtK3X/HjogcZOaHfsnC1n+xPtYNLevLl+NRDk/C3rtl","/logo.svg":"sha384-+BuKCMBo397XNFUKODY0egGt8/fiStijQ1xZ4zbFrO5OqumbkPxttykHiZIlv9Qb"};
 
 const SCRIPT_RE$1 = /<script((?=[^>]+\bsrc="([^"]+)")(?![^>]+\bintegrity="[^"]+")[^>]+)(?:\/>|><\/script>)/g;
 const LINK_RE$1 = /<link((?=[^>]+\brel="(?:stylesheet|preload|modulepreload)")(?=[^>]+\bhref="([^"]+)")(?![^>]+\bintegrity="[\w\-+/=]+")[^>]+)>/g;
