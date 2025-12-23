@@ -3,12 +3,12 @@
         <div class="text-center">
             <v-dialog v-model="dialog" width="auto">
                 <template v-slot:activator="{ props }">
-                    <v-btn v-bind="props" variant="text" icon="fas:fa fa-search"></v-btn>
+                    <v-btn icon="fas fa-search" title="Search" v-bind="props"></v-btn>
                 </template>
 
                 <template v-slot:default="{ isActive }">
                     <v-card min-height="100" min-width="500">
-                        <div ref="searchContainer" class="gcse-search"></div>
+                        <search />
                         <v-card-actions>
                             <v-btn color="primary" block @click="isActive.value = false">Close Search</v-btn>
                         </v-card-actions>
@@ -26,6 +26,7 @@
         onMounted,
         nextTick
     } from 'vue'
+    import Search from '../search/search.vue'
 
     const dialog = ref(false)
     const searchContainer = ref(null)

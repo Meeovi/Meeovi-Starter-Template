@@ -5,6 +5,11 @@ export const pathToI18nConfig = {
     "pl-PL": "/",
     "testde": "/"
   },
+  "/results": {
+    "en-GB": "/results",
+    "pl-PL": "/results",
+    "testde": "/results"
+  },
   "/:slug(.*)*": {
     "en-GB": "/:slug(.*)*",
     "pl-PL": "/:slug(.*)*",
@@ -35,11 +40,6 @@ export const pathToI18nConfig = {
     "pl-PL": "/Auth/register",
     "testde": "/Auth/register"
   },
-  "/Search/results": {
-    "en-GB": "/Search/results",
-    "pl-PL": "/Search/results",
-    "testde": "/Search/results"
-  },
   "/User/notifications": {
     "en-GB": "/User/notifications",
     "pl-PL": "/User/notifications",
@@ -58,13 +58,13 @@ export const pathToI18nConfig = {
 };
 export const i18nPathToPath = {
   "/": "/",
+  "/results": "/results",
   "/:slug(.*)*": "/:slug(.*)*",
   "/Auth/login": "/Auth/login",
   "/User": "/User",
   "/User/account": "/User/account",
   "/Auth/callback": "/Auth/callback",
   "/Auth/register": "/Auth/register",
-  "/Search/results": "/Search/results",
   "/User/notifications": "/User/notifications",
   "/Auth/reset-password": "/Auth/reset-password",
   "/Auth/forgot-password": "/Auth/forgot-password"

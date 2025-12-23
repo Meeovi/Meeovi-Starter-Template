@@ -62,8 +62,21 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     "nuxt-security",
-    '@logto/nuxt',
+    'nuxt-tiptap-editor',
+    'nuxt-auth-utils',
   ],
+
+  auth: {
+    oauth: {
+      directus: {
+        clientId: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_ID,
+        clientSecret: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_SECRET,
+        redirectUrl: process.env.NUXT_OAUTH_DIRECTUS_REDIRECT_URL
+      }
+    },
+    atproto: true,
+    webAuthn: true
+  },
 
   security: {
     headers: {
@@ -174,13 +187,6 @@ export default defineNuxtConfig({
       stripe: {
         publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
       },
-
-      logto: {
-        endpoint: process.env.NUXT_LOGTO_ENDPOINT,
-        appId: process.env.NUXT_LOGTO_APP_ID,
-        appSecret: process.env.NUXT_LOGTO_APP_SECRET,
-        cookieEncryptionKey: process.env.NUXT_LOGTO_COOKIE_ENCRYPTION_KEY,
-      },
     },
     stripe: {
       secretKey: process.env.STRIPE_SECRET_KEY
@@ -198,17 +204,6 @@ export default defineNuxtConfig({
     ],
   },
 
-  vite: {
-    define: {
-      'process.env.DEBUG': false,
-    },
-    ssr: {
-      noExternal: ['vuetify']
-    },
-    logLevel: 'info',
-    plugins: []
-  },
-
   nitro: {
     prerender: {
       routes: [
@@ -216,6 +211,17 @@ export default defineNuxtConfig({
       ]
     },
     compressPublicAssets: true,
+    storage: {
+      redis: {
+        driver: 'redis',
+        port: 6379,
+        host: process.env.REDIS_HOST || '',
+        password: process.env.REDIS_PASSWORD || '',
+      }
+    },
+    experimental: {
+      websocket: true
+    }
   },
 
   compatibilityDate: '2025-02-22',

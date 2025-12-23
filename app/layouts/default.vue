@@ -1,5 +1,5 @@
 <template>
-  <v-app :theme="theme">
+  <v-app :theme="theme.global.name.value" class="auto-text">
     <v-app-bar id="topnav" density="compact">
       <template v-slot:prepend>
         <v-btn variant="flat" @click="drawer = !drawer">
@@ -7,32 +7,23 @@
         </v-btn>
       </template>
 
-      <v-app-bar-title><a class="logobrand" href="/">
-          <v-icon start icon="fas fa-question-circle"></v-icon> Logo
-        </a></v-app-bar-title>
+      <logo />
+      <v-spacer></v-spacer>
 
-      <v-text-field density="compact" variant="solo" label="Search" append-inner-icon="fas fa-search" single-line
-        hide-details @click:append-inner="onClick"></v-text-field>
+      <mobilesearch />
+      <search />
       <v-spacer></v-spacer>
 
       <div class="d-flex align-center flex-column flex-sm-row fill-height">
-        <v-col>
-          <v-btn :prepend-icon="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'" @click="onClick"></v-btn>
+        <v-col cols="3">
+          <v-btn @click="toggleDark()" variant="text">
+            <v-icon>
+              {{ isDark ? 'fas:fa fa-moon' : 'fas:fa fa-sun' }}
+            </v-icon>
+          </v-btn>
         </v-col>
         <v-col>
-          <v-menu :location="location" transition="slide-y-transition">
-            <template v-slot:activator="{ props }">
-              <v-btn variant="flat" v-bind="props">
-                <v-icon start icon="fas fa-clock-rotate-left"></v-icon>
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item title="" value="" href="/"></v-list-item>
-              <v-divider></v-divider>
-              <v-list-item title="Show More" value="Show More" href="/admin/user/notifications">
-              </v-list-item>
-            </v-list>
-          </v-menu>
+          <LayoutNotifications />
         </v-col>
 
         <v-col>
@@ -60,16 +51,17 @@
           <v-navigation-drawer v-model="drawer" temporary>
             <v-list-item title="Home" href="/"></v-list-item>
             <v-expansion-panels variant="accordion">
-            <v-expansion-panel title="Departments" expand-icon="fas fa-plus" collapse-icon="fas fa-minus" elevation="0">
+              <v-expansion-panel title="Departments" expand-icon="fas fa-plus" collapse-icon="fas fa-minus"
+                elevation="0">
                 <v-expansion-panel-text>
-                    <div >
-                        <v-list-item title="departments.name" value="departments.name"
-                            href="`/departments/${departments.slug}`">
-                        </v-list-item>
-                    </div>
+                  <div>
+                    <v-list-item title="departments.name" value="departments.name"
+                      href="`/departments/${departments.slug}`">
+                    </v-list-item>
+                  </div>
                 </v-expansion-panel-text>
-            </v-expansion-panel>
-        </v-expansion-panels>
+              </v-expansion-panel>
+            </v-expansion-panels>
             <v-list-item title="" href="/projects/"></v-list-item>
             <v-list-item title="" href="/lists/"></v-list-item>
             <v-spacer></v-spacer>
@@ -89,32 +81,52 @@
 </template>
 
 <script setup>
-  import search from '~/components/Search/search.vue'
-  import ecosystemmenu from '~/components/Menus/ecosystemmenu.vue'
-  import {
-    ref
-  } from 'vue';
-  import {
-    useDark,
-    useToggle
-  } from '@vueuse/core'
-  import {
-    useTheme
-  } from 'vuetify'
+  import search from '~/components/search/search.vue'
+  import logo from '~/components/blocks/logo.vue'
+  import FooterNav from '~/components/menus/FooterNav.vue'
+  import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
+  import LayoutNotifications from '~/components/menus/layoutNotifications.vue'
+  import mobilesearch from '~/components/menus/mobilesearch.vue'
+  import { ref, onMounted, watch, computed } from 'vue';
+  import { useTheme } from 'vuetify'
+
+  const drawer = ref(null);
 
   const theme = useTheme()
-  const isDark = useDark()
-  const toggleDark = useToggle(isDark)
+  const location = ref('bottom')
 
-  // Sync Vuetify theme with dark mode
-  watch(isDark, (dark) => {
-    theme.global.name.value = dark ? 'dark' : 'light'
-  }, {
-    immediate: true
+  // Local storage key
+  const STORAGE_KEY = 'elite-theme'
+
+  // isDark reflects the current theme name
+  const isDark = computed(() => (theme.global.name?.value || '').toLowerCase() === 'dark')
+
+  // Determine initial mode
+  onMounted(() => {
+    const stored = localStorage.getItem(STORAGE_KEY)
+
+    if (stored) {
+      // Use saved preference
+      theme.global.name.value = stored
+    } else {
+      // No preference — follow system
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      theme.global.name.value = prefersDark ? 'dark' : 'light'
+    }
   })
 
-  // Initialize user state
-  const drawer = ref(null);
+  // Toggle between themes
+  const toggleDark = () => {
+    theme.global.name.value = (theme.global.name.value === 'dark') ? 'light' : 'dark'
+  }
+
+  // Save preference whenever theme name changes
+  watch(
+    () => theme.global.name.value,
+    (val) => {
+      if (val) localStorage.setItem(STORAGE_KEY, val)
+    }
+  )
 
   useSeoMeta({
     title: 'Starter Template',
