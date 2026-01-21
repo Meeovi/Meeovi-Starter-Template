@@ -1,8 +1,5 @@
 <template>
   <div class="searchField">
-    <!--<MeiliSearchProvider :index-name="indexName" :search-client="searchClient">
-      <MeiliSearchBar class="mainSearch" placeholder="Search Meeovi" />
-    </MeiliSearchProvider>-->
     <form ref="referenceRef" role="search" class="relative" @submit.prevent="submit">
       <div class="flex">
         <SfInput ref="inputRef" v-model="inputModel"
@@ -48,8 +45,8 @@
     useRouter
   } from 'vue-router'
   import {
-    instantMeiliSearch
-  } from '@meilisearch/instant-meilisearch'
+    useSearch
+  } from '@meeovi/search'
   import {
     useRuntimeConfig
   } from '#imports';
@@ -169,12 +166,7 @@
   const indexName = config.public.indexName;
 
   // Initialize MeiliSearch client
-  const {
-    searchClient
-  } = instantMeiliSearch(
-    `${config.public.meilisearch.host}`,
-    `${config.public.meilisearch.searchApiKey}`
-  )
+  useSearch();
 
   // Query hook to capture the input query
   const queryHook = (query: string, refine: (arg0: any) => void) => {

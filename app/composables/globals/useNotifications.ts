@@ -1,5 +1,6 @@
 import { ref, onMounted } from 'vue'
 import { useNuxtApp } from '#app'
+import { directus, readItems, updateItem } from '@meeovi/directus-client'
 
 export interface Notification {
   id: string
@@ -15,13 +16,12 @@ export interface Notification {
 export function useNotifications() {
   const notifications = ref<Notification[]>([])
   const unreadCount = ref(0)
-  const { $directus, $readItems, $updateItem } = useNuxtApp()
 
   // Fetch notifications from Directus
   const fetchDirectusNotifications = async () => {
     try {
       const { data } = await useAsyncData<unknown[]>('directusNotifications', () => {
-        return $directus.request($readItems('notifications', {
+        return directus.request(readItems('notifications', {
           filter: {
             recipient: { _eq: 'current_user' }
           },
@@ -86,7 +86,7 @@ export function useNotifications() {
   const markAsRead = async (notificationId: string, source: 'magento' | 'directus') => {
     try {
       if (source === 'directus') {
-        await $directus.request($updateItem('notifications', notificationId, {
+        await directus.request(updateItem('notifications', notificationId, {
           status: 'read'
         }))
       } else {
@@ -108,10 +108,10 @@ export function useNotifications() {
   }
 
   // Mark all notifications as read
-  const markAllAsRead = async () => {
+  const markAllAsRead = async (id: string | number) => {
     try {
       // Update Directus notifications
-      await $directus.request($updateItem('notifications', {
+      await directus.request(updateItem('notifications', id, {
         filter: {
           recipient: { _eq: 'current_user' },
           status: { _eq: 'inbox' }
