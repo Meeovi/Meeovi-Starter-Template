@@ -22,11 +22,18 @@
       "ts-node": "ts-node -r tsconfig-paths/register --compiler-options '{\"module\":\"CommonJS\"}'",
       "generate": "nuxt generate",
       "preview": "nuxt preview",
-      "postinstall": "nuxt prepare"
+      "postinstall": "nuxt prepare",
+      "start": "node .output/server/index.mjs"
    },
    "dependencies": {
-      "@meeovi/core": "^1.0.1",
+      "@meeovi/adapter-starter": "^1.0.1",
+      "@meeovi/auth": "^1.0.8",
+      "@meeovi/commerce": "^1.0.2",
+      "@meeovi/core": "^1.0.3",
       "@meeovi/directus-client": "^1.0.9",
+      "@meeovi/sdk": "^1.0.2",
+      "@meeovi/search": "^1.0.3",
+      "@meeovi/types": "^1.0.1",
       "@nuxt/image": "^1.11.0",
       "@nuxtjs/i18n": "^10.1.0",
       "eslint": "^9.32.0",

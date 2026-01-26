@@ -14,7 +14,7 @@ export default defineNuxtConfig({
       },
       meta: [{
         name: 'description',
-        content: 'Starter Template for the M Framework'
+        content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'Meeovi Starter Template'}`
       }, ],
       link: [{
           rel: 'icon',
@@ -38,7 +38,7 @@ export default defineNuxtConfig({
   },
 
   appConfig: {
-    titleSuffix: '',
+    titleSuffix: `${process.env.NUXT_PUBLIC_SITE_NAME || ' - Meeovi Starter Template'}`,
   },
 
   css: [
@@ -54,29 +54,13 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    "@nuxt/image",
-    '@nuxtjs/tailwindcss',
-    "@storefront-ui/nuxt",
     'vuetify-nuxt-module',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     "nuxt-security",
     'nuxt-tiptap-editor',
-    'nuxt-auth-utils',
   ],
-
-  auth: {
-    oauth: {
-      directus: {
-        clientId: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_ID,
-        clientSecret: process.env.NUXT_OAUTH_DIRECTUS_CLIENT_SECRET,
-        redirectUrl: process.env.NUXT_OAUTH_DIRECTUS_REDIRECT_URL
-      }
-    },
-    atproto: true,
-    webAuthn: true
-  },
 
   security: {
     headers: {
@@ -163,44 +147,16 @@ export default defineNuxtConfig({
         }
       },
 
-      indexName: process.env.MEILISEARCH_INDEX_NAME,
-
-      meilisearch: {
-        host: process.env.MEILISEARCH_HOST,
-        searchApiKey: process.env.MEILISEARCH_SEARCH_API_KEY,
-        options: {
-          primaryKey: 'id',
-          keepZeroFacets: false,
-          finitePagination: false
-        },
-      },
-
-      // Commerce 
-      commerceUrl: process.env.COMMERCE_STORE_URL,
-      commerceGraphql: process.env.COMMERCE_GRAPHQL_URL,
-      commerceApiToken: process.env.WEBSITE_TOKEN,
-
-      // Google Tag Manager
-      gtagId: process.env.NUXT_PUBLIC_GTAG_ID,
-
-      // Stripe
-      stripe: {
-        publishableKey: process.env.STRIPE_PUBLISHABLE_KEY
-      },
+      meeovi: {
+        apiUrl: process.env.MEEOVI_API_URL,
+        searchIndex: process.env.MEEOVI_SEARCH_INDEX
+      }
     },
-    stripe: {
-      secretKey: process.env.STRIPE_SECRET_KEY
-    }
   },
 
   build: {
     transpile: [
       'vuetify',
-      "@fortawesome/vue-fontawesome",
-      "@fortawesome/fontawesome-svg-core",
-      "@fortawesome/pro-solid-svg-icons",
-      "@fortawesome/pro-regular-svg-icons",
-      "@fortawesome/free-brands-svg-icons"
     ],
   },
 
@@ -211,17 +167,6 @@ export default defineNuxtConfig({
       ]
     },
     compressPublicAssets: true,
-    storage: {
-      redis: {
-        driver: 'redis',
-        port: 6379,
-        host: process.env.REDIS_HOST || '',
-        password: process.env.REDIS_PASSWORD || '',
-      }
-    },
-    experimental: {
-      websocket: true
-    }
   },
 
   compatibilityDate: '2025-02-22',
