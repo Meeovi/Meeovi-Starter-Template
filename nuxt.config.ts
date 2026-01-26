@@ -59,7 +59,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     "nuxt-security",
-    'nuxt-tiptap-editor',
   ],
 
   security: {

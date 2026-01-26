@@ -26,18 +26,22 @@
       "start": "node .output/server/index.mjs"
    },
    "dependencies": {
-      "@meeovi/adapter-starter": "^1.0.1",
-      "@meeovi/auth": "^1.0.8",
-      "@meeovi/commerce": "^1.0.2",
       "@meeovi/core": "^1.0.3",
       "@meeovi/directus-client": "^1.0.9",
+      "@meeovi/layer-auth": "^1.0.4",
+      "@meeovi/layer-commerce": "^1.0.1",
+      "@meeovi/layer-search": "^1.0.4",
+      "@meeovi/layer-shared": "^1.0.2",
       "@meeovi/sdk": "^1.0.2",
-      "@meeovi/search": "^1.0.3",
-      "@meeovi/types": "^1.0.1",
       "@nuxt/image": "^1.11.0",
       "@nuxtjs/i18n": "^10.1.0",
+      "@paralleldrive/cuid2": "^3.3.0",
+      "@pinia/nuxt": "^0.11.3",
+      "@prisma/adapter-pg": "^7.3.0",
+      "@prisma/client": "^7.3.0",
+      "cors": "^2.8.6",
       "eslint": "^9.32.0",
-      "nuxt": "^4.2.2",
+      "nuxt": "^4.3.0",
       "nuxt-security": "^2.4.0",
       "pinia": "^3.0.3",
       "vuetify-nuxt-module": "^0.18.8"
@@ -45,6 +49,7 @@
    "devDependencies": {
       "@nuxtjs/turnstile": "^1.0.0",
       "@vueuse/core": "^14.0.0",
-      "@vueuse/nuxt": "^14.0.0"
+      "@vueuse/nuxt": "^14.0.0",
+      "prisma": "^7.3.0"
    }
 }

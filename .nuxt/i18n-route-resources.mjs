@@ -14,58 +14,10 @@ export const pathToI18nConfig = {
     "en-GB": "/:slug(.*)*",
     "pl-PL": "/:slug(.*)*",
     "testde": "/:slug(.*)*"
-  },
-  "/Auth/login": {
-    "en-GB": "/Auth/login",
-    "pl-PL": "/Auth/login",
-    "testde": "/Auth/login"
-  },
-  "/User": {
-    "en-GB": "/User",
-    "pl-PL": "/User",
-    "testde": "/User"
-  },
-  "/User/account": {
-    "en-GB": "/User/account",
-    "pl-PL": "/User/account",
-    "testde": "/User/account"
-  },
-  "/Auth/callback": {
-    "en-GB": "/Auth/callback",
-    "pl-PL": "/Auth/callback",
-    "testde": "/Auth/callback"
-  },
-  "/Auth/register": {
-    "en-GB": "/Auth/register",
-    "pl-PL": "/Auth/register",
-    "testde": "/Auth/register"
-  },
-  "/User/notifications": {
-    "en-GB": "/User/notifications",
-    "pl-PL": "/User/notifications",
-    "testde": "/User/notifications"
-  },
-  "/Auth/reset-password": {
-    "en-GB": "/Auth/reset-password",
-    "pl-PL": "/Auth/reset-password",
-    "testde": "/Auth/reset-password"
-  },
-  "/Auth/forgot-password": {
-    "en-GB": "/Auth/forgot-password",
-    "pl-PL": "/Auth/forgot-password",
-    "testde": "/Auth/forgot-password"
   }
 };
 export const i18nPathToPath = {
   "/": "/",
   "/results": "/results",
-  "/:slug(.*)*": "/:slug(.*)*",
-  "/Auth/login": "/Auth/login",
-  "/User": "/User",
-  "/User/account": "/User/account",
-  "/Auth/callback": "/Auth/callback",
-  "/Auth/register": "/Auth/register",
-  "/User/notifications": "/User/notifications",
-  "/Auth/reset-password": "/Auth/reset-password",
-  "/Auth/forgot-password": "/Auth/forgot-password"
+  "/:slug(.*)*": "/:slug(.*)*"
 };

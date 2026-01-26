@@ -1,27 +1,6 @@
 {
   "compilerOptions": {
     "paths": {
-      "nitropack/types": [
-        "../node_modules/nitropack/types"
-      ],
-      "nitropack/runtime": [
-        "../node_modules/nitropack/runtime"
-      ],
-      "nitropack": [
-        "../node_modules/nitropack"
-      ],
-      "defu": [
-        "../node_modules/defu"
-      ],
-      "h3": [
-        "../node_modules/h3"
-      ],
-      "consola": [
-        "../node_modules/consola"
-      ],
-      "ofetch": [
-        "../node_modules/ofetch"
-      ],
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
@@ -83,8 +62,29 @@
         "../node_modules/ufo/dist/index",
         "../node_modules/ufo"
       ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
+      "nitropack/runtime": [
+        "../node_modules/nitropack/runtime"
+      ],
+      "nitropack": [
+        "../node_modules/nitropack"
+      ],
+      "defu": [
+        "../node_modules/defu"
+      ],
+      "h3": [
+        "../node_modules/h3"
+      ],
+      "consola": [
+        "../node_modules/consola"
+      ],
+      "ofetch": [
+        "../node_modules/ofetch"
+      ],
+      "crossws": [
+        "../node_modules/crossws"
       ],
       "~": [
         "../app"
@@ -116,6 +116,12 @@
       "#shared/*": [
         "../shared/*"
       ],
+      "#server": [
+        "../server"
+      ],
+      "#server/*": [
+        "../server/*"
+      ],
       "#app": [
         "../node_modules/nuxt/dist/app"
       ],
@@ -124,12 +130,6 @@
       ],
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
-      ],
-      "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
-      ],
-      "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#i18n": [
         "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index"
@@ -143,9 +143,6 @@
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
       ],
-      "#auth-utils": [
-        "../node_modules/nuxt-auth-utils/dist/runtime/types/index"
-      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -156,7 +153,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/8e47341d-4346-4c50-871d-900308573f11"
       ],
       "#components": [
         "./components"
@@ -176,6 +173,7 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
+    "allowArbitraryExtensions": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "forceConsistentCasingInFileNames": true,
@@ -214,16 +212,11 @@
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
     "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
-    "../node_modules/nuxt-tiptap-editor/node_modules",
-    "../node_modules/nuxt-auth-utils/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -241,7 +234,7 @@
     "../node_modules/dist/runtime/server",
     "../node_modules/*.*",
     "../node_modules/dist/*.*",
-    "dev",
+    "../.output",
     "../server"
   ]
 }

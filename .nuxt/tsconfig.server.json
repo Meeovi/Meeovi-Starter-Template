@@ -29,27 +29,6 @@
       "@@/*": [
         "../*"
       ],
-      "nitropack/types": [
-        "../node_modules/nitropack/types"
-      ],
-      "nitropack/runtime": [
-        "../node_modules/nitropack/runtime"
-      ],
-      "nitropack": [
-        "../node_modules/nitropack"
-      ],
-      "defu": [
-        "../node_modules/defu"
-      ],
-      "h3": [
-        "../node_modules/h3"
-      ],
-      "consola": [
-        "../node_modules/consola"
-      ],
-      "ofetch": [
-        "../node_modules/ofetch"
-      ],
       "@unhead/vue": [
         "../node_modules/@unhead/vue"
       ],
@@ -104,14 +83,41 @@
       "ufo": [
         "../node_modules/ufo"
       ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
+      "nitropack/runtime": [
+        "../node_modules/nitropack/runtime"
+      ],
+      "nitropack": [
+        "../node_modules/nitropack"
+      ],
+      "defu": [
+        "../node_modules/defu"
+      ],
+      "h3": [
+        "../node_modules/h3"
+      ],
+      "consola": [
+        "../node_modules/consola"
+      ],
+      "ofetch": [
+        "../node_modules/ofetch"
+      ],
+      "crossws": [
+        "../node_modules/crossws"
       ],
       "#shared": [
         "../shared"
       ],
       "#shared/*": [
         "../shared/*"
+      ],
+      "#server": [
+        "../server"
+      ],
+      "#server/*": [
+        "../server/*"
       ],
       "#build": [
         "./"
@@ -121,12 +127,6 @@
       ],
       "#internal/nuxt/paths": [
         "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
-      ],
-      "#image": [
-        "../node_modules/@nuxt/image/dist/runtime"
-      ],
-      "#image/*": [
-        "../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#i18n": [
         "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index-server"
@@ -140,9 +140,6 @@
       "#internal-i18n-types": [
         "../node_modules/@nuxtjs/i18n/dist/types"
       ],
-      "#auth-utils": [
-        "../node_modules/nuxt-auth-utils/dist/runtime/types/index"
-      ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
       ]
@@ -151,7 +148,9 @@
       "esnext",
       "webworker",
       "dom.iterable"
-    ]
+    ],
+    "noUncheckedIndexedAccess": true,
+    "allowArbitraryExtensions": true
   },
   "include": [
     "./types/nitro-nuxt.d.ts",
@@ -164,16 +163,11 @@
   "exclude": [
     "../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxtjs/tailwindcss/node_modules",
-    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@pinia/nuxt/node_modules",
     "../node_modules/@vueuse/nuxt/node_modules",
     "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
-    "../node_modules/nuxt-tiptap-editor/node_modules",
-    "../node_modules/nuxt-auth-utils/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

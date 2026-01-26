@@ -1,1 +1,0 @@
-export { default } from "file:///home/meebuzo/github/Meeovi-Starter-Template/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
