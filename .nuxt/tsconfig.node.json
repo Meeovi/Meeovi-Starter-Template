@@ -23,7 +23,7 @@
         "../node_modules/vue-router/vue-router-auto-routes"
       ],
       "unplugin-vue-router/client": [
-        "../node_modules/unplugin-vue-router/client"
+        "../../../../node_modules/unplugin-vue-router/client"
       ],
       "@nuxt/schema": [
         "../node_modules/@nuxt/schema"
@@ -34,26 +34,29 @@
       "vite/client": [
         "../node_modules/vite/client"
       ],
+      "@tiptap/vue-3": [
+        "../../../../node_modules/@tiptap/vue-3"
+      ],
       "vue-i18n": [
-        "../node_modules/vue-i18n"
+        "../../../../node_modules/vue-i18n"
       ],
       "@intlify/shared": [
-        "../node_modules/@intlify/shared"
-      ],
-      "@intlify/message-compiler": [
-        "../node_modules/@intlify/message-compiler"
-      ],
-      "@intlify/core-base": [
-        "../node_modules/@intlify/core-base"
+        "../../../../node_modules/@intlify/shared"
       ],
       "@intlify/core": [
-        "../node_modules/@intlify/core"
+        "../../../../node_modules/@intlify/core"
+      ],
+      "@intlify/core-base": [
+        "../../../../node_modules/@intlify/core-base"
+      ],
+      "@intlify/utils": [
+        "../../../../node_modules/@intlify/utils"
       ],
       "@intlify/utils/h3": [
-        "../node_modules/@intlify/utils"
+        "../../../../node_modules/@intlify/utils"
       ],
-      "ufo": [
-        "../node_modules/ufo"
+      "@intlify/message-compiler": [
+        "../../../../node_modules/@intlify/message-compiler"
       ],
       "nitropack/types": [
         "../node_modules/nitropack/types"
@@ -109,17 +112,41 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
+    "../../../../layers/auth/modules/*.*",
+    "../../../../layers/auth/nuxt.config.*",
+    "../../../../layers/auth/.config/nuxt.*",
+    "../../../../layers/auth/layers/*/nuxt.config.*",
+    "../../../../layers/auth/layers/*/.config/nuxt.*",
+    "../../../../layers/auth/layers/*/modules/**/*",
+    "../node_modules/@meeovi/layer-search/modules/*.*",
+    "../node_modules/@meeovi/layer-search/nuxt.config.*",
+    "../node_modules/@meeovi/layer-search/.config/nuxt.*",
+    "../node_modules/@meeovi/layer-search/layers/*/nuxt.config.*",
+    "../node_modules/@meeovi/layer-search/layers/*/.config/nuxt.*",
+    "../node_modules/@meeovi/layer-search/layers/*/modules/**/*",
+    "../../../../layers/shared/modules/*.*",
+    "../../../../layers/shared/nuxt.config.*",
+    "../../../../layers/shared/.config/nuxt.*",
+    "../../../../layers/shared/layers/*/nuxt.config.*",
+    "../../../../layers/shared/layers/*/.config/nuxt.*",
+    "../../../../layers/shared/layers/*/modules/**/*",
     "../nuxt.schema.*",
     "../layers/*/nuxt.schema.*"
   ],
   "exclude": [
     "../node_modules",
+    "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/vuetify-nuxt-module/node_modules",
-    "../node_modules/@pinia/nuxt/node_modules",
-    "../node_modules/@vueuse/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
-    "../node_modules/nuxt-security/node_modules",
+    "../../../../layers/auth/node_modules",
+    "../node_modules/@meeovi/layer-search/node_modules",
+    "../../../../layers/shared/node_modules",
+    "../../../../node_modules/vuetify-nuxt-module/node_modules",
+    "../../../../node_modules/nuxt-tiptap-editor/node_modules",
+    "../../../../node_modules/@pinia/nuxt/node_modules",
+    "../../../../node_modules/@vueuse/nuxt/node_modules",
+    "../../../../node_modules/@nuxtjs/i18n/node_modules",
+    "../../../../node_modules/nuxt-security/node_modules",
+    "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -133,6 +160,35 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
+    "../../../../layers/auth/app/**/*",
+    "../../../../layers/auth/modules/*/runtime/**/*",
+    "../../../../layers/auth/test/nuxt/**/*",
+    "../../../../layers/auth/tests/nuxt/**/*",
+    "../../../../layers/auth/layers/*/app/**/*",
+    "../../../../layers/auth/layers/*/modules/*/runtime/**/*",
+    "../../../../layers/auth/modules/*/runtime/server/**/*",
+    "../../../../layers/auth/layers/*/server/**/*",
+    "../../../../layers/auth/layers/*/modules/*/runtime/server/**/*",
+    "../node_modules/@meeovi/layer-search/app/**/*",
+    "../node_modules/@meeovi/layer-search/modules/*/runtime/**/*",
+    "../node_modules/@meeovi/layer-search/test/nuxt/**/*",
+    "../node_modules/@meeovi/layer-search/tests/nuxt/**/*",
+    "../node_modules/@meeovi/layer-search/layers/*/app/**/*",
+    "../node_modules/@meeovi/layer-search/layers/*/modules/*/runtime/**/*",
+    "../node_modules/@meeovi/layer-search/modules/*/runtime/server/**/*",
+    "../node_modules/@meeovi/layer-search/layers/*/server/**/*",
+    "../node_modules/@meeovi/layer-search/layers/*/modules/*/runtime/server/**/*",
+    "../../../../layers/shared/app/**/*",
+    "../../../../layers/shared/modules/*/runtime/**/*",
+    "../../../../layers/shared/test/nuxt/**/*",
+    "../../../../layers/shared/tests/nuxt/**/*",
+    "../../../../layers/shared/layers/*/app/**/*",
+    "../../../../layers/shared/layers/*/modules/*/runtime/**/*",
+    "../../../../layers/shared/modules/*/runtime/server/**/*",
+    "../../../../layers/shared/layers/*/server/**/*",
+    "../../../../layers/shared/layers/*/modules/*/runtime/server/**/*",
+    "../../../../node_modules/runtime",
+    "../../../../node_modules/dist/runtime",
     "../node_modules/runtime",
     "../node_modules/dist/runtime"
   ]

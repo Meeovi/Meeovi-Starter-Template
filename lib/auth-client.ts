@@ -1,8 +1,9 @@
-import { inferAdditionalFields, adminClient, createAuthClient } from "@meeovi/layer-auth";
-import type { auth } from "../server/utils/auth"
+import { inferAdditionalFields, adminClient } from 'better-auth/client/plugins'
+import { createAuthClient } from 'better-auth/client'
+import type { Auth } from "../server/utils/auth"
 
 export const authClient = createAuthClient({
-	plugins: [inferAdditionalFields<typeof auth>(), adminClient()],
+	plugins: [inferAdditionalFields<Auth>(), adminClient()],
 });
 
 export const signIn = authClient.signIn;

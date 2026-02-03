@@ -17,13 +17,13 @@
           </main>
         </v-layout>
       </v-card>
-      <FooterNav />
+      <Footer />
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-  import FooterNav from '~/components/menus/FooterNav.vue'
+  import Footer from '~/components/menus/Footer.vue'
   import sidebarnav from '~/components/menus/sidebarnav.vue'
   import { ref, onMounted, watch, computed } from 'vue';
   import { useTheme } from 'vuetify'

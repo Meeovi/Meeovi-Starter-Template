@@ -2,7 +2,7 @@
 import { defuFn } from 'defu'
 
 const inlineConfig = {
-  "titleSuffix": " - Meeovi Starter Template",
+  "titleSuffix": "Meeovi",
   "nuxt": {}
 }
 

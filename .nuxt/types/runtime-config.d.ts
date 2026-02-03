@@ -10,6 +10,14 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       cdnURL: string,
    },
 
+   auth: {
+      redirect: {
+         login: string,
+
+         home: string,
+      },
+   },
+
    turnstile: {
       secretKey: string,
    },
@@ -208,6 +216,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
          strictSeo: boolean,
 
          nitroContextDetection: boolean,
+
+         httpCacheDuration: number,
       },
 
       domainLocales: {

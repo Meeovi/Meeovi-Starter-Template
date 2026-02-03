@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+  extends: [
+    '@meeovi/layer-auth',
+    '@meeovi/layer-search',
+    '@meeovi/layer-shared',
+  ],
+
   experimental: {
     watcher: 'parcel'
   },
@@ -24,15 +30,6 @@ export default defineNuxtConfig({
           rel: 'apple-touch-icon',
           href: '/icons/apple-touch-icon-180x180.png'
         },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/satellite-min.css'
-        },
-        {
-          rel: 'preload',
-          as: 'style',
-          href: 'https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap'
-        }
       ],
     },
   },
@@ -54,67 +51,11 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    'vuetify-nuxt-module',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@nuxtjs/i18n',
-    "nuxt-security",
+    '@nuxt/image'
   ],
 
-  security: {
-    headers: {
-      contentSecurityPolicy: false,
-      strictTransportSecurity: {
-        maxAge: 0
-      },
-      crossOriginOpenerPolicy: false,
-      crossOriginEmbedderPolicy: false,
-      permissionsPolicy: false
-    }
-  },
-
-  vuetify: {
-    vuetifyOptions: {
-      icons: {
-        defaultSet: 'fa-svg',
-        svg: {
-          fa: {
-            libraries: [
-              [ /* default export? */ false, /* export name */ 'fas', /* library */ '@fortawesome/free-solid-svg-icons']
-            ]
-          }
-        },
-        sets: [{
-          name: 'mdi',
-          cdn: 'https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css'
-        }]
-      }
-    }
-  },
-
-  i18n: {
-    strategy: "prefix_except_default",
-    defaultLocale: "en-GB",
-    detectBrowserLanguage: false,
-    langDir: "./src/langs/",
-    vueI18n: "./config",
-    locales: [{
-        code: "en-GB",
-        language: "en-GB",
-        file: "en-GB.ts",
-      },
-      {
-        code: "pl-PL",
-        language: "pl-PL",
-        file: "pl-PL.ts",
-      },
-      {
-        code: "testde",
-        language: "de-DE",
-        file: "de-DE.ts",
-        localeId: "c19b753b5f2c4bea8ad15e00027802d4",
-      },
-    ],
+  image: {
+    provider: 'netlify'
   },
 
   runtimeConfig: {
@@ -153,20 +94,11 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    transpile: [
-      'vuetify',
-    ],
-  },
-
+  compatibilityDate: '2025-02-22',
   nitro: {
     prerender: {
-      routes: [
-        '/assets/images/*',
-      ]
-    },
-    compressPublicAssets: true,
+      enabled: false,
+      routes: []
+    }
   },
-
-  compatibilityDate: '2025-02-22',
 })

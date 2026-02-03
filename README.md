@@ -6,17 +6,19 @@ A powerful, consistent, and flexible starter template with tons of integrations.
 
 ## Features include:
 
-- Starter Template supports Graphql, Rest Apis
-- Extendible system that supports Nuxtjs, Vuejs modules
-- Wordpress and Woocommerce Integration
-- Searchkit and Instantsearch.js support
+- Starter template for the Alternate Framework that provides a slim shell to get started.
+- Extendible system that supports Nuxtjs, Vuejs modules.
+- Integrated with @meeovi/layer-auth supporting all of Better-Auth features (both client and server-side).
+- Searchkit and Instantsearch.js support via @meeovi/layer-search.
+- Extendable with @meeovi/adapter-* providing custom features extending @meeovi/layer-*.
+- Wire server-side semantic reranking (call your embeddings API + rerank).
 - Added an error page
-- Vuetify, Fontawesome integration for design system
-- Google Tag Manager, Google Analytics integration
-- Stripe integration for payments and commerce
-- Directus integration for content management system integration along with Wordpress
+- Vuetify, Fontawesome integration for design system via @meeovi/layer-shared.
+- Google Tag Manager, Google Analytics integration via @meeovi/layer-shared.
+- Pluggable payment system supporting numerous payment methods via @meeovi/layer-commerce.
+- Directus integration for content management system integration via @meeovi/adapter-directus.
 
-and much more. Take a look at www.Starter Template.com 
+and much more. Take a look at template.meeovi.com 
 
 ## Prerequisites:
 

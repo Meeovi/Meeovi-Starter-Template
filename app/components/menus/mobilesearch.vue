@@ -26,7 +26,7 @@
         onMounted,
         nextTick
     } from 'vue'
-    import Search from '../search/search.vue'
+    import Search from '@meeovi/layer-search/app/components/search.vue'
 
     const dialog = ref(false)
     const searchContainer = ref(null)

@@ -2,7 +2,10 @@
 /// <reference path="nitro-layouts.d.ts" />
 /// <reference path="app.config.d.ts" />
 /// <reference path="runtime-config.d.ts" />
-/// <reference types="/home/meebuzo/github/alternate-framework/themes/Meeovi-Starter-Template/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference types="/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxt/nitro-server/dist/index.mjs" />
+/// <reference path="nuxt-security.d.ts" />
+/// <reference path="nuxt-security-nitro.d.ts" />
+/// <reference path="../image/providers.d.ts" />
 /// <reference path="nitro-middleware.d.ts" />
 
 import type { RuntimeConfig } from 'nuxt/schema'

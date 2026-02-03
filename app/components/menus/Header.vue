@@ -48,10 +48,9 @@
 </template>
 
 <script setup>
-  import search from '~/components/search/search.vue'
   import logo from '~/components/blocks/logo.vue'
   import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
-  import LayoutNotifications from '~/components/menus/layoutNotifications.vue'
+  import LayoutNotifications from '~/components/menus/Notifications.vue'
   import mobilesearch from '~/components/menus/mobilesearch.vue'
   import { ref, onMounted, watch, computed } from 'vue';
 

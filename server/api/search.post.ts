@@ -2,11 +2,12 @@
 import Searchkit, { SearchkitConfig } from 'searchkit'
 import { defineEventHandler, readBody } from 'h3'
 import 'dotenv/config'
+import { getEnv } from '@meeovi/layer-search/app/utils/env'
 
 const baseConfig: Omit<SearchkitConfig, 'search_settings'> & { search_settings?: any } = {
   connection: {
-    host: process.env.SEARCH_HOST!,
-    apiKey: process.env.SEARCH_API_KEY
+    host: getEnv('SEARCH_HOST')!,
+    apiKey: getEnv('SEARCH_API_KEY')
   }
 }
 

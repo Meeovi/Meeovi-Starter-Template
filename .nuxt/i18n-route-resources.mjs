@@ -5,19 +5,55 @@ export const pathToI18nConfig = {
     "pl-PL": "/",
     "testde": "/"
   },
+  "/login": {
+    "en-GB": "/login",
+    "pl-PL": "/login",
+    "testde": "/login"
+  },
+  "/confirm": {
+    "en-GB": "/confirm",
+    "pl-PL": "/confirm",
+    "testde": "/confirm"
+  },
   "/results": {
     "en-GB": "/results",
     "pl-PL": "/results",
     "testde": "/results"
   },
+  "/callback": {
+    "en-GB": "/callback",
+    "pl-PL": "/callback",
+    "testde": "/callback"
+  },
+  "/register": {
+    "en-GB": "/register",
+    "pl-PL": "/register",
+    "testde": "/register"
+  },
   "/:slug(.*)*": {
     "en-GB": "/:slug(.*)*",
     "pl-PL": "/:slug(.*)*",
     "testde": "/:slug(.*)*"
+  },
+  "/reset-password": {
+    "en-GB": "/reset-password",
+    "pl-PL": "/reset-password",
+    "testde": "/reset-password"
+  },
+  "/forgot-password": {
+    "en-GB": "/forgot-password",
+    "pl-PL": "/forgot-password",
+    "testde": "/forgot-password"
   }
 };
 export const i18nPathToPath = {
   "/": "/",
+  "/login": "/login",
+  "/confirm": "/confirm",
   "/results": "/results",
-  "/:slug(.*)*": "/:slug(.*)*"
+  "/callback": "/callback",
+  "/register": "/register",
+  "/:slug(.*)*": "/:slug(.*)*",
+  "/reset-password": "/reset-password",
+  "/forgot-password": "/forgot-password"
 };
