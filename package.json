@@ -25,16 +25,16 @@
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@meeovi/auth": "^1.0.8",
+      "@meeovi/adapter-directus": "^1.0.0",
       "@meeovi/core": "^1.0.4",
       "@paralleldrive/cuid2": "^3.3.0",
-      "@prisma/client-runtime-utils": "^7.3.0",
       "nuxt": "^4.3.0"
    },
    "devDependencies": {
-      "@meeovi/layer-auth": "file:../../../layers/auth",
-      "@meeovi/layer-search": "^1.1.1",
-      "@meeovi/layer-shared": "file:../../../layers/shared",
-      "@nuxt/image": "^2.0.0"
+      "@meeovi/layer-auth": "^1.1.15",
+      "@meeovi/layer-search": "^1.1.4",
+      "@meeovi/layer-shared": "^1.1.0",
+      "@nuxt/image": "^2.0.0",
+      "vue-tsc": "^3.2.4"
    }
 }

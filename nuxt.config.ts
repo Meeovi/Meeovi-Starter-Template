@@ -1,104 +1,78 @@
 export default defineNuxtConfig({
+  srcDir: 'src',
+
+  ssr: true,
+
+  typescript: {
+    strict: true,
+    typeCheck: true
+  },
+
   extends: [
     '@meeovi/layer-auth',
     '@meeovi/layer-search',
-    '@meeovi/layer-shared',
+    '@meeovi/layer-shared'
   ],
 
   experimental: {
-    watcher: 'parcel'
+    watcher: 'parcel',
+    payloadExtraction: true
   },
 
   app: {
     head: {
       viewport: 'minimum-scale=1, initial-scale=1, width=device-width',
-      templateParams: {
-        separator: '·',
-      },
-      htmlAttrs: {
-        lang: 'en',
-      },
-      meta: [{
-        name: 'description',
-        content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'Meeovi Starter Template'}`
-      }, ],
-      link: [{
-          rel: 'icon',
-          href: '/favicon.ico'
-        },
-        {
-          rel: 'apple-touch-icon',
-          href: '/icons/apple-touch-icon-180x180.png'
-        },
+      templateParams: { separator: '·' },
+      htmlAttrs: { lang: 'en' },
+      titleTemplate: '%s - Meeovi Starter',
+      meta: [
+        { name: 'description', content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'Meeovi Starter Template'}` },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
-    },
+      link: [
+        { rel: 'icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon-180x180.png' }
+      ]
+    }
   },
 
   appConfig: {
-    titleSuffix: `${process.env.NUXT_PUBLIC_SITE_NAME || ' - Meeovi Starter Template'}`,
+    titleSuffix: `${process.env.NUXT_PUBLIC_SITE_NAME || ' - Meeovi Starter Template'}`
   },
 
-  css: [
-    'assets/web/assets/mobirise-icons2/mobirise2.css',
-    'assets/bootstrap/css/bootstrap.min.css',
-    'assets/bootstrap/css/bootstrap-grid.min.css',
-    'assets/bootstrap/css/bootstrap-reboot.min.css',
-    'assets/theme/css/style.css',
-    'assets/mobirise/css/mbr-additional.css',
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    'assets/styles/mobile.css',
-    'assets/styles/styles.css',
-  ],
+  css: [],
 
   modules: [
     '@nuxt/image'
   ],
 
-  image: {
-    provider: 'netlify'
-  },
+  image: { provider: 'netlify' },
 
   runtimeConfig: {
-    // Cloudflare Turnstile
-    turnstile: {
-      // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
-      // environment variable.
-      secretKey: process.env.NUXT_TURNSTILE_SECRET_KEY,
-    },
+    meeoviSecret: process.env.MEEOVI_SECRET,
     public: {
-      // Directus
-      directus: {
-        url: process.env.DIRECTUS_URL,
-        nuxtBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-        auth: {
-          email: process.env.NUXTUS_DIRECTUS_ADMIN_EMAIL,
-          password: process.env.NUXTUS_DIRECTUS_ADMIN_PASSWORD,
-          token: process.env.NUXTUS_DIRECTUS_STATIC_TOKEN,
-          enabled: true,
-          enableGlobalAuthMiddleware: false, // Enable auth middleware on every page
-          userFields: ['*'], // Select user fields
-          redirect: {
-            login: '/auth/login', // Path to redirect when login is required
-            logout: '/', // Path to redirect after logout
-            home: '/', // Path to redirect after successful login
-            resetPassword: '/auth/reset-password', // Path to redirect for password reset
-            callback: '/auth/callback', // Path to redirect after login with provider
-          },
-        }
-      },
-
-      meeovi: {
-        apiUrl: process.env.MEEOVI_API_URL,
-        searchIndex: process.env.MEEOVI_SEARCH_INDEX
-      }
-    },
-  },
-
-  compatibilityDate: '2025-02-22',
-  nitro: {
-    prerender: {
-      enabled: false,
-      routes: []
+      meeoviProvider: process.env.MEEOVI_PROVIDER || 'directus',
+      directus: { url: process.env.DIRECTUS_URL || '', staticToken: process.env.DIRECTUS_STATIC_TOKEN || '' },
+      magento: { baseUrl: process.env.MAGENTO_BASE_URL || '', accessToken: process.env.MAGENTO_ACCESS_TOKEN || '' },
+      appName: process.env.APP_NAME || 'Meeovi Starter'
     }
   },
+
+  nitro: {
+    preset: 'node-server',
+    prerender: { crawlLinks: false },
+    routeRules: {
+      '/**': {
+        headers: {
+          'X-Frame-Options': 'SAMEORIGIN',
+          'X-Content-Type-Options': 'nosniff',
+          'Referrer-Policy': 'strict-origin-when-cross-origin'
+        }
+      }
+    }
+  },
+
+  vite: {
+    build: { sourcemap: process.env.NODE_ENV !== 'production' }
+  }
 })

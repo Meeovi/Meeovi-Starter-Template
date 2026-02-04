@@ -18,10 +18,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       },
    },
 
-   turnstile: {
-      secretKey: string,
-   },
-
    nitro: {
       envPrefix: string,
    },
@@ -141,43 +137,21 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
   }
   interface SharedPublicRuntimeConfig {
+   meeoviProvider: string,
+
    directus: {
       url: string,
 
-      nuxtBaseUrl: string,
-
-      auth: {
-         email: string,
-
-         password: string,
-
-         token: string,
-
-         enabled: boolean,
-
-         enableGlobalAuthMiddleware: boolean,
-
-         userFields: Array<string>,
-
-         redirect: {
-            login: string,
-
-            logout: string,
-
-            home: string,
-
-            resetPassword: string,
-
-            callback: string,
-         },
-      },
+      staticToken: string,
    },
 
-   meeovi: {
-      apiUrl: string,
+   magento: {
+      baseUrl: string,
 
-      searchIndex: string,
+      accessToken: string,
    },
+
+   appName: string,
 
    i18n: {
       baseUrl: string,

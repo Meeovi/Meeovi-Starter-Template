@@ -14,149 +14,14 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
-  'BlocksLogo': typeof import("../../app/components/blocks/logo.vue").default
-  'MenusFooter': typeof import("../../app/components/menus/Footer.vue").default
-  'MenusHeader': typeof import("../../app/components/menus/Header.vue").default
-  'MenusNotifications': typeof import("../../app/components/menus/Notifications.vue").default
-  'MenusEcosystemmenu': typeof import("../../app/components/menus/ecosystemmenu.vue").default
-  'MenusLowernav': typeof import("../../app/components/menus/lowernav.vue").default
-  'MenusMobilesearch': typeof import("../../app/components/menus/mobilesearch.vue").default
-  'MenusSidebarnav': typeof import("../../app/components/menus/sidebarnav.vue").default
-  'MenusTopmenu': typeof import("../../app/components/menus/topmenu.vue").default
-  'BlocksLogoutButton': typeof import("../../../../../layers/auth/app/components/blocks/logoutButton.vue").default
-  'Gallery': typeof import("../../../../../layers/shared/app/components/Gallery/Gallery.vue").default
-  'Heading': typeof import("../../../../../layers/shared/app/components/Heading/Heading.vue").default
-  'HeadingTypes': typeof import("../../../../../layers/shared/app/components/Heading/types").default
-  'MediaAudioGallery': typeof import("../../../../../layers/shared/app/components/media/audioGallery.vue").default
-  'MediaDragDropUpload': typeof import("../../../../../layers/shared/app/components/media/dragDropUpload.vue").default
-  'MediaFullscreenMediaModal': typeof import("../../../../../layers/shared/app/components/media/fullscreenMediaModal.vue").default
-  'MediaImageCard': typeof import("../../../../../layers/shared/app/components/media/imageCard.vue").default
-  'MediaImageGallery': typeof import("../../../../../layers/shared/app/components/media/imageGallery.vue").default
-  'MediaCard': typeof import("../../../../../layers/shared/app/components/media/mediaCard.vue").default
-  'MediaCarousel': typeof import("../../../../../layers/shared/app/components/media/mediaCarousel.vue").default
-  'MediaFolderSidebar': typeof import("../../../../../layers/shared/app/components/media/mediaFolderSidebar.vue").default
-  'MediaPlayer': typeof import("../../../../../layers/shared/app/components/media/mediaPlayer.vue").default
-  'MediaSearchBar': typeof import("../../../../../layers/shared/app/components/media/mediaSearchBar.vue").default
-  'MediaVideoGallery': typeof import("../../../../../layers/shared/app/components/media/videoGallery.vue").default
-  'UiAccordionItem': typeof import("../../../../../layers/shared/app/components/ui/AccordionItem/AccordionItem.vue").default
-  'UiAccordionItemTypes': typeof import("../../../../../layers/shared/app/components/ui/AccordionItem/types").default
-  'UiAlert': typeof import("../../../../../layers/shared/app/components/ui/Alert/Alert.vue").default
-  'UiAlertTypes': typeof import("../../../../../layers/shared/app/components/ui/Alert/types").default
-  'UiBreadcrumbs': typeof import("../../../../../layers/shared/app/components/ui/Breadcrumbs/Breadcrumbs.vue").default
-  'UiBreadcrumbsTypes': typeof import("../../../../../layers/shared/app/components/ui/Breadcrumbs/types").default
-  'UiCartProductCard': typeof import("../../../../../layers/shared/app/components/ui/CartProductCard/CartProductCard.vue").default
-  'UiCartProductCardTypes': typeof import("../../../../../layers/shared/app/components/ui/CartProductCard/types").default
-  'UiCategoryCard': typeof import("../../../../../layers/shared/app/components/ui/CategoryCard/CategoryCard.vue").default
-  'UiCategoryCardTypes': typeof import("../../../../../layers/shared/app/components/ui/CategoryCard/types").default
-  'UiDisplay': typeof import("../../../../../layers/shared/app/components/ui/Display/Display.vue").default
-  'UiDisplayTypes': typeof import("../../../../../layers/shared/app/components/ui/Display/types").default
-  'UiDivider': typeof import("../../../../../layers/shared/app/components/ui/Divider/Divider.vue").default
-  'UiFooter': typeof import("../../../../../layers/shared/app/components/ui/Footer.vue").default
-  'UiFormHelperText': typeof import("../../../../../layers/shared/app/components/ui/Form/FormHelperText.vue").default
-  'UiFormLabel': typeof import("../../../../../layers/shared/app/components/ui/Form/FormLabel.vue").default
-  'UiFormPasswordInput': typeof import("../../../../../layers/shared/app/components/ui/Form/FormPasswordInput.vue").default
-  'UiHero': typeof import("../../../../../layers/shared/app/components/ui/Hero/Hero.vue").default
-  'UiHeroTypes': typeof import("../../../../../layers/shared/app/components/ui/Hero/types").default
-  'UiModal': typeof import("../../../../../layers/shared/app/components/ui/Modal/Modal.vue").default
-  'UiModalTypes': typeof import("../../../../../layers/shared/app/components/ui/Modal/types").default
-  'UiMotionable': typeof import("../../../../../layers/shared/app/components/ui/Motionable.vue").default
-  'UiNavbarBottom': typeof import("../../../../../layers/shared/app/components/ui/NavbarBottom.vue").default
-  'UiNavbarTop': typeof import("../../../../../layers/shared/app/components/ui/NavbarTop.vue").default
-  'UiOverlay': typeof import("../../../../../layers/shared/app/components/ui/Overlay/Overlay.vue").default
-  'UiOverlayTypes': typeof import("../../../../../layers/shared/app/components/ui/Overlay/types").default
-  'UiPageBuilder': typeof import("../../../../../layers/shared/app/components/ui/PageBuilder.vue").default
-  'UiPageContainer': typeof import("../../../../../layers/shared/app/components/ui/PageContainer.vue").default
-  'UiPagination': typeof import("../../../../../layers/shared/app/components/ui/Pagination/Pagination.vue").default
-  'UiPaginationTypes': typeof import("../../../../../layers/shared/app/components/ui/Pagination/types").default
-  'UiProductCard': typeof import("../../../../../layers/shared/app/components/ui/ProductCard/ProductCard.vue").default
-  'UiProductCardTypes': typeof import("../../../../../layers/shared/app/components/ui/ProductCard/types").default
-  'UiProductCardHorizontal': typeof import("../../../../../layers/shared/app/components/ui/ProductCardHorizontal/ProductCardHorizontal.vue").default
-  'UiProductCardHorizontalTypes': typeof import("../../../../../layers/shared/app/components/ui/ProductCardHorizontal/types").default
-  'UiPurchaseCard': typeof import("../../../../../layers/shared/app/components/ui/PurchaseCard/PurchaseCard.vue").default
-  'UiPurchaseCardTypes': typeof import("../../../../../layers/shared/app/components/ui/PurchaseCard/types").default
-  'UiQuantitySelector': typeof import("../../../../../layers/shared/app/components/ui/QuantitySelector/QuantitySelector.vue").default
-  'UiQuantitySelectorTypes': typeof import("../../../../../layers/shared/app/components/ui/QuantitySelector/types").default
-  'UiRadialProgress': typeof import("../../../../../layers/shared/app/components/ui/RadialProgress.vue").default
-  'UiReview': typeof import("../../../../../layers/shared/app/components/ui/Review/Review.vue").default
-  'UiReviewTypes': typeof import("../../../../../layers/shared/app/components/ui/Review/types").default
-  'UiScrollTop': typeof import("../../../../../layers/shared/app/components/ui/ScrollTop.vue").default
-  'UiSearch': typeof import("../../../../../layers/shared/app/components/ui/Search.vue").default
-  'UiTag': typeof import("../../../../../layers/shared/app/components/ui/Tag/Tag.vue").default
-  'UiTagTypes': typeof import("../../../../../layers/shared/app/components/ui/Tag/types").default
-  'UiVsfLogo': typeof import("../../../../../layers/shared/app/components/ui/VsfLogo.vue").default
-  'UiFormsBooleanInput': typeof import("../../../../../layers/shared/app/components/ui/forms/BooleanInput.vue").default
-  'UiFormsDateTime': typeof import("../../../../../layers/shared/app/components/ui/forms/DateTime.vue").default
-  'UiFormsDirectusFormElement': typeof import("../../../../../layers/shared/app/components/ui/forms/DirectusFormElement.vue").default
-  'UiFormsDynamicTableElement': typeof import("../../../../../layers/shared/app/components/ui/forms/DynamicTableElement.vue").default
-  'UiFormsFileInput': typeof import("../../../../../layers/shared/app/components/ui/forms/FileInput.vue").default
-  'UiFormsFormField': typeof import("../../../../../layers/shared/app/components/ui/forms/FormField.vue").default
-  'UiFormsRelationSelect': typeof import("../../../../../layers/shared/app/components/ui/forms/RelationSelect.vue").default
-  'UiFormsRepeaterInput': typeof import("../../../../../layers/shared/app/components/ui/forms/RepeaterInput.vue").default
-  'UiFormsSelectInput': typeof import("../../../../../layers/shared/app/components/ui/forms/SelectInput.vue").default
-  'UiFormsTextArea': typeof import("../../../../../layers/shared/app/components/ui/forms/TextArea.vue").default
-  'UiFormsTextInput': typeof import("../../../../../layers/shared/app/components/ui/forms/TextInput.vue").default
-  'UiFormsTiptapEditor': typeof import("../../../../../layers/shared/app/components/ui/forms/TiptapEditor.vue").default
-  'UiForms[collection]': typeof import("../../../../../layers/shared/app/components/ui/forms/[collection].vue").default
-  'UiStudioBuilder': typeof import("../../../../../layers/shared/app/components/ui/studio/builder.vue").default
-  'UiStudioDocument': typeof import("../../../../../layers/shared/app/components/ui/studio/document.vue").default
-  'UiStudioEmail': typeof import("../../../../../layers/shared/app/components/ui/studio/email.vue").default
-  'AtomsBaseButton': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseButton.vue").default
-  'AtomsBaseCard': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseCard.vue").default
-  'AtomsBaseCheckbox': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseCheckbox.vue").default
-  'AtomsBaseLogo': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseLogo.vue").default
-  'AtomsBaseText': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseText.vue").default
-  'AtomsBaseTitle': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseTitle.vue").default
-  'AtomsDiscordIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/DiscordIcon.vue").default
-  'AtomsGithubIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/GithubIcon.vue").default
-  'AtomsHalfSolidStarIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/HalfSolidStarIcon.vue").default
-  'AtomsSelectArrow': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/SelectArrow.vue").default
-  'AtomsSolidStarIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/SolidStarIcon.vue").default
-  'AtomsStarIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/StarIcon.vue").default
-  'AtomsTwitterIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/TwitterIcon.vue").default
-  'AtomsWebIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/WebIcon.vue").default
-  'AtomsXIcon': typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/XIcon.vue").default
-  'FeaturesAiSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/aiSearch.vue").default
-  'FeaturesAllSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/allSearch.vue").default
+  'BlocksLogoutButton': typeof import("../../node_modules/@meeovi/layer-auth/app/components/blocks/logoutButton.vue").default
   'FeaturesAutocomplete': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/autocomplete.vue").default
-  'FeaturesImageSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/imageSearch.vue").default
   'FeaturesSearchkitSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/searchkitSearch.vue").default
-  'FeaturesVideoSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/features/videoSearch.vue").default
   'Filters': typeof import("../../node_modules/@meeovi/layer-search/app/components/filters/filters.vue").default
-  'MoleculesBaseSelect': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/BaseSelect.vue").default
-  'MoleculesPageNumber': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/PageNumber.vue").default
-  'MoleculesRangeSlider': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/RangeSlider.vue").default
   'MoleculesSearchInput': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/SearchInput.vue").default
-  'MoleculesSocialLink': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/SocialLink.vue").default
-  'MoleculesStarRating': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/StarRating.vue").default
   'MoleculesPagination': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/pagination.vue").default
   'MoleculesResultList': typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/resultList.vue").default
-  'OrganismsLoadingIndicator': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/LoadingIndicator.vue").default
-  'OrganismsMeiliSearchBar': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchBar.vue").default
-  'OrganismsMeiliSearchFacetFilter': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchFacetFilter.vue").default
-  'OrganismsMeiliSearchLoadingProvider': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchLoadingProvider.vue").default
-  'OrganismsMeiliSearchPagination': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchPagination.vue").default
-  'OrganismsMeiliSearchProvider': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchProvider.vue").default
-  'OrganismsMeiliSearchRangeFilter': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchRangeFilter.vue").default
-  'OrganismsMeiliSearchRatingFilter': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchRatingFilter.vue").default
-  'OrganismsMeiliSearchResults': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchResults.vue").default
-  'OrganismsMeiliSearchSorting': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchSorting.vue").default
-  'OrganismsMeiliSearchStats': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchStats.vue").default
-  'OrganismsProductCard': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/ProductCard.vue").default
-  'OrganismsTheNavbar': typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/TheNavbar.vue").default
-  'ResultsAudioSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/audioSearch.vue").default
-  'ResultsBooksSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/booksSearch.vue").default
-  'ResultsFinanceSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/financeSearch.vue").default
-  'ResultsImageSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/imageSearch.vue").default
-  'ResultsMusicSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/musicSearch.vue").default
-  'ResultsNewsSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/newsSearch.vue").default
-  'ResultsSpaceSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/spaceSearch.vue").default
-  'ResultsSpacesSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/spacesSearch.vue").default
-  'ResultsTravelSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/travelSearch.vue").default
-  'ResultsVideoSearch': typeof import("../../node_modules/@meeovi/layer-search/app/components/results/videoSearch.vue").default
   'Search': typeof import("../../node_modules/@meeovi/layer-search/app/components/search.vue").default
-  'TemplatesHomeTemplate': typeof import("../../node_modules/@meeovi/layer-search/app/components/templates/HomeTemplate.vue").default
-  'WidgetsClearRefinements': typeof import("../../node_modules/@meeovi/layer-search/app/components/widgets/ClearRefinements.vue").default
-  'WidgetsNoResults': typeof import("../../node_modules/@meeovi/layer-search/app/components/widgets/NoResults.vue").default
   'NuxtWelcome': typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default
   'NuxtLayout': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default
   'NuxtErrorBoundary': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default
@@ -172,8 +37,8 @@ interface _GlobalComponents {
   'TiptapEditorContent': typeof import("@tiptap/vue-3").EditorContent
   'TiptapFloatingMenu': typeof import("@tiptap/vue-3/menus").FloatingMenu
   'TiptapBubbleMenu': typeof import("@tiptap/vue-3/menus").BubbleMenu
-  'NuxtLinkLocale': typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
-  'SwitchLocalePathLink': typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
+  'NuxtLinkLocale': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default
+  'SwitchLocalePathLink': typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default
   'NuxtPage': typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default
   'NoScript': typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript
   'Link': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link
@@ -185,149 +50,14 @@ interface _GlobalComponents {
   'Html': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Html
   'Body': typeof import("../../node_modules/nuxt/dist/head/runtime/components").Body
   'NuxtIsland': typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island").default
-  'LazyBlocksLogo': LazyComponent<typeof import("../../app/components/blocks/logo.vue").default>
-  'LazyMenusFooter': LazyComponent<typeof import("../../app/components/menus/Footer.vue").default>
-  'LazyMenusHeader': LazyComponent<typeof import("../../app/components/menus/Header.vue").default>
-  'LazyMenusNotifications': LazyComponent<typeof import("../../app/components/menus/Notifications.vue").default>
-  'LazyMenusEcosystemmenu': LazyComponent<typeof import("../../app/components/menus/ecosystemmenu.vue").default>
-  'LazyMenusLowernav': LazyComponent<typeof import("../../app/components/menus/lowernav.vue").default>
-  'LazyMenusMobilesearch': LazyComponent<typeof import("../../app/components/menus/mobilesearch.vue").default>
-  'LazyMenusSidebarnav': LazyComponent<typeof import("../../app/components/menus/sidebarnav.vue").default>
-  'LazyMenusTopmenu': LazyComponent<typeof import("../../app/components/menus/topmenu.vue").default>
-  'LazyBlocksLogoutButton': LazyComponent<typeof import("../../../../../layers/auth/app/components/blocks/logoutButton.vue").default>
-  'LazyGallery': LazyComponent<typeof import("../../../../../layers/shared/app/components/Gallery/Gallery.vue").default>
-  'LazyHeading': LazyComponent<typeof import("../../../../../layers/shared/app/components/Heading/Heading.vue").default>
-  'LazyHeadingTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/Heading/types").default>
-  'LazyMediaAudioGallery': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/audioGallery.vue").default>
-  'LazyMediaDragDropUpload': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/dragDropUpload.vue").default>
-  'LazyMediaFullscreenMediaModal': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/fullscreenMediaModal.vue").default>
-  'LazyMediaImageCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/imageCard.vue").default>
-  'LazyMediaImageGallery': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/imageGallery.vue").default>
-  'LazyMediaCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaCard.vue").default>
-  'LazyMediaCarousel': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaCarousel.vue").default>
-  'LazyMediaFolderSidebar': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaFolderSidebar.vue").default>
-  'LazyMediaPlayer': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaPlayer.vue").default>
-  'LazyMediaSearchBar': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaSearchBar.vue").default>
-  'LazyMediaVideoGallery': LazyComponent<typeof import("../../../../../layers/shared/app/components/media/videoGallery.vue").default>
-  'LazyUiAccordionItem': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/AccordionItem/AccordionItem.vue").default>
-  'LazyUiAccordionItemTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/AccordionItem/types").default>
-  'LazyUiAlert': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Alert/Alert.vue").default>
-  'LazyUiAlertTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Alert/types").default>
-  'LazyUiBreadcrumbs': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Breadcrumbs/Breadcrumbs.vue").default>
-  'LazyUiBreadcrumbsTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Breadcrumbs/types").default>
-  'LazyUiCartProductCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/CartProductCard/CartProductCard.vue").default>
-  'LazyUiCartProductCardTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/CartProductCard/types").default>
-  'LazyUiCategoryCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/CategoryCard/CategoryCard.vue").default>
-  'LazyUiCategoryCardTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/CategoryCard/types").default>
-  'LazyUiDisplay': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Display/Display.vue").default>
-  'LazyUiDisplayTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Display/types").default>
-  'LazyUiDivider': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Divider/Divider.vue").default>
-  'LazyUiFooter': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Footer.vue").default>
-  'LazyUiFormHelperText': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Form/FormHelperText.vue").default>
-  'LazyUiFormLabel': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Form/FormLabel.vue").default>
-  'LazyUiFormPasswordInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Form/FormPasswordInput.vue").default>
-  'LazyUiHero': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Hero/Hero.vue").default>
-  'LazyUiHeroTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Hero/types").default>
-  'LazyUiModal': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Modal/Modal.vue").default>
-  'LazyUiModalTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Modal/types").default>
-  'LazyUiMotionable': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Motionable.vue").default>
-  'LazyUiNavbarBottom': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/NavbarBottom.vue").default>
-  'LazyUiNavbarTop': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/NavbarTop.vue").default>
-  'LazyUiOverlay': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Overlay/Overlay.vue").default>
-  'LazyUiOverlayTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Overlay/types").default>
-  'LazyUiPageBuilder': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/PageBuilder.vue").default>
-  'LazyUiPageContainer': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/PageContainer.vue").default>
-  'LazyUiPagination': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Pagination/Pagination.vue").default>
-  'LazyUiPaginationTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Pagination/types").default>
-  'LazyUiProductCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ProductCard/ProductCard.vue").default>
-  'LazyUiProductCardTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ProductCard/types").default>
-  'LazyUiProductCardHorizontal': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ProductCardHorizontal/ProductCardHorizontal.vue").default>
-  'LazyUiProductCardHorizontalTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ProductCardHorizontal/types").default>
-  'LazyUiPurchaseCard': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/PurchaseCard/PurchaseCard.vue").default>
-  'LazyUiPurchaseCardTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/PurchaseCard/types").default>
-  'LazyUiQuantitySelector': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/QuantitySelector/QuantitySelector.vue").default>
-  'LazyUiQuantitySelectorTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/QuantitySelector/types").default>
-  'LazyUiRadialProgress': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/RadialProgress.vue").default>
-  'LazyUiReview': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Review/Review.vue").default>
-  'LazyUiReviewTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Review/types").default>
-  'LazyUiScrollTop': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ScrollTop.vue").default>
-  'LazyUiSearch': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Search.vue").default>
-  'LazyUiTag': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Tag/Tag.vue").default>
-  'LazyUiTagTypes': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Tag/types").default>
-  'LazyUiVsfLogo': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/VsfLogo.vue").default>
-  'LazyUiFormsBooleanInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/BooleanInput.vue").default>
-  'LazyUiFormsDateTime': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DateTime.vue").default>
-  'LazyUiFormsDirectusFormElement': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DirectusFormElement.vue").default>
-  'LazyUiFormsDynamicTableElement': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DynamicTableElement.vue").default>
-  'LazyUiFormsFileInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/FileInput.vue").default>
-  'LazyUiFormsFormField': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/FormField.vue").default>
-  'LazyUiFormsRelationSelect': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/RelationSelect.vue").default>
-  'LazyUiFormsRepeaterInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/RepeaterInput.vue").default>
-  'LazyUiFormsSelectInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/SelectInput.vue").default>
-  'LazyUiFormsTextArea': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TextArea.vue").default>
-  'LazyUiFormsTextInput': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TextInput.vue").default>
-  'LazyUiFormsTiptapEditor': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TiptapEditor.vue").default>
-  'LazyUiForms[collection]': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/[collection].vue").default>
-  'LazyUiStudioBuilder': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/studio/builder.vue").default>
-  'LazyUiStudioDocument': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/studio/document.vue").default>
-  'LazyUiStudioEmail': LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/studio/email.vue").default>
-  'LazyAtomsBaseButton': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseButton.vue").default>
-  'LazyAtomsBaseCard': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseCard.vue").default>
-  'LazyAtomsBaseCheckbox': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseCheckbox.vue").default>
-  'LazyAtomsBaseLogo': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseLogo.vue").default>
-  'LazyAtomsBaseText': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseText.vue").default>
-  'LazyAtomsBaseTitle': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/BaseTitle.vue").default>
-  'LazyAtomsDiscordIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/DiscordIcon.vue").default>
-  'LazyAtomsGithubIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/GithubIcon.vue").default>
-  'LazyAtomsHalfSolidStarIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/HalfSolidStarIcon.vue").default>
-  'LazyAtomsSelectArrow': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/SelectArrow.vue").default>
-  'LazyAtomsSolidStarIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/SolidStarIcon.vue").default>
-  'LazyAtomsStarIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/StarIcon.vue").default>
-  'LazyAtomsTwitterIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/TwitterIcon.vue").default>
-  'LazyAtomsWebIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/WebIcon.vue").default>
-  'LazyAtomsXIcon': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/atoms/XIcon.vue").default>
-  'LazyFeaturesAiSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/aiSearch.vue").default>
-  'LazyFeaturesAllSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/allSearch.vue").default>
+  'LazyBlocksLogoutButton': LazyComponent<typeof import("../../node_modules/@meeovi/layer-auth/app/components/blocks/logoutButton.vue").default>
   'LazyFeaturesAutocomplete': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/autocomplete.vue").default>
-  'LazyFeaturesImageSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/imageSearch.vue").default>
   'LazyFeaturesSearchkitSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/searchkitSearch.vue").default>
-  'LazyFeaturesVideoSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/features/videoSearch.vue").default>
   'LazyFilters': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/filters/filters.vue").default>
-  'LazyMoleculesBaseSelect': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/BaseSelect.vue").default>
-  'LazyMoleculesPageNumber': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/PageNumber.vue").default>
-  'LazyMoleculesRangeSlider': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/RangeSlider.vue").default>
   'LazyMoleculesSearchInput': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/SearchInput.vue").default>
-  'LazyMoleculesSocialLink': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/SocialLink.vue").default>
-  'LazyMoleculesStarRating': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/StarRating.vue").default>
   'LazyMoleculesPagination': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/pagination.vue").default>
   'LazyMoleculesResultList': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/molecules/resultList.vue").default>
-  'LazyOrganismsLoadingIndicator': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/LoadingIndicator.vue").default>
-  'LazyOrganismsMeiliSearchBar': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchBar.vue").default>
-  'LazyOrganismsMeiliSearchFacetFilter': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchFacetFilter.vue").default>
-  'LazyOrganismsMeiliSearchLoadingProvider': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchLoadingProvider.vue").default>
-  'LazyOrganismsMeiliSearchPagination': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchPagination.vue").default>
-  'LazyOrganismsMeiliSearchProvider': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchProvider.vue").default>
-  'LazyOrganismsMeiliSearchRangeFilter': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchRangeFilter.vue").default>
-  'LazyOrganismsMeiliSearchRatingFilter': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchRatingFilter.vue").default>
-  'LazyOrganismsMeiliSearchResults': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchResults.vue").default>
-  'LazyOrganismsMeiliSearchSorting': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchSorting.vue").default>
-  'LazyOrganismsMeiliSearchStats': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/MeiliSearchStats.vue").default>
-  'LazyOrganismsProductCard': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/ProductCard.vue").default>
-  'LazyOrganismsTheNavbar': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/organisms/TheNavbar.vue").default>
-  'LazyResultsAudioSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/audioSearch.vue").default>
-  'LazyResultsBooksSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/booksSearch.vue").default>
-  'LazyResultsFinanceSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/financeSearch.vue").default>
-  'LazyResultsImageSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/imageSearch.vue").default>
-  'LazyResultsMusicSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/musicSearch.vue").default>
-  'LazyResultsNewsSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/newsSearch.vue").default>
-  'LazyResultsSpaceSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/spaceSearch.vue").default>
-  'LazyResultsSpacesSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/spacesSearch.vue").default>
-  'LazyResultsTravelSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/travelSearch.vue").default>
-  'LazyResultsVideoSearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/results/videoSearch.vue").default>
   'LazySearch': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/search.vue").default>
-  'LazyTemplatesHomeTemplate': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/templates/HomeTemplate.vue").default>
-  'LazyWidgetsClearRefinements': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/widgets/ClearRefinements.vue").default>
-  'LazyWidgetsNoResults': LazyComponent<typeof import("../../node_modules/@meeovi/layer-search/app/components/widgets/NoResults.vue").default>
   'LazyNuxtWelcome': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue").default>
   'LazyNuxtLayout': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout").default>
   'LazyNuxtErrorBoundary': LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue").default>
@@ -343,8 +73,8 @@ interface _GlobalComponents {
   'LazyTiptapEditorContent': LazyComponent<typeof import("@tiptap/vue-3").EditorContent>
   'LazyTiptapFloatingMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").FloatingMenu>
   'LazyTiptapBubbleMenu': LazyComponent<typeof import("@tiptap/vue-3/menus").BubbleMenu>
-  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
-  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
+  'LazyNuxtLinkLocale': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale").default>
+  'LazySwitchLocalePathLink': LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink").default>
   'LazyNuxtPage': LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page").default>
   'LazyNoScript': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").NoScript>
   'LazyLink': LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components").Link>

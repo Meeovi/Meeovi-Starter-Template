@@ -6,10 +6,10 @@ type Decorate<T extends Record<string, any>> = { [K in keyof T as K extends stri
 type InjectionType<A extends Plugin> = A extends {default: Plugin<infer T>} ? Decorate<T> : unknown
 
 type NuxtAppInjections = 
-  InjectionType<typeof import("../../../../../node_modules/@pinia/nuxt/dist/runtime/payload-plugin.js")> &
+  InjectionType<typeof import("../../node_modules/@pinia/nuxt/dist/runtime/payload-plugin.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/revive-payload.client.js")> &
-  InjectionType<typeof import("../../../../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-i18n.js")> &
-  InjectionType<typeof import("../../../../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-icons.js")> &
+  InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-i18n.js")> &
+  InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-icons.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/head/runtime/plugins/unhead.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/router.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/payload.client.js")> &
@@ -17,17 +17,17 @@ type NuxtAppInjections =
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/check-outdated-build.client.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/revive-payload.server.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/app/plugins/chunk-reload.client.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@pinia/nuxt/dist/runtime/plugin.vue3.js")> &
+  InjectionType<typeof import("../../node_modules/@pinia/nuxt/dist/runtime/plugin.vue3.js")> &
   InjectionType<typeof import("../../node_modules/nuxt/dist/pages/runtime/plugins/prefetch.client.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/switch-locale-path-ssr.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/route-locale-detect.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/preload.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/dev.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/i18n.js")> &
-  InjectionType<typeof import("../../../../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-no-client-hints.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/switch-locale-path-ssr.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/route-locale-detect.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/preload.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/dev.js")> &
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/i18n.js")> &
+  InjectionType<typeof import("../../node_modules/vuetify-nuxt-module/dist/runtime/plugins/vuetify-no-client-hints.js")> &
   InjectionType<typeof import("../../node_modules/@meeovi/layer-search/app/plugins/instantsearch.js")> &
   InjectionType<typeof import("../../node_modules/@meeovi/layer-search/app/plugins/search.js")> &
-  InjectionType<typeof import("../../../../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/ssg-detect.js")>
+  InjectionType<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/plugins/ssg-detect.js")>
 
 declare module '#app' {
   interface NuxtApp extends NuxtAppInjections { }
