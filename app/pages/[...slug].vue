@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+
     const route = useRoute();
     const {
         $directus,

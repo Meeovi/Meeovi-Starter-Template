@@ -2,8 +2,8 @@
    "name": "starter-template",
    "type": "module",
    "version": "1.0.0",
-   "description": "Official Alternate Framework starter template.",
-   "author": "Meeovi Labs (https://framework.meeovi.com)",
+   "description": "Official M Framework starter template.",
+   "author": "M Framework Labs (https://framework.meeovi.com)",
    "homepage": "https://framework.meeovi.com",
    "repository": {
       "type": "git",
@@ -25,16 +25,16 @@
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@meeovi/adapter-directus": "^1.0.0",
-      "@meeovi/core": "^1.0.4",
-      "@paralleldrive/cuid2": "^3.3.0",
-      "nuxt": "^4.3.0"
-   },
-   "devDependencies": {
-      "@meeovi/layer-auth": "^1.1.15",
-      "@meeovi/layer-search": "^1.1.4",
-      "@meeovi/layer-shared": "^1.1.0",
+      "@mframework/adapter-betterauth": "^0.1.2-beta1",
+      "@mframework/adapter-directus": "^0.0.3",
+      "@mframework/adapter-opensearch": "^0.0.2",
+      "@mframework/core": "^0.0.12",
+      "@mframework/layer-auth": "^0.0.6",
+      "@mframework/layer-commerce": "^0.0.7",
+      "@mframework/layer-search": "^0.0.7-beta.0",
+      "@mframework/layer-shared": "^0.0.6-beta.14",
+      "@mframework/localization": "^0.0.1",
       "@nuxt/image": "^2.0.0",
-      "vue-tsc": "^3.2.4"
+      "nuxt": "^4.3.1"
    }
 }

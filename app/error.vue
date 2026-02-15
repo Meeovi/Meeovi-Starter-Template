@@ -9,10 +9,10 @@
                 <div class="row">
                     <div class="content-wrap col-12 col-md-12">
                         <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-                            <strong>{{ page?.name }}</strong>
+                            <strong>{{ page?.name || 'Error Page' }}</strong>
                         </h1>
 
-                        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" v-html="page?.content"></p>
+                        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" v-html="page?.content || 'An unexpected error has occurred.'"></p>
 
                         <div class="mbr-section-btn">
                             <NuxtLink class="btn btn-white-outline display-7" :to="page?.link">

@@ -17,6 +17,6 @@ if (import.meta.dev && !import.meta.nitro && import.meta.hot) {
 }
 /** client-end **/
 
+import cfg0 from "/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/app.config.ts"
 
-
-export default /*@__PURE__*/ defuFn(inlineConfig)
+export default /*@__PURE__*/ defuFn(cfg0, inlineConfig)

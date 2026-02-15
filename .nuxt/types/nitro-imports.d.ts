@@ -1,8 +1,4 @@
 declare global {
-  const H3Error: typeof import('../../node_modules/h3').H3Error
-  const H3Event: typeof import('../../node_modules/h3').H3Event
-  const __buildAssetsURL: typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').buildAssetsURL
-  const __publicAssetsURL: typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths').publicAssetsURL
   const appendCorsHeaders: typeof import('../../node_modules/h3').appendCorsHeaders
   const appendCorsPreflightHeaders: typeof import('../../node_modules/h3').appendCorsPreflightHeaders
   const appendHeader: typeof import('../../node_modules/h3').appendHeader
@@ -10,7 +6,7 @@ declare global {
   const appendResponseHeader: typeof import('../../node_modules/h3').appendResponseHeader
   const appendResponseHeaders: typeof import('../../node_modules/h3').appendResponseHeaders
   const assertMethod: typeof import('../../node_modules/h3').assertMethod
-  const auth: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/auth').auth
+  const auth: typeof import('../../node_modules/@mframework/layer-auth/server/utils/auth').auth
   const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').cachedEventHandler
   const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').cachedFunction
   const callNodeListener: typeof import('../../node_modules/h3').callNodeListener
@@ -22,15 +18,10 @@ declare global {
   const createEvent: typeof import('../../node_modules/h3').createEvent
   const createEventStream: typeof import('../../node_modules/h3').createEventStream
   const createRouter: typeof import('../../node_modules/h3').createRouter
-  const dbStats: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/dbStats').default
   const defaultContentType: typeof import('../../node_modules/h3').defaultContentType
-  const defineAppConfig: typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/utils/config').defineAppConfig
   const defineCachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').defineCachedEventHandler
   const defineCachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').defineCachedFunction
   const defineEventHandler: typeof import('../../node_modules/h3').defineEventHandler
-  const defineI18nConfig: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/shared').defineI18nConfig
-  const defineI18nLocale: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/shared').defineI18nLocale
-  const defineI18nLocaleDetector: typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/composables/server').defineI18nLocaleDetector
   const defineLazyEventHandler: typeof import('../../node_modules/h3').defineLazyEventHandler
   const defineNitroErrorHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/error/utils').defineNitroErrorHandler
   const defineNitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin').defineNitroPlugin
@@ -48,25 +39,16 @@ declare global {
   const dynamicEventHandler: typeof import('../../node_modules/h3').dynamicEventHandler
   const eventHandler: typeof import('../../node_modules/h3').eventHandler
   const fetchWithEvent: typeof import('../../node_modules/h3').fetchWithEvent
-  const filterSchema: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/query').filterSchema
+  const filterSchema: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').filterSchema
   const fromNodeMiddleware: typeof import('../../node_modules/h3').fromNodeMiddleware
   const fromPlainHandler: typeof import('../../node_modules/h3').fromPlainHandler
   const fromWebHandler: typeof import('../../node_modules/h3').fromWebHandler
-  const generateRuntimeConfig: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/runtimeConfig').generateRuntimeConfig
   const getCookie: typeof import('../../node_modules/h3').getCookie
-  const getCookieLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').getCookieLocale
-  const getDBStats: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/dbStats').getDBStats
   const getHeader: typeof import('../../node_modules/h3').getHeader
-  const getHeaderLanguage: typeof import('../../node_modules/@intlify/utils/dist/h3').getHeaderLanguage
-  const getHeaderLanguages: typeof import('../../node_modules/@intlify/utils/dist/h3').getHeaderLanguages
-  const getHeaderLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').getHeaderLocale
-  const getHeaderLocales: typeof import('../../node_modules/@intlify/utils/dist/h3').getHeaderLocales
   const getHeaders: typeof import('../../node_modules/h3').getHeaders
   const getMethod: typeof import('../../node_modules/h3').getMethod
-  const getPathLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').getPathLocale
   const getProxyRequestHeaders: typeof import('../../node_modules/h3').getProxyRequestHeaders
   const getQuery: typeof import('../../node_modules/h3').getQuery
-  const getQueryLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').getQueryLocale
   const getRequestFingerprint: typeof import('../../node_modules/h3').getRequestFingerprint
   const getRequestHeader: typeof import('../../node_modules/h3').getRequestHeader
   const getRequestHeaders: typeof import('../../node_modules/h3').getRequestHeaders
@@ -95,25 +77,22 @@ declare global {
   const isMethod: typeof import('../../node_modules/h3').isMethod
   const isPreflightRequest: typeof import('../../node_modules/h3').isPreflightRequest
   const isStream: typeof import('../../node_modules/h3').isStream
-  const isValidTable: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/db').isValidTable
   const isWebResponse: typeof import('../../node_modules/h3').isWebResponse
   const lazyEventHandler: typeof import('../../node_modules/h3').lazyEventHandler
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin').nitroPlugin
   const parseCookies: typeof import('../../node_modules/h3').parseCookies
-  const prisma: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/db').prisma
-  const processFilters: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/query').processFilters
+  const processFilters: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').processFilters
   const promisifyNodeListener: typeof import('../../node_modules/h3').promisifyNodeListener
   const proxyRequest: typeof import('../../node_modules/h3').proxyRequest
-  const query: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/query').default
+  const query: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').default
   const readBody: typeof import('../../node_modules/h3').readBody
   const readFormData: typeof import('../../node_modules/h3').readFormData
   const readMultipartFormData: typeof import('../../node_modules/h3').readMultipartFormData
   const readRawBody: typeof import('../../node_modules/h3').readRawBody
   const readValidatedBody: typeof import('../../node_modules/h3').readValidatedBody
   const removeResponseHeader: typeof import('../../node_modules/h3').removeResponseHeader
-  const requireAuth: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/require-auth').requireAuth
+  const requireAuth: typeof import('../../node_modules/@mframework/layer-auth/server/utils/require-auth').requireAuth
   const runTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task').runTask
-  const runtimeConfig: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/runtimeConfig').runtimeConfig
   const sanitizeStatusCode: typeof import('../../node_modules/h3').sanitizeStatusCode
   const sanitizeStatusMessage: typeof import('../../node_modules/h3').sanitizeStatusMessage
   const sealSession: typeof import('../../node_modules/h3').sealSession
@@ -127,7 +106,6 @@ declare global {
   const sendWebResponse: typeof import('../../node_modules/h3').sendWebResponse
   const serveStatic: typeof import('../../node_modules/h3').serveStatic
   const setCookie: typeof import('../../node_modules/h3').setCookie
-  const setCookieLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').setCookieLocale
   const setHeader: typeof import('../../node_modules/h3').setHeader
   const setHeaders: typeof import('../../node_modules/h3').setHeaders
   const setResponseHeader: typeof import('../../node_modules/h3').setResponseHeader
@@ -139,36 +117,25 @@ declare global {
   const toPlainHandler: typeof import('../../node_modules/h3').toPlainHandler
   const toWebHandler: typeof import('../../node_modules/h3').toWebHandler
   const toWebRequest: typeof import('../../node_modules/h3').toWebRequest
-  const tryCookieLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').tryCookieLocale
-  const tryHeaderLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').tryHeaderLocale
-  const tryHeaderLocales: typeof import('../../node_modules/@intlify/utils/dist/h3').tryHeaderLocales
-  const tryPathLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').tryPathLocale
-  const tryQueryLocale: typeof import('../../node_modules/@intlify/utils/dist/h3').tryQueryLocale
   const unsealSession: typeof import('../../node_modules/h3').unsealSession
   const updateSession: typeof import('../../node_modules/h3').updateSession
   const useAppConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config').useAppConfig
   const useBase: typeof import('../../node_modules/h3').useBase
-  const useDB: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/db').useDB
   const useEvent: typeof import('../../node_modules/nitropack/dist/runtime/internal/context').useEvent
   const useImage: typeof import('../../node_modules/@nuxt/image/dist/runtime/server/utils/image').useImage
   const useNitroApp: typeof import('../../node_modules/nitropack/dist/runtime/internal/app').useNitroApp
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config').useRuntimeConfig
   const useSession: typeof import('../../node_modules/h3').useSession
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage').useStorage
-  const useTranslation: typeof import('../../node_modules/@intlify/h3').useTranslation
-  const withFilters: typeof import('../../node_modules/@meeovi/layer-auth/server/utils/query').withFilters
+  const withFilters: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').withFilters
   const writeEarlyHints: typeof import('../../node_modules/h3').writeEarlyHints
 }
 // for type re-export
 declare global {
   // @ts-ignore
-  export type { EventHandler, EventHandlerRequest, EventHandlerResponse, EventHandlerObject, H3EventContext } from '../../node_modules/h3'
-  import('../../node_modules/h3')
-  // @ts-ignore
-  export type { Auth } from '../../node_modules/@meeovi/layer-auth/server/utils/auth'
-  import('../../node_modules/@meeovi/layer-auth/server/utils/auth')
+  export type { Auth } from '../../node_modules/@mframework/layer-auth/server/utils/auth'
+  import('../../node_modules/@mframework/layer-auth/server/utils/auth')
 }
-export { H3Event, H3Error, appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
 export { useNitroApp } from 'nitropack/runtime/internal/app';
 export { useRuntimeConfig, useAppConfig } from 'nitropack/runtime/internal/config';
 export { defineNitroPlugin, nitroPlugin } from 'nitropack/runtime/internal/plugin';
@@ -180,17 +147,9 @@ export { getRouteRules } from 'nitropack/runtime/internal/route-rules';
 export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
-export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsURL } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxt/nitro-server/dist/runtime/utils/paths';
-export { defineAppConfig } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxt/nitro-server/dist/runtime/utils/config';
+export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
 export { defuReplaceArray } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/nuxt-security/dist/utils/merge';
 export { useImage } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxt/image/dist/runtime/server/utils/image';
-export { defineI18nLocale, defineI18nConfig } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxtjs/i18n/dist/runtime/composables/shared';
-export { defineI18nLocaleDetector } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxtjs/i18n/dist/runtime/composables/server';
-export { useTranslation } from '@intlify/h3';
-export { getCookieLocale, getHeaderLanguage, getHeaderLanguages, getHeaderLocale, getHeaderLocales, getPathLocale, getQueryLocale, setCookieLocale, tryCookieLocale, tryHeaderLocale, tryHeaderLocales, tryPathLocale, tryQueryLocale } from '@intlify/utils/h3';
-export { auth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/auth';
-export { prisma, useDB, isValidTable } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/db';
-export { default as dbStats, getDBStats } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/dbStats';
-export { default as query, filterSchema, processFilters, withFilters } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/query';
-export { requireAuth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/require-auth';
-export { generateRuntimeConfig, runtimeConfig } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@meeovi/layer-auth/server/utils/runtimeConfig';
+export { auth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/auth';
+export { default as query, filterSchema, processFilters, withFilters } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/query';
+export { requireAuth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/require-auth';

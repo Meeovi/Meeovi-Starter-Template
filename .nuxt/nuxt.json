@@ -1,9 +1,9 @@
 {
-  "_hash": "gx3Tb4fWJh7PXHhwg76fc_NSxaMTrI7J9jDddMdMGX4",
+  "_hash": "zHCW_i1hXWMtQitXXrXyQHAWVgB-VUWAiFgPy6KeX0I",
   "project": {
-    "rootDir": "/home/meebuzo/github/alternate-framework/themes/framework-themes/starter-template"
+    "rootDir": "/home/meebuzo/github/alternate-framework/themes/framework/starter-template"
   },
   "versions": {
-    "nuxt": "4.3.0"
+    "nuxt": "4.3.1"
   }
 }

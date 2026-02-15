@@ -11,7 +11,11 @@
             <v-spacer></v-spacer>
 
             <mobilesearch />
-            <search />
+
+            <ClientOnly>
+                <Search />
+            </ClientOnly>
+
             <v-spacer></v-spacer>
 
             <div class="d-flex align-center flex-column flex-sm-row fill-height">
@@ -22,9 +26,9 @@
                         </v-icon>
                     </v-btn>
                 </v-col>
-                <v-col>
+                <!--<v-col>
                     <LayoutNotifications />
-                </v-col>
+                </v-col>-->
 
                 <v-col>
                     <ecosystemmenu />
@@ -48,47 +52,53 @@
 </template>
 
 <script setup>
-  import logo from '~/components/blocks/logo.vue'
-  import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
-  import LayoutNotifications from '~/components/menus/Notifications.vue'
-  import mobilesearch from '~/components/menus/mobilesearch.vue'
-  import { ref, onMounted, watch, computed } from 'vue';
+    import logo from '~/components/blocks/logo.vue'
+    import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
+    //import LayoutNotifications from '~/components/menus/Notifications.vue'
+    import mobilesearch from '~/components/menus/mobilesearch.vue'
+    import {
+        ref,
+        onMounted,
+        watch,
+        computed
+    } from 'vue';
+    import {
+        useTheme
+    } from 'vuetify'
 
-  const drawer = ref(null);
+    const drawer = ref(null);
 
-  const theme = useTheme()
-  const location = ref('bottom')
+    const theme = useTheme()
+    const location = ref('bottom')
 
-  // Local storage key
-  const STORAGE_KEY = 'elite-theme'
+    // Local storage key
+    const STORAGE_KEY = 'elite-theme'
 
-  // isDark reflects the current theme name
-  const isDark = computed(() => (theme.global.name?.value || '').toLowerCase() === 'dark')
+    // isDark reflects the current theme name
+    const isDark = computed(() => theme.global.name.value === 'dark')
 
-  // Determine initial mode
-  onMounted(() => {
-    const stored = localStorage.getItem(STORAGE_KEY)
+    // Determine initial mode
+    onMounted(() => {
+        const stored = localStorage.getItem(STORAGE_KEY)
 
-    if (stored) {
-      // Use saved preference
-      theme.global.name.value = stored
-    } else {
-      // No preference — follow system
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      theme.global.name.value = prefersDark ? 'dark' : 'light'
-    }
-  })
+        if (stored) {
+            // Use saved preference
+            theme.global.name.value = stored
+        } else {
+            // No preference — follow system
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            theme.global.name.value = prefersDark ? 'dark' : 'light'
+        }
+    })
 
-  // Toggle between themes
-  const toggleDark = () => {
-    theme.global.name.value = (theme.global.name.value === 'dark') ? 'light' : 'dark'
-  }
+    // Toggle between themes
+    const toggleDark = () => { theme.global.name.value = isDark.value ? 'light' : 'dark' }
 
-  // Save preference whenever theme name changes
-  watch(
-    () => theme.global.name.value,
-    (val) => {
-      if (val) localStorage.setItem(STORAGE_KEY, val)
-    }
-  )
+    // Save preference whenever theme name changes
+    watch(
+        () => theme.global.name.value,
+        (val) => {
+            if (val) localStorage.setItem(STORAGE_KEY, val)
+        }
+    )
 </script>

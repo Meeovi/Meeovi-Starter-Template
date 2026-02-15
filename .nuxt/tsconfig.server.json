@@ -18,10 +18,10 @@
         "./types/nitro-imports"
       ],
       "~/*": [
-        "../src/*"
+        "../app/*"
       ],
       "@/*": [
-        "../src/*"
+        "../app/*"
       ],
       "~~/*": [
         "../*"
@@ -64,27 +64,6 @@
       ],
       "@tiptap/vue-3": [
         "../node_modules/@tiptap/vue-3"
-      ],
-      "vue-i18n": [
-        "../node_modules/vue-i18n"
-      ],
-      "@intlify/shared": [
-        "../node_modules/@intlify/shared"
-      ],
-      "@intlify/core": [
-        "../node_modules/@intlify/core"
-      ],
-      "@intlify/core-base": [
-        "../node_modules/@intlify/core-base"
-      ],
-      "@intlify/utils": [
-        "../node_modules/@intlify/utils"
-      ],
-      "@intlify/utils/h3": [
-        "../node_modules/@intlify/utils"
-      ],
-      "@intlify/message-compiler": [
-        "../node_modules/@intlify/message-compiler"
       ],
       "nitropack/types": [
         "../node_modules/nitropack/types"
@@ -131,35 +110,23 @@
       "#internal/nuxt/paths": [
         "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
       ],
-      "#layers/auth": [
-        "../node_modules/@meeovi/layer-auth"
-      ],
-      "#layers/auth/*": [
-        "../node_modules/@meeovi/layer-auth/*"
-      ],
-      "#layers/search": [
-        "../node_modules/@meeovi/layer-search"
-      ],
-      "#layers/search/*": [
-        "../node_modules/@meeovi/layer-search/*"
-      ],
       "#layers/shared": [
-        "../node_modules/@meeovi/layer-shared"
+        "../node_modules/@mframework/layer-shared"
       ],
       "#layers/shared/*": [
-        "../node_modules/@meeovi/layer-shared/*"
+        "../node_modules/@mframework/layer-shared/*"
       ],
-      "#i18n": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index-server"
+      "#layers/auth": [
+        "../node_modules/@mframework/layer-auth"
       ],
-      "#i18n-kit": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
+      "#layers/auth/*": [
+        "../node_modules/@mframework/layer-auth/*"
       ],
-      "#i18n-kit/*": [
-        "../node_modules/@nuxtjs/i18n/dist/runtime/kit/*"
+      "#layers/search": [
+        "../node_modules/@mframework/layer-search"
       ],
-      "#internal-i18n-types": [
-        "../node_modules/@nuxtjs/i18n/dist/types"
+      "#layers/search/*": [
+        "../node_modules/@mframework/layer-search/*"
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
@@ -180,28 +147,27 @@
     "../../../../node_modules/runtime/server",
     "../../../../node_modules/dist/runtime/server",
     "../server/**/*",
-    "../node_modules/@meeovi/layer-auth/server/**/*",
-    "../node_modules/@meeovi/layer-search/server/**/*",
-    "../node_modules/@meeovi/layer-shared/server/**/*",
+    "../node_modules/@mframework/layer-shared/server/**/*",
+    "../node_modules/@mframework/layer-auth/server/**/*",
+    "../node_modules/@mframework/layer-search/server/**/*",
     "../shared/**/*.d.ts",
-    "../node_modules/@meeovi/layer-auth/shared/**/*.d.ts",
-    "../node_modules/@meeovi/layer-search/shared/**/*.d.ts",
-    "../node_modules/@meeovi/layer-shared/shared/**/*.d.ts",
+    "../node_modules/@mframework/layer-shared/shared/**/*.d.ts",
+    "../node_modules/@mframework/layer-auth/shared/**/*.d.ts",
+    "../node_modules/@mframework/layer-search/shared/**/*.d.ts",
     "./types/nitro.d.ts"
   ],
   "exclude": [
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@meeovi/layer-auth/node_modules",
-    "../node_modules/@meeovi/layer-search/node_modules",
-    "../node_modules/@meeovi/layer-shared/node_modules",
-    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../node_modules/@mframework/layer-shared/node_modules",
+    "../node_modules/@mframework/layer-auth/node_modules",
+    "../node_modules/@mframework/layer-search/node_modules",
     "../node_modules/nuxt-tiptap-editor/node_modules",
-    "../node_modules/@pinia/nuxt/node_modules",
+    "../../../../node_modules/@pinia/nuxt/node_modules",
     "../../../../node_modules/@vueuse/nuxt/node_modules",
-    "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/nuxt-security/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
     "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",

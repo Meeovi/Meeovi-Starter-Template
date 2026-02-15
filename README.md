@@ -27,7 +27,7 @@ npm install
 3. Install a backend adapter (example: Directus):
 
 ```bash
-npm install @meeovi/adapter-directus
+npm install @mframework/adapter-directus
 ```
 
 4. Configure environment variables
@@ -91,7 +91,7 @@ There are also layer-provided composables such as `useAuth()` and `useSearch()` 
 To develop without an external backend install the mock adapter:
 
 ```bash
-npm install @meeovi/adapter-mock
+npm install @mframework/adapter-mock
 export MEEOVI_PROVIDER=mock
 ```
 

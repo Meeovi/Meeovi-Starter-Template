@@ -153,60 +153,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
 
    appName: string,
 
-   i18n: {
-      baseUrl: string,
-
-      defaultLocale: string,
-
-      rootRedirect: any,
-
-      redirectStatusCode: number,
-
-      skipSettingLocaleOnNavigate: boolean,
-
-      locales: Array<{
-
-      }>,
-
-      detectBrowserLanguage: boolean,
-
-      experimental: {
-         localeDetector: string,
-
-         typedPages: boolean,
-
-         typedOptionsAndMessages: boolean,
-
-         alternateLinkCanonicalQueries: boolean,
-
-         devCache: boolean,
-
-         cacheLifetime: any,
-
-         stripMessagesPayload: boolean,
-
-         preload: boolean,
-
-         strictSeo: boolean,
-
-         nitroContextDetection: boolean,
-
-         httpCacheDuration: number,
-      },
-
-      domainLocales: {
-         "en-GB": {
-            domain: string,
-         },
-
-         "pl-PL": {
-            domain: string,
-         },
-
-         testde: {
-            domain: string,
-         },
-      },
+   search: {
+      index: string,
    },
   }
 declare module '@nuxt/schema' {
