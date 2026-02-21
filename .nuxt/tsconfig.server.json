@@ -51,7 +51,7 @@
         "../node_modules/vue-router/vue-router-auto-routes"
       ],
       "unplugin-vue-router/client": [
-        "../../../../node_modules/unplugin-vue-router/client"
+        "../node_modules/unplugin-vue-router/client"
       ],
       "@nuxt/schema": [
         "../node_modules/@nuxt/schema"
@@ -107,12 +107,6 @@
       "#internal/nuxt/paths": [
         "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
       ],
-      "#layers/search": [
-        "../../../../layers/search"
-      ],
-      "#layers/search/*": [
-        "../../../../layers/search/*"
-      ],
       "#pwa": [
         "../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index"
       ],
@@ -145,16 +139,13 @@
     "../node_modules/runtime/server",
     "../node_modules/dist/runtime/server",
     "../server/**/*",
-    "../../../../layers/search/server/**/*",
     "../shared/**/*.d.ts",
-    "../../../../layers/search/shared/**/*.d.ts",
     "./types/nitro.d.ts"
   ],
   "exclude": [
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../../../../layers/search/node_modules",
     "../node_modules/@vite-pwa/nuxt/node_modules",
     "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxt/icon/node_modules",

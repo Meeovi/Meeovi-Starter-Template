@@ -12,11 +12,9 @@
       <Logo class="h-6 w-auto" />
     </template>
 
-    <template #center>
-      <search />
-    </template>
-
     <template #right>
+      <Search />
+      
       <UColorModeButton />
 
       <USlideover side="right" title="Starter Template">
@@ -39,7 +37,7 @@
     NavigationMenuItem
   } from '@nuxt/ui'
   import Logo from '../blocks/logo.vue'
-  import search from '@mframework/layer-search/app/components/search.vue'
+  import Search from '../search/search.vue'
 
   const route = useRoute()
 

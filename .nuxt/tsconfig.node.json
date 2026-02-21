@@ -23,7 +23,7 @@
         "../node_modules/vue-router/vue-router-auto-routes"
       ],
       "unplugin-vue-router/client": [
-        "../../../../node_modules/unplugin-vue-router/client"
+        "../node_modules/unplugin-vue-router/client"
       ],
       "@nuxt/schema": [
         "../node_modules/@nuxt/schema"
@@ -88,12 +88,6 @@
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
     "../layers/*/modules/**/*",
-    "../../../../layers/search/modules/*.*",
-    "../../../../layers/search/nuxt.config.*",
-    "../../../../layers/search/.config/nuxt.*",
-    "../../../../layers/search/layers/*/nuxt.config.*",
-    "../../../../layers/search/layers/*/.config/nuxt.*",
-    "../../../../layers/search/layers/*/modules/**/*",
     "../nuxt.schema.*",
     "../layers/*/nuxt.schema.*"
   ],
@@ -101,7 +95,6 @@
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../../../../layers/search/node_modules",
     "../node_modules/@vite-pwa/nuxt/node_modules",
     "../node_modules/@nuxt/image/node_modules",
     "../node_modules/@nuxt/icon/node_modules",
@@ -121,15 +114,6 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
-    "../../../../layers/search/app/**/*",
-    "../../../../layers/search/modules/*/runtime/**/*",
-    "../../../../layers/search/test/nuxt/**/*",
-    "../../../../layers/search/tests/nuxt/**/*",
-    "../../../../layers/search/layers/*/app/**/*",
-    "../../../../layers/search/layers/*/modules/*/runtime/**/*",
-    "../../../../layers/search/modules/*/runtime/server/**/*",
-    "../../../../layers/search/layers/*/server/**/*",
-    "../../../../layers/search/layers/*/modules/*/runtime/server/**/*",
     "../node_modules/runtime",
     "../node_modules/dist/runtime"
   ]

@@ -22,20 +22,7 @@ interface _GlobalComponents {
   MenusMobilesearch: typeof import("../../app/components/menus/mobilesearch.vue")['default']
   MenusSidebarnav: typeof import("../../app/components/menus/sidebarnav.vue")['default']
   MenusTopmenu: typeof import("../../app/components/menus/topmenu.vue")['default']
-  FeaturesAutocomplete: typeof import("../../../../../layers/search/app/components/features/autocomplete.vue")['default']
-  FeaturesPagination: typeof import("../../../../../layers/search/app/components/features/pagination.vue")['default']
-  Filters: typeof import("../../../../../layers/search/app/components/filters/filters.vue")['default']
-  ResultsAudioSearch: typeof import("../../../../../layers/search/app/components/results/audioSearch.vue")['default']
-  ResultsBooksSearch: typeof import("../../../../../layers/search/app/components/results/booksSearch.vue")['default']
-  ResultsFinanceSearch: typeof import("../../../../../layers/search/app/components/results/financeSearch.vue")['default']
-  ResultsImageSearch: typeof import("../../../../../layers/search/app/components/results/imageSearch.vue")['default']
-  ResultsMusicSearch: typeof import("../../../../../layers/search/app/components/results/musicSearch.vue")['default']
-  ResultsNewsSearch: typeof import("../../../../../layers/search/app/components/results/newsSearch.vue")['default']
-  ResultsSpaceSearch: typeof import("../../../../../layers/search/app/components/results/spaceSearch.vue")['default']
-  ResultsSpacesSearch: typeof import("../../../../../layers/search/app/components/results/spacesSearch.vue")['default']
-  ResultsTravelSearch: typeof import("../../../../../layers/search/app/components/results/travelSearch.vue")['default']
-  ResultsVideoSearch: typeof import("../../../../../layers/search/app/components/results/videoSearch.vue")['default']
-  Search: typeof import("../../../../../layers/search/app/components/search.vue")['default']
+  Search: typeof import("../../app/components/search/search.vue")['default']
   UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
   UColorModeButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
   UColorModeImage: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeImage.vue")['default']
@@ -198,20 +185,7 @@ interface _GlobalComponents {
   LazyMenusMobilesearch: LazyComponent<typeof import("../../app/components/menus/mobilesearch.vue")['default']>
   LazyMenusSidebarnav: LazyComponent<typeof import("../../app/components/menus/sidebarnav.vue")['default']>
   LazyMenusTopmenu: LazyComponent<typeof import("../../app/components/menus/topmenu.vue")['default']>
-  LazyFeaturesAutocomplete: LazyComponent<typeof import("../../../../../layers/search/app/components/features/autocomplete.vue")['default']>
-  LazyFeaturesPagination: LazyComponent<typeof import("../../../../../layers/search/app/components/features/pagination.vue")['default']>
-  LazyFilters: LazyComponent<typeof import("../../../../../layers/search/app/components/filters/filters.vue")['default']>
-  LazyResultsAudioSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/audioSearch.vue")['default']>
-  LazyResultsBooksSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/booksSearch.vue")['default']>
-  LazyResultsFinanceSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/financeSearch.vue")['default']>
-  LazyResultsImageSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/imageSearch.vue")['default']>
-  LazyResultsMusicSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/musicSearch.vue")['default']>
-  LazyResultsNewsSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/newsSearch.vue")['default']>
-  LazyResultsSpaceSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/spaceSearch.vue")['default']>
-  LazyResultsSpacesSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/spacesSearch.vue")['default']>
-  LazyResultsTravelSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/travelSearch.vue")['default']>
-  LazyResultsVideoSearch: LazyComponent<typeof import("../../../../../layers/search/app/components/results/videoSearch.vue")['default']>
-  LazySearch: LazyComponent<typeof import("../../../../../layers/search/app/components/search.vue")['default']>
+  LazySearch: LazyComponent<typeof import("../../app/components/search/search.vue")['default']>
   LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
   LazyUColorModeButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>
   LazyUColorModeImage: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeImage.vue")['default']>

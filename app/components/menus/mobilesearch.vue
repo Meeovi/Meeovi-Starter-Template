@@ -1,7 +1,7 @@
 <template>
     <div id="minSearch">
         <div class="text-center">
-            <v-dialog v-model="dialog" width="auto">
+            <UModal v-model="dialog" width="auto">
                 <template v-slot:activator="{ props }">
                     <UButton icon="fas fa-search" title="Search" v-bind="props"></UButton>
                 </template>
@@ -14,7 +14,7 @@
                         </template>
                     </UCard>
                 </template>
-            </v-dialog>
+            </UModal>
         </div>
     </div>
 </template>

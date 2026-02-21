@@ -6,6 +6,7 @@ type ComponentProps<T> = T extends new(...args: any) => { $props: infer P } ? No
 
 declare module 'nuxt/app' {
   interface NuxtLayouts {
+    auth: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/layouts/auth.vue").default>,
     default: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/layouts/default.vue").default>,
     nolive: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/layouts/nolive.vue").default>,
 }

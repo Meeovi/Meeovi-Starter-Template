@@ -3,16 +3,12 @@ import process from 'node:process'
 const sw = process.env.SW === 'true'
 
 export default defineNuxtConfig({
-  future: {
-    compatibilityVersion: 5,
-  },
-
   ssr: true,
 
   extends: [
     //'@mframework/layer-shared',
     //'@mframework/layer-auth',
-    '@mframework/layer-search'
+    //'@mframework/layer-search'
   ],
 
   app: {
@@ -64,6 +60,17 @@ export default defineNuxtConfig({
   ],
 
   modules: ['@vite-pwa/nuxt', '@nuxt/image', '@nuxt/ui'],
+
+  adapterAuth: {
+    endpoint: '/api/auth/[...all]',
+    client: {
+      baseURL: '/api/auth',
+      fetchOptions: {
+        credentials: 'include'
+      }
+    },
+    enableMiddleware: true
+  },
 
   pwa: {
     strategies: sw ? 'injectManifest' : 'generateSW',

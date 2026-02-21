@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NuxtLink class="logobrand" href="/">
+        <ULink class="logobrand" href="/">
             <div v-if="blocksSiteoverview?.media?.directus_files_id">
                 <UButton :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="ghost">
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
@@ -12,7 +12,7 @@
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
                 </UButton>
             </div>
-        </NuxtLink>
+        </ULink>
     </div>
 </template>
 
