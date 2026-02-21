@@ -17,24 +17,31 @@
    "scripts": {
       "starter-commit": "git add . && git commit -m \"ready for update\"",
       "starter-update": "git pull \"https://github.com/Meeovi/Meeovi-Starter-Template\"",
-      "build": "nuxt build",
       "dev": "nuxt dev --host 0.0.0.0 --port 3001",
+      "dev-sw": "SW=true nuxi dev",
+      "build": "nuxt build",
+      "build-sw": "SW=true nuxi build",
       "ts-node": "ts-node -r tsconfig-paths/register --compiler-options '{\"module\":\"CommonJS\"}'",
       "generate": "nuxt generate",
       "preview": "nuxt preview",
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@mframework/adapter-betterauth": "^0.1.2-beta1",
-      "@mframework/adapter-directus": "^0.0.3",
-      "@mframework/adapter-opensearch": "^0.0.2",
-      "@mframework/core": "^0.0.12",
-      "@mframework/layer-auth": "^0.0.6",
-      "@mframework/layer-commerce": "^0.0.7",
-      "@mframework/layer-search": "^0.0.7-beta.0",
-      "@mframework/layer-shared": "^0.0.6-beta.14",
-      "@mframework/localization": "^0.0.1",
+      "@mframework/adapter-directus": "file:../../../adapters/directus",
+      "@mframework/adapter-opensearch": "file:../../../adapters/opensearch",
+      "@mframework/core": "file:../../../core",
+      "@mframework/layer-auth": "file:../../../layers/auth",
+      "@mframework/layer-commerce": "file:../../../layers/commerce",
+      "@mframework/layer-search": "file:../../../layers/search",
+      "@mframework/layer-shared": "file:../../../layers/shared",
+      "@mframework/layer-social": "file:../../../layers/social",
+      "@mframework/localization": "file:../../../layers/localization",
       "@nuxt/image": "^2.0.0",
-      "nuxt": "^4.3.1"
+      "@nuxt/ui": "^4.4.0",
+      "@vercel/kv": "^3.0.0",
+      "@vite-pwa/nuxt": "^1.1.1",
+      "lucide-vue-next": "^0.575.0",
+      "nuxt": "^4.3.1",
+      "tailwindcss": "^4.2.0"
    }
 }

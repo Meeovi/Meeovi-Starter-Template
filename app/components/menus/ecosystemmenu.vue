@@ -2,32 +2,32 @@
     <v-row justify="center">
         <v-dialog v-model="dialog" :scrim="false" transition="dialog-bottom-transition">
             <template v-slot:activator="{ props }">
-                <v-btn v-bind="props" :title="eco?.description">
-                    <v-icon start icon="fas:fa fa-grip"></v-icon>
-                </v-btn>
+                <UButton v-bind="props" :title="eco?.description">
+                    <UIcon start icon="fas:fa fa-grip"></UIcon>
+                </UButton>
             </template>
-            <v-card>
+            <UCard>
                 <v-toolbar dark color="primary">
-                    <v-btn icon dark @click="dialog = false">
-                        <v-icon icon="fas:fa fa-circle-xmark"></v-icon>
-                    </v-btn>
-                    <v-card-title>
+                    <UButton icon dark @click="dialog = false">
+                        <UIcon icon="fas:fa fa-circle-xmark"></UIcon>
+                    </UButton>
+                    <template #header>
                         <span class="text-h6">{{ eco?.name }}</span>
-                    </v-card-title>
+                    </template>
                 </v-toolbar>
                 <v-row style="padding: 10px;">
                     <v-col cols="3" v-for="menu in activeMenus" :key="menu?.id">
                         <NuxtLink :to="menu?.slug">
-                            <v-card class="mx-auto" max-width="300">
+                            <UCard class="mx-auto" max-width="300">
                                 <div class="ecoAvatar">
-                                    <v-avatar :icon="`fas:fa fa-${menu?.icon}`" size="180"></v-avatar>
+                                    <UAvatar :icon="`fas:fa fa-${menu?.icon}`" size="180"></UAvatar>
                                 </div>
-                                <v-card-title class="ecoTitle">{{ menu?.name }}</v-card-title>
-                            </v-card>
+                                <UCard-title class="ecoTitle">{{ menu?.name }}</template>
+                            </UCard>
                         </NuxtLink>
                     </v-col>
                 </v-row>
-            </v-card>
+            </UCard>
         </v-dialog>
     </v-row>
 </template>

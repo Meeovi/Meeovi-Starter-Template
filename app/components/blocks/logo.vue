@@ -1,19 +1,18 @@
 <template>
     <div>
-        <v-app-bar-title>
-            <NuxtLink class="logobrand" href="/">
-                <v-icon start color="orange" v-if="blocksSiteoverview?.media?.directus_files_id">
-                    <img loading="lazy"
-                        :src="`${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`"
-                        :alt="blocksSiteoverview?.name || 'Meeovi'" />
-                </v-icon>
+        <NuxtLink class="logobrand" href="/">
+            <div v-if="blocksSiteoverview?.media?.directus_files_id">
+                <UButton :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="ghost">
+                    {{ blocksSiteoverview?.name || 'Meeovi' }}
+                </UButton>
+            </div>
 
-                <v-icon v-else start>
-                    <img src="/images/logo.png" :alt="blocksSiteoverview?.name || 'Meeovi'" />
-                </v-icon>
-                <p class="logotext">{{ blocksSiteoverview?.name || 'Meeovi' }}</p>
-            </NuxtLink>
-        </v-app-bar-title>
+            <div v-else start>
+                <UButton :avatar="{ src: '/images/logo.png' }" size="md" color="neutral" variant="ghost">
+                    {{ blocksSiteoverview?.name || 'Meeovi' }}
+                </UButton>
+            </div>
+        </NuxtLink>
     </div>
 </template>
 

@@ -23,7 +23,7 @@
         "../node_modules/vue-router/vue-router-auto-routes"
       ],
       "unplugin-vue-router/client": [
-        "../node_modules/unplugin-vue-router/client"
+        "../../../../node_modules/unplugin-vue-router/client"
       ],
       "@nuxt/schema": [
         "../node_modules/@nuxt/schema"
@@ -33,9 +33,6 @@
       ],
       "vite/client": [
         "../node_modules/vite/client"
-      ],
-      "@tiptap/vue-3": [
-        "../node_modules/@tiptap/vue-3"
       ],
       "nitropack/types": [
         "../node_modules/nitropack/types"
@@ -97,23 +94,11 @@
       "#server/*": [
         "../server/*"
       ],
-      "#layers/shared": [
-        "../node_modules/@mframework/layer-shared"
-      ],
-      "#layers/shared/*": [
-        "../node_modules/@mframework/layer-shared/*"
-      ],
-      "#layers/auth": [
-        "../node_modules/@mframework/layer-auth"
-      ],
-      "#layers/auth/*": [
-        "../node_modules/@mframework/layer-auth/*"
-      ],
       "#layers/search": [
-        "../node_modules/@mframework/layer-search"
+        "../../../../layers/search"
       ],
       "#layers/search/*": [
-        "../node_modules/@mframework/layer-search/*"
+        "../../../../layers/search/*"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -123,6 +108,18 @@
       ],
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
+      ],
+      "#pwa": [
+        "../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index"
+      ],
+      "#ui": [
+        "../node_modules/@nuxt/ui/dist/runtime"
+      ],
+      "#ui/*": [
+        "../node_modules/@nuxt/ui/dist/runtime/*"
+      ],
+      "#color-mode-options": [
+        "./color-mode-options.mjs"
       ],
       "#vue-router": [
         "../node_modules/vue-router"
@@ -188,39 +185,17 @@
     "../layers/*/shared/**/*.d.ts",
     "../*.d.ts",
     "../layers/*/*.d.ts",
-    "../node_modules/@mframework/layer-shared/app/**/*",
-    "../node_modules/@mframework/layer-shared/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-shared/test/nuxt/**/*",
-    "../node_modules/@mframework/layer-shared/tests/nuxt/**/*",
-    "../node_modules/@mframework/layer-shared/layers/*/app/**/*",
-    "../node_modules/@mframework/layer-shared/layers/*/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-shared/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-shared/modules/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-shared/layers/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-shared/*.d.ts",
-    "../node_modules/@mframework/layer-shared/layers/*/*.d.ts",
-    "../node_modules/@mframework/layer-auth/app/**/*",
-    "../node_modules/@mframework/layer-auth/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-auth/test/nuxt/**/*",
-    "../node_modules/@mframework/layer-auth/tests/nuxt/**/*",
-    "../node_modules/@mframework/layer-auth/layers/*/app/**/*",
-    "../node_modules/@mframework/layer-auth/layers/*/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-auth/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-auth/modules/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-auth/layers/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-auth/*.d.ts",
-    "../node_modules/@mframework/layer-auth/layers/*/*.d.ts",
-    "../node_modules/@mframework/layer-search/app/**/*",
-    "../node_modules/@mframework/layer-search/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-search/test/nuxt/**/*",
-    "../node_modules/@mframework/layer-search/tests/nuxt/**/*",
-    "../node_modules/@mframework/layer-search/layers/*/app/**/*",
-    "../node_modules/@mframework/layer-search/layers/*/modules/*/runtime/**/*",
-    "../node_modules/@mframework/layer-search/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-search/modules/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-search/layers/*/shared/**/*.d.ts",
-    "../node_modules/@mframework/layer-search/*.d.ts",
-    "../node_modules/@mframework/layer-search/layers/*/*.d.ts",
+    "../../../../layers/search/app/**/*",
+    "../../../../layers/search/modules/*/runtime/**/*",
+    "../../../../layers/search/test/nuxt/**/*",
+    "../../../../layers/search/tests/nuxt/**/*",
+    "../../../../layers/search/layers/*/app/**/*",
+    "../../../../layers/search/layers/*/modules/*/runtime/**/*",
+    "../../../../layers/search/shared/**/*.d.ts",
+    "../../../../layers/search/modules/*/shared/**/*.d.ts",
+    "../../../../layers/search/layers/*/shared/**/*.d.ts",
+    "../../../../layers/search/*.d.ts",
+    "../../../../layers/search/layers/*/*.d.ts",
     "./nuxt.node.d.ts",
     "../modules/*.*",
     "../nuxt.config.*",
@@ -231,51 +206,29 @@
     "../shared/**/*",
     "../modules/*/shared/**/*",
     "../layers/*/shared/**/*",
-    "../node_modules/@mframework/layer-shared/modules/*.*",
-    "../node_modules/@mframework/layer-shared/nuxt.config.*",
-    "../node_modules/@mframework/layer-shared/.config/nuxt.*",
-    "../node_modules/@mframework/layer-shared/layers/*/nuxt.config.*",
-    "../node_modules/@mframework/layer-shared/layers/*/.config/nuxt.*",
-    "../node_modules/@mframework/layer-shared/layers/*/modules/**/*",
-    "../node_modules/@mframework/layer-shared/shared/**/*",
-    "../node_modules/@mframework/layer-shared/modules/*/shared/**/*",
-    "../node_modules/@mframework/layer-shared/layers/*/shared/**/*",
-    "../node_modules/@mframework/layer-auth/modules/*.*",
-    "../node_modules/@mframework/layer-auth/nuxt.config.*",
-    "../node_modules/@mframework/layer-auth/.config/nuxt.*",
-    "../node_modules/@mframework/layer-auth/layers/*/nuxt.config.*",
-    "../node_modules/@mframework/layer-auth/layers/*/.config/nuxt.*",
-    "../node_modules/@mframework/layer-auth/layers/*/modules/**/*",
-    "../node_modules/@mframework/layer-auth/shared/**/*",
-    "../node_modules/@mframework/layer-auth/modules/*/shared/**/*",
-    "../node_modules/@mframework/layer-auth/layers/*/shared/**/*",
-    "../node_modules/@mframework/layer-search/modules/*.*",
-    "../node_modules/@mframework/layer-search/nuxt.config.*",
-    "../node_modules/@mframework/layer-search/.config/nuxt.*",
-    "../node_modules/@mframework/layer-search/layers/*/nuxt.config.*",
-    "../node_modules/@mframework/layer-search/layers/*/.config/nuxt.*",
-    "../node_modules/@mframework/layer-search/layers/*/modules/**/*",
-    "../node_modules/@mframework/layer-search/shared/**/*",
-    "../node_modules/@mframework/layer-search/modules/*/shared/**/*",
-    "../node_modules/@mframework/layer-search/layers/*/shared/**/*",
+    "../../../../layers/search/modules/*.*",
+    "../../../../layers/search/nuxt.config.*",
+    "../../../../layers/search/.config/nuxt.*",
+    "../../../../layers/search/layers/*/nuxt.config.*",
+    "../../../../layers/search/layers/*/.config/nuxt.*",
+    "../../../../layers/search/layers/*/modules/**/*",
+    "../../../../layers/search/shared/**/*",
+    "../../../../layers/search/modules/*/shared/**/*",
+    "../../../../layers/search/layers/*/shared/**/*",
     "../node_modules/runtime",
-    "../node_modules/dist/runtime",
-    "../../../../node_modules/runtime",
-    "../../../../node_modules/dist/runtime"
+    "../node_modules/dist/runtime"
   ],
   "exclude": [
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
-    "../node_modules/@mframework/layer-shared/node_modules",
-    "../node_modules/@mframework/layer-auth/node_modules",
-    "../node_modules/@mframework/layer-search/node_modules",
-    "../node_modules/nuxt-tiptap-editor/node_modules",
-    "../../../../node_modules/@pinia/nuxt/node_modules",
-    "../../../../node_modules/@vueuse/nuxt/node_modules",
-    "../node_modules/nuxt-security/node_modules",
-    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../../../../layers/search/node_modules",
+    "../node_modules/@vite-pwa/nuxt/node_modules",
     "../node_modules/@nuxt/image/node_modules",
+    "../node_modules/@nuxt/icon/node_modules",
+    "../node_modules/@nuxt/fonts/node_modules",
+    "../node_modules/@nuxtjs/color-mode/node_modules",
+    "../node_modules/@nuxt/ui/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -283,18 +236,10 @@
     "../modules/*/runtime/server/**/*",
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-shared/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-shared/layers/*/server/**/*",
-    "../node_modules/@mframework/layer-shared/layers/*/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-auth/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-auth/layers/*/server/**/*",
-    "../node_modules/@mframework/layer-auth/layers/*/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-search/modules/*/runtime/server/**/*",
-    "../node_modules/@mframework/layer-search/layers/*/server/**/*",
-    "../node_modules/@mframework/layer-search/layers/*/modules/*/runtime/server/**/*",
+    "../../../../layers/search/modules/*/runtime/server/**/*",
+    "../../../../layers/search/layers/*/server/**/*",
+    "../../../../layers/search/layers/*/modules/*/runtime/server/**/*",
     "../node_modules/runtime/server",
-    "../node_modules/dist/runtime/server",
-    "../../../../node_modules/runtime/server",
-    "../../../../node_modules/dist/runtime/server"
+    "../node_modules/dist/runtime/server"
   ]
 }

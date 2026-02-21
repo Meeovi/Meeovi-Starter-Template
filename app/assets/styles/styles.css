@@ -1,22 +1,4 @@
 /********************** Main CSS *************/
-
-html {
-    font-family: 'Inter', sans-serif !important;
-}
-
-a,
-a:hover {
-    color: rgb(var(--v-theme-info));
-}
-
-.v-theme--dark .auto-text {
-  color: white;
-}
-
-.v-theme--light .auto-text {
-  color: black;
-}
-
 #topnav {
     width: 100% !important;
 }
@@ -25,6 +7,9 @@ a:hover {
     position: relative;
     text-decoration: none;
     display: inline-block;
+    top: -7px;
+    font-size: 25px;
+    left: 20px;
 }
 
 .logobrand, .logotext {
@@ -66,93 +51,9 @@ a:hover {
     background-color: white;
 }
 
-.ais-SearchBox-input {
-    min-height: 0 !important;
-    border-radius: 55px !important;
-}
-
-.ais-InstantSearch svg {
-    display: none !important;
-}
-
-.mainSearch span {
-    height: 50px !important;
-}
-
-.searchDropdown {
-    position: relative;
-    z-index: 99999;
-}
-
-.cart-flyout.v-navigation-drawer--active {
-    right: 0 !important;
-    margin-top: 0 !important;
-    height: 95vh !important;
-    width: 383px !important;
-    min-width: 383px !important;
-    margin-top: 0 !important;
-}
-
 /******************* Main Section CSS *********/
 
-#mainSection {
-    top: 0px !important;
-    margin-bottom: 50vh !important;
-    position: relative !important;
-    left: 5px;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-#mainWebsite {
-    top: 0px !important;
-    position: relative !important;
-    left: 0px;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.footer2 a {
-    color: white !important;
-}
 /******************** Sidebar CSS *************/
 
-#sidebarNav {
-    height: 100vh !important;
-    left: 0px;
-    float: left;
-    position: fixed;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.v-navigation-drawer {
-    min-width: 70px !important;
-}
-
-.mainbar {
-    width: 100px !important;
-}
-
-.sidebarmenu {
-    width: 300px;
-    min-height: 100% !important;
-    max-height: 100% !important;
-    height: 100% !important;
-    left: 100px !important;
-    margin: 0px !important;
-}
-
-.mainbar li {
-    list-style-type: none;
-    padding-bottom: 25px !important;
-}
-
-.sidebarmenu .v-overlay__content {
-    max-height: calc(100%) !important;
-}
 
 /******************** Footer CSS *************/
-.footer1 {
-    background-color: transparent;
-}

@@ -8,7 +8,6 @@ declare module 'nuxt/app' {
   interface NuxtLayouts {
     default: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/layouts/default.vue").default>,
     nolive: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/app/layouts/nolive.vue").default>,
-    auth: ComponentProps<typeof import("/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/app/layouts/auth.vue").default>,
 }
   export type LayoutKey = keyof NuxtLayouts extends never ? string : keyof NuxtLayouts
   interface PageMeta {

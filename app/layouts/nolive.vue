@@ -4,7 +4,7 @@
       <Header />
 
       <v-main>
-        <v-card>
+        <UCard>
           <v-layout>
             <v-navigation-drawer v-model="drawer" temporary>
               <sidebarnav />
@@ -16,7 +16,7 @@
               <slot />
             </main>
           </v-layout>
-        </v-card>
+        </UCard>
 
         <Footer />
       </v-main>

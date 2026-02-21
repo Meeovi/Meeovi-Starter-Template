@@ -1,104 +1,67 @@
 <template>
-    <div>
-        <v-app-bar id="topnav" density="compact">
-            <template v-slot:prepend>
-                <v-btn variant="flat" @click="drawer = !drawer">
-                    <v-icon start icon="fas fa-bars"></v-icon> Menu
-                </v-btn>
-            </template>
+  <UHeader toggle-side="left">
+    <template #left>
+      <USlideover side="left" title="Starter Template">
+        <UButton label="Menu" size="xl" color="neutral" variant="ghost" icon="i-lucide-menu" />
 
-            <logo />
-            <v-spacer></v-spacer>
+        <template #body>
+          <UNavigationMenu orientation="vertical" :items="items" class="data-[orientation=vertical]:w-48" />
+        </template>
+      </USlideover>
+    
+      <Logo class="h-6 w-auto" />
+    </template>
 
-            <mobilesearch />
+    <template #center>
+      <search />
+    </template>
 
-            <ClientOnly>
-                <Search />
-            </ClientOnly>
+    <template #right>
+      <UColorModeButton />
 
-            <v-spacer></v-spacer>
+      <USlideover side="right" title="Starter Template">
+        <UButton size="xl" color="neutral" variant="ghost" icon="i-lucide-circle-user" />
 
-            <div class="d-flex align-center flex-column flex-sm-row fill-height">
-                <v-col cols="3">
-                    <v-btn @click="toggleDark()" variant="text">
-                        <v-icon>
-                            {{ isDark ? 'fas:fa fa-moon' : 'fas:fa fa-sun' }}
-                        </v-icon>
-                    </v-btn>
-                </v-col>
-                <!--<v-col>
-                    <LayoutNotifications />
-                </v-col>-->
+        <template #body>
+          <UNavigationMenu orientation="vertical" :items="items" class="data-[orientation=vertical]:w-48" />
+        </template>
+      </USlideover>
+    </template>
 
-                <v-col>
-                    <ecosystemmenu />
-                </v-col>
-                <v-col>
-                    <v-menu :location="location" transition="slide-y-transition">
-                        <template v-slot:activator="{ props }">
-                            <v-btn variant="flat" v-bind="props">
-                                <v-icon start icon="fas fa-user-circle"></v-icon>
-                            </v-btn>
-                        </template>
-                        <v-list>
-                            <v-list-item title="My Account" value="my account" href="/admin/user/"></v-list-item>
-                            <v-list-item title="Logout" value="logout" href="/logout"></v-list-item>
-                        </v-list>
-                    </v-menu>
-                </v-col>
-            </div>
-        </v-app-bar>
-    </div>
+    <template #body>
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+    </template>
+  </UHeader>
 </template>
 
-<script setup>
-    import logo from '~/components/blocks/logo.vue'
-    import ecosystemmenu from '~/components/menus/ecosystemmenu.vue'
-    //import LayoutNotifications from '~/components/menus/Notifications.vue'
-    import mobilesearch from '~/components/menus/mobilesearch.vue'
-    import {
-        ref,
-        onMounted,
-        watch,
-        computed
-    } from 'vue';
-    import {
-        useTheme
-    } from 'vuetify'
+<script setup lang="ts">
+  import type {
+    NavigationMenuItem
+  } from '@nuxt/ui'
+  import Logo from '../blocks/logo.vue'
+  import search from '@mframework/layer-search/app/components/search.vue'
 
-    const drawer = ref(null);
+  const route = useRoute()
 
-    const theme = useTheme()
-    const location = ref('bottom')
-
-    // Local storage key
-    const STORAGE_KEY = 'elite-theme'
-
-    // isDark reflects the current theme name
-    const isDark = computed(() => theme.global.name.value === 'dark')
-
-    // Determine initial mode
-    onMounted(() => {
-        const stored = localStorage.getItem(STORAGE_KEY)
-
-        if (stored) {
-            // Use saved preference
-            theme.global.name.value = stored
-        } else {
-            // No preference — follow system
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            theme.global.name.value = prefersDark ? 'dark' : 'light'
-        }
-    })
-
-    // Toggle between themes
-    const toggleDark = () => { theme.global.name.value = isDark.value ? 'light' : 'dark' }
-
-    // Save preference whenever theme name changes
-    watch(
-        () => theme.global.name.value,
-        (val) => {
-            if (val) localStorage.setItem(STORAGE_KEY, val)
-        }
-    )
+  const items = computed < NavigationMenuItem[] > (() => [{
+    label: 'Docs',
+    to: '/docs/getting-started',
+    icon: 'i-lucide-book-open',
+    active: route.path.startsWith('/docs/getting-started')
+  }, {
+    label: 'Components',
+    to: '/docs/components',
+    icon: 'i-lucide-box',
+    active: route.path.startsWith('/docs/components')
+  }, {
+    label: 'Figma',
+    icon: 'i-simple-icons-figma',
+    to: 'https://go.nuxt.com/figma-ui',
+    target: '_blank'
+  }, {
+    label: 'Releases',
+    icon: 'i-lucide-rocket',
+    to: 'https://github.com/nuxt/ui/releases',
+    target: '_blank'
+  }])
 </script>

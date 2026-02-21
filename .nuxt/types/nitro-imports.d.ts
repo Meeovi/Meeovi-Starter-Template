@@ -6,7 +6,6 @@ declare global {
   const appendResponseHeader: typeof import('../../node_modules/h3').appendResponseHeader
   const appendResponseHeaders: typeof import('../../node_modules/h3').appendResponseHeaders
   const assertMethod: typeof import('../../node_modules/h3').assertMethod
-  const auth: typeof import('../../node_modules/@mframework/layer-auth/server/utils/auth').auth
   const cachedEventHandler: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').cachedEventHandler
   const cachedFunction: typeof import('../../node_modules/nitropack/dist/runtime/internal/cache').cachedFunction
   const callNodeListener: typeof import('../../node_modules/h3').callNodeListener
@@ -34,12 +33,10 @@ declare global {
   const defineTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task').defineTask
   const defineWebSocket: typeof import('../../node_modules/h3').defineWebSocket
   const defineWebSocketHandler: typeof import('../../node_modules/h3').defineWebSocketHandler
-  const defuReplaceArray: typeof import('../../node_modules/nuxt-security/dist/utils/merge').defuReplaceArray
   const deleteCookie: typeof import('../../node_modules/h3').deleteCookie
   const dynamicEventHandler: typeof import('../../node_modules/h3').dynamicEventHandler
   const eventHandler: typeof import('../../node_modules/h3').eventHandler
   const fetchWithEvent: typeof import('../../node_modules/h3').fetchWithEvent
-  const filterSchema: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').filterSchema
   const fromNodeMiddleware: typeof import('../../node_modules/h3').fromNodeMiddleware
   const fromPlainHandler: typeof import('../../node_modules/h3').fromPlainHandler
   const fromWebHandler: typeof import('../../node_modules/h3').fromWebHandler
@@ -81,17 +78,14 @@ declare global {
   const lazyEventHandler: typeof import('../../node_modules/h3').lazyEventHandler
   const nitroPlugin: typeof import('../../node_modules/nitropack/dist/runtime/internal/plugin').nitroPlugin
   const parseCookies: typeof import('../../node_modules/h3').parseCookies
-  const processFilters: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').processFilters
   const promisifyNodeListener: typeof import('../../node_modules/h3').promisifyNodeListener
   const proxyRequest: typeof import('../../node_modules/h3').proxyRequest
-  const query: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').default
   const readBody: typeof import('../../node_modules/h3').readBody
   const readFormData: typeof import('../../node_modules/h3').readFormData
   const readMultipartFormData: typeof import('../../node_modules/h3').readMultipartFormData
   const readRawBody: typeof import('../../node_modules/h3').readRawBody
   const readValidatedBody: typeof import('../../node_modules/h3').readValidatedBody
   const removeResponseHeader: typeof import('../../node_modules/h3').removeResponseHeader
-  const requireAuth: typeof import('../../node_modules/@mframework/layer-auth/server/utils/require-auth').requireAuth
   const runTask: typeof import('../../node_modules/nitropack/dist/runtime/internal/task').runTask
   const sanitizeStatusCode: typeof import('../../node_modules/h3').sanitizeStatusCode
   const sanitizeStatusMessage: typeof import('../../node_modules/h3').sanitizeStatusMessage
@@ -127,14 +121,7 @@ declare global {
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config').useRuntimeConfig
   const useSession: typeof import('../../node_modules/h3').useSession
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage').useStorage
-  const withFilters: typeof import('../../node_modules/@mframework/layer-auth/server/utils/query').withFilters
   const writeEarlyHints: typeof import('../../node_modules/h3').writeEarlyHints
-}
-// for type re-export
-declare global {
-  // @ts-ignore
-  export type { Auth } from '../../node_modules/@mframework/layer-auth/server/utils/auth'
-  import('../../node_modules/@mframework/layer-auth/server/utils/auth')
 }
 export { useNitroApp } from 'nitropack/runtime/internal/app';
 export { useRuntimeConfig, useAppConfig } from 'nitropack/runtime/internal/config';
@@ -148,8 +135,4 @@ export { useEvent } from 'nitropack/runtime/internal/context';
 export { defineTask, runTask } from 'nitropack/runtime/internal/task';
 export { defineNitroErrorHandler } from 'nitropack/runtime/internal/error/utils';
 export { appendCorsHeaders, appendCorsPreflightHeaders, appendHeader, appendHeaders, appendResponseHeader, appendResponseHeaders, assertMethod, callNodeListener, clearResponseHeaders, clearSession, createApp, createAppEventHandler, createError, createEvent, createEventStream, createRouter, defaultContentType, defineEventHandler, defineLazyEventHandler, defineNodeListener, defineNodeMiddleware, defineRequestMiddleware, defineResponseMiddleware, defineWebSocket, defineWebSocketHandler, deleteCookie, dynamicEventHandler, eventHandler, fetchWithEvent, fromNodeMiddleware, fromPlainHandler, fromWebHandler, getCookie, getHeader, getHeaders, getMethod, getProxyRequestHeaders, getQuery, getRequestFingerprint, getRequestHeader, getRequestHeaders, getRequestHost, getRequestIP, getRequestPath, getRequestProtocol, getRequestURL, getRequestWebStream, getResponseHeader, getResponseHeaders, getResponseStatus, getResponseStatusText, getRouterParam, getRouterParams, getSession, getValidatedQuery, getValidatedRouterParams, handleCacheHeaders, handleCors, isCorsOriginAllowed, isError, isEvent, isEventHandler, isMethod, isPreflightRequest, isStream, isWebResponse, lazyEventHandler, parseCookies, promisifyNodeListener, proxyRequest, readBody, readFormData, readMultipartFormData, readRawBody, readValidatedBody, removeResponseHeader, sanitizeStatusCode, sanitizeStatusMessage, sealSession, send, sendError, sendIterable, sendNoContent, sendProxy, sendRedirect, sendStream, sendWebResponse, serveStatic, setCookie, setHeader, setHeaders, setResponseHeader, setResponseHeaders, setResponseStatus, splitCookiesString, toEventHandler, toNodeListener, toPlainHandler, toWebHandler, toWebRequest, unsealSession, updateSession, useBase, useSession, writeEarlyHints } from 'h3';
-export { defuReplaceArray } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/nuxt-security/dist/utils/merge';
 export { useImage } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@nuxt/image/dist/runtime/server/utils/image';
-export { auth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/auth';
-export { default as query, filterSchema, processFilters, withFilters } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/query';
-export { requireAuth } from '/home/meebuzo/github/alternate-framework/themes/framework/starter-template/node_modules/@mframework/layer-auth/server/utils/require-auth';

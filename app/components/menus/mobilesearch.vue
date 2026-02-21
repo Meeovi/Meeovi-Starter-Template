@@ -3,16 +3,16 @@
         <div class="text-center">
             <v-dialog v-model="dialog" width="auto">
                 <template v-slot:activator="{ props }">
-                    <v-btn icon="fas fa-search" title="Search" v-bind="props"></v-btn>
+                    <UButton icon="fas fa-search" title="Search" v-bind="props"></UButton>
                 </template>
 
                 <template v-slot:default="{ isActive }">
-                    <v-card min-height="100" min-width="500">
+                    <UCard min-height="100" min-width="500">
                         <search />
-                        <v-card-actions>
-                            <v-btn color="primary" block @click="isActive.value = false">Close Search</v-btn>
-                        </v-card-actions>
-                    </v-card>
+                        <template>
+                            <UButton color="primary" block @click="isActive.value = false">Close Search</UButton>
+                        </template>
+                    </UCard>
                 </template>
             </v-dialog>
         </div>
