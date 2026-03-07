@@ -62,6 +62,27 @@
       "vite/client": [
         "../node_modules/vite/client"
       ],
+      "vue-i18n": [
+        "../node_modules/vue-i18n"
+      ],
+      "@intlify/shared": [
+        "../node_modules/@intlify/shared"
+      ],
+      "@intlify/core": [
+        "../node_modules/@intlify/core"
+      ],
+      "@intlify/core-base": [
+        "../node_modules/@intlify/core-base"
+      ],
+      "@intlify/utils": [
+        "../node_modules/@intlify/utils"
+      ],
+      "@intlify/utils/h3": [
+        "../node_modules/@intlify/utils"
+      ],
+      "@intlify/message-compiler": [
+        "../node_modules/@intlify/message-compiler"
+      ],
       "nitropack/types": [
         "../node_modules/nitropack/types"
       ],
@@ -107,23 +128,29 @@
       "#internal/nuxt/paths": [
         "../node_modules/@nuxt/nitro-server/dist/runtime/utils/paths"
       ],
+      "#i18n": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/composables/index-server"
+      ],
+      "#i18n-kit": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/kit"
+      ],
+      "#i18n-kit/*": [
+        "../node_modules/@nuxtjs/i18n/dist/runtime/kit/*"
+      ],
+      "#internal-i18n-types": [
+        "../node_modules/@nuxtjs/i18n/dist/types"
+      ],
       "#pwa": [
         "../node_modules/@vite-pwa/nuxt/dist/runtime/composables/index"
-      ],
-      "#ui": [
-        "../node_modules/@nuxt/ui/dist/runtime"
-      ],
-      "#ui/*": [
-        "../node_modules/@nuxt/ui/dist/runtime/*"
-      ],
-      "#color-mode-options": [
-        "./color-mode-options.mjs"
       ],
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
       ],
-      "#nuxt-icon-server-bundle": [
-        "./nuxt-icon-server-bundle"
+      "#tailwindcss": [
+        "./tailwind"
+      ],
+      "#tailwindcss/sources": [
+        "./tailwindcss/sources"
       ]
     },
     "lib": [
@@ -138,6 +165,8 @@
     "./types/nitro-nuxt.d.ts",
     "../node_modules/runtime/server",
     "../node_modules/dist/runtime/server",
+    "../../../../packages/modules/api-client/runtime/server",
+    "../../../../packages/modules/api-client/dist/runtime/server",
     "../server/**/*",
     "../shared/**/*.d.ts",
     "./types/nitro.d.ts"
@@ -146,12 +175,12 @@
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/@vite-pwa/nuxt/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxt/icon/node_modules",
-    "../node_modules/@nuxt/fonts/node_modules",
-    "../node_modules/@nuxtjs/color-mode/node_modules",
-    "../node_modules/@nuxt/ui/node_modules",
+    "../../../../packages/modules/api-client/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

@@ -34,6 +34,27 @@
       "vite/client": [
         "../node_modules/vite/client"
       ],
+      "vue-i18n": [
+        "../node_modules/vue-i18n"
+      ],
+      "@intlify/shared": [
+        "../node_modules/@intlify/shared"
+      ],
+      "@intlify/core": [
+        "../node_modules/@intlify/core"
+      ],
+      "@intlify/core-base": [
+        "../node_modules/@intlify/core-base"
+      ],
+      "@intlify/utils": [
+        "../node_modules/@intlify/utils"
+      ],
+      "@intlify/utils/h3": [
+        "../node_modules/@intlify/utils"
+      ],
+      "@intlify/message-compiler": [
+        "../node_modules/@intlify/message-compiler"
+      ],
       "nitropack/types": [
         "../node_modules/nitropack/types"
       ],
@@ -95,12 +116,12 @@
     "../node_modules",
     "../../../../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/vuetify-nuxt-module/node_modules",
+    "../node_modules/@nuxtjs/i18n/node_modules",
     "../node_modules/@vite-pwa/nuxt/node_modules",
-    "../node_modules/@nuxt/image/node_modules",
-    "../node_modules/@nuxt/icon/node_modules",
-    "../node_modules/@nuxt/fonts/node_modules",
-    "../node_modules/@nuxtjs/color-mode/node_modules",
-    "../node_modules/@nuxt/ui/node_modules",
+    "../../../../packages/modules/api-client/node_modules",
+    "../node_modules/@nuxtjs/tailwindcss/node_modules",
+    "../node_modules/@storefront-ui/nuxt/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist",
@@ -115,6 +136,8 @@
     "../layers/*/server/**/*",
     "../layers/*/modules/*/runtime/server/**/*",
     "../node_modules/runtime",
-    "../node_modules/dist/runtime"
+    "../node_modules/dist/runtime",
+    "../../../../packages/modules/api-client/runtime",
+    "../../../../packages/modules/api-client/dist/runtime"
   ]
 }

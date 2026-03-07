@@ -3,14 +3,6 @@ import process from 'node:process'
 const sw = process.env.SW === 'true'
 
 export default defineNuxtConfig({
-  ssr: true,
-
-  extends: [
-    //'@mframework/layer-shared',
-    //'@mframework/layer-auth',
-    //'@mframework/layer-search'
-  ],
-
   app: {
     baseURL: '/',
     head: {
@@ -21,7 +13,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      titleTemplate: '%s - Meeovi Starter',
+      titleTemplate: `%s - ${process.env.NUXT_PUBLIC_SITE_NAME || 'Meeovi Starter Template'}`,
       meta: [{
           name: 'description',
           content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'Meeovi Starter Template'}`
@@ -59,17 +51,46 @@ export default defineNuxtConfig({
     'assets/styles/styles.css',
   ],
 
-  modules: ['@vite-pwa/nuxt', '@nuxt/image', '@nuxt/ui'],
+  modules: [
+    'vuetify-nuxt-module',
+    '@nuxtjs/i18n',
+    '@vite-pwa/nuxt',
+    '@mframework/api-client/nuxt',
+    '@storefront-ui/nuxt'
+  ],
 
-  adapterAuth: {
-    endpoint: '/api/auth/[...all]',
-    client: {
-      baseURL: '/api/auth',
-      fetchOptions: {
-        credentials: 'include'
+  mApi: {
+    endpoint: '/api/graphql',
+  },
+
+  vuetify: {
+    vuetifyOptions: {
+      icons: {
+        defaultSet: 'fa',
+        sets: [{
+          name: 'fa',
+          cdn: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css'
+        }]
+      },
+      theme: {
+        defaultTheme: 'light',
+        themes: {
+          light: {},
+          dark: {}
+        }
       }
-    },
-    enableMiddleware: true
+    }
+  },
+
+  i18n: {
+    locales: [{
+      code: 'en-US',
+      language: 'en-US',
+      name: 'English (US)',
+      dir: 'ltr',
+    }, ],
+    defaultLocale: 'en-US',
+    strategy: 'no_prefix',
   },
 
   pwa: {
@@ -143,6 +164,17 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2026-02-15',
+
+  build: {
+    transpile: ['vuetify', '@fortawesome/vue-fontawesome']
+  },
+
+  vite: {
+    define: {
+      'process.env.DEBUG': false
+    }
+  },
+
   nitro: {
     experimental: {
       wasm: true,

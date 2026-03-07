@@ -27,19 +27,20 @@
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@mframework/adapter-directus": "file:../../../adapters/directus",
-      "@mframework/adapter-opensearch": "file:../../../adapters/opensearch",
-      "@mframework/core": "file:../../../core",
-      "@mframework/layer-commerce": "file:../../../layers/commerce",
-      "@mframework/layer-shared": "file:../../../layers/shared",
-      "@mframework/layer-social": "file:../../../layers/social",
-      "@mframework/adapter-auth": "file:../../../adapters/auth",
-      "@mframework/localization": "file:../../../layers/localization",
-      "@nuxt/image": "^2.0.0",
-      "@nuxt/ui": "^4.4.0",
+      "@mframework/adapter-opensearch": "file:../../../packages/adapters/opensearch",
+      "@mframework/api": "file:../../../packages/modules/api",
+      "@mframework/api-client": "file:../../../packages/modules/api-client",
+      "@mframework/localization": "file:../../../packages/modules/localization",
+      "@nuxt/ui": "^3.3.7",
+      "@nuxtjs/i18n": "^10.2.3",
       "@vite-pwa/nuxt": "^1.1.1",
-      "lucide-vue-next": "^0.575.0",
       "nuxt": "^4.3.1",
-      "tailwindcss": "^4.2.0"
+      "vuetify-nuxt-module": "^0.19.5"
+   },
+   "devDependencies": {
+      "@storefront-ui/nuxt": "^3.3.0",
+      "dotenv": "^17.3.1",
+      "eslint-plugin-nuxt-layers": "^0.2.0",
+      "tsx": "^4.21.0"
    }
 }

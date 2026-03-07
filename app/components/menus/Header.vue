@@ -1,65 +1,103 @@
 <template>
-  <UHeader toggle-side="left">
-    <template #left>
-      <USlideover side="left" title="Starter Template">
-        <UButton label="Menu" size="xl" color="neutral" variant="ghost" icon="i-lucide-menu" />
+    <div>
+        <v-app-bar id="topnav" density="compact">
+            <template v-slot:prepend>
+                <v-btn variant="flat" @click="$emit('toggleDrawer')">
+                    <v-icon start icon="fas fa-bars"></v-icon> Menu
+                </v-btn>
+            </template>
 
-        <template #body>
-          <UNavigationMenu orientation="vertical" :items="items" class="data-[orientation=vertical]:w-48" />
-        </template>
-      </USlideover>
-    
-      <Logo class="h-6 w-auto" />
-    </template>
+            <logo />
+            <v-spacer></v-spacer>
 
-    <template #right>
-      <Search />
-      
-      <UColorModeButton />
+            <mobilesearch />
 
-      <USlideover side="right" title="Starter Template">
-        <UButton size="xl" color="neutral" variant="ghost" icon="i-lucide-circle-user" />
+            <ClientOnly>
+                <Search />
+            </ClientOnly>
 
-        <template #body>
-          <UNavigationMenu orientation="vertical" :items="items" class="data-[orientation=vertical]:w-48" />
-        </template>
-      </USlideover>
-    </template>
+            <v-spacer></v-spacer>
 
-    <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
-    </template>
-  </UHeader>
+            <div class="d-flex align-center flex-column flex-sm-row fill-height">
+                <v-col cols="3">
+                    <v-btn @click="toggleDark()" variant="text">
+                        <v-icon>
+                            {{ isDark ? 'fas:fa fa-moon' : 'fas:fa fa-sun' }}
+                        </v-icon>
+                    </v-btn>
+                </v-col>
+                <!--<v-col>
+                    <LayoutNotifications />
+                </v-col>-->
+
+                <v-col>
+                    <ecosystemmenu />
+                </v-col>
+                <v-col>
+                    <accountMenu />
+                </v-col>
+            </div>
+        </v-app-bar>
+    </div>
 </template>
 
-<script setup lang="ts">
-  import type {
-    NavigationMenuItem
-  } from '@nuxt/ui'
-  import Logo from '../blocks/logo.vue'
-  import Search from '../search/search.vue'
+<script setup>
+    import {
+        ref,
+        onMounted,
+        watch,
+        computed
+    } from 'vue'
+    import {
+        useTheme
+    } from 'vuetify'
+    import logo from '../blocks/logo.vue'
+    import ecosystemmenu from './ecosystemmenu.vue'
+    import Search from '@mframework/layer-search/app/components/search.vue'
+    //import LayoutNotifications from './Notifications.vue'
+    import mobilesearch from './mobilesearch.vue'
+    import accountMenu from './accountMenu.vue'
 
-  const route = useRoute()
+    defineProps({
+        drawer: {
+            type: Boolean,
+            default: false
+        }
+    })
 
-  const items = computed < NavigationMenuItem[] > (() => [{
-    label: 'Docs',
-    to: '/docs/getting-started',
-    icon: 'i-lucide-book-open',
-    active: route.path.startsWith('/docs/getting-started')
-  }, {
-    label: 'Components',
-    to: '/docs/components',
-    icon: 'i-lucide-box',
-    active: route.path.startsWith('/docs/components')
-  }, {
-    label: 'Figma',
-    icon: 'i-simple-icons-figma',
-    to: 'https://go.nuxt.com/figma-ui',
-    target: '_blank'
-  }, {
-    label: 'Releases',
-    icon: 'i-lucide-rocket',
-    to: 'https://github.com/nuxt/ui/releases',
-    target: '_blank'
-  }])
+    defineEmits(['toggleDrawer'])
+
+    const theme = useTheme()
+    const location = ref('bottom')
+
+    // Local storage key
+    const STORAGE_KEY = 'elite-theme'
+
+    // isDark reflects the current theme name
+    const isDark = computed(() => theme.global.name.value === 'dark')
+
+    // Determine initial mode
+    onMounted(() => {
+        const stored = localStorage.getItem(STORAGE_KEY)
+
+        if (stored) {
+            // Use saved preference
+            theme.global.name.value = stored
+        } else {
+            // No preference — follow system
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+            theme.global.name.value = prefersDark ? 'dark' : 'light'
+        }
+    })
+
+    // Toggle between themes
+    const toggleDark = () => { theme.global.name.value = isDark.value ? 'light' : 'dark' }
+
+    // Save preference whenever theme name changes
+    watch(
+        () => theme.global.name.value,
+        (val) => {
+            if (val) localStorage.setItem(STORAGE_KEY, val)
+        }
+    )
 </script>

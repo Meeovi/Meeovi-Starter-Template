@@ -1,20 +1,20 @@
 <template>
     <div id="minSearch">
         <div class="text-center">
-            <UModal v-model="dialog" width="auto">
+            <v-dialog v-model="dialog" width="auto">
                 <template v-slot:activator="{ props }">
-                    <UButton icon="fas fa-search" title="Search" v-bind="props"></UButton>
+                    <v-btn icon="fas fa-search" title="Search" v-bind="props"></v-btn>
                 </template>
 
                 <template v-slot:default="{ isActive }">
-                    <UCard min-height="100" min-width="500">
+                    <v-card min-height="100" min-width="500">
                         <search />
-                        <template>
-                            <UButton color="primary" block @click="isActive.value = false">Close Search</UButton>
-                        </template>
-                    </UCard>
+                        <v-card-actions>
+                            <v-btn color="primary" block @click="isActive.value = false">Close Search</v-btn>
+                        </v-card-actions>
+                    </v-card>
                 </template>
-            </UModal>
+            </v-dialog>
         </div>
     </div>
 </template>

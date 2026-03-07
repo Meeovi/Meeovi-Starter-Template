@@ -1,18 +1,18 @@
 <template>
     <div>
-        <ULink class="logobrand" href="/">
+        <NuxtLink class="logobrand" href="/">
             <div v-if="blocksSiteoverview?.media?.directus_files_id">
-                <UButton :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="ghost">
+                <v-btn :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="text">
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
-                </UButton>
+                </v-btn>
             </div>
 
             <div v-else start>
-                <UButton :avatar="{ src: '/images/logo.png' }" size="md" color="neutral" variant="ghost">
+                <v-btn :avatar="{ src: '/images/logo.png' }" size="md" color="neutral" variant="text">
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
-                </UButton>
+                </v-btn>
             </div>
-        </ULink>
+        </NuxtLink>
     </div>
 </template>
 
@@ -20,6 +20,10 @@
     import {
         ref
     } from 'vue'
+    import {
+        useNuxtApp,
+        useAsyncData
+    } from '#app'
 
     const {
         $directus,

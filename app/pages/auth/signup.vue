@@ -2,11 +2,11 @@
     <UAuthForm :fields="fields" :schema="schema" :providers="providers" title="Create an account"
         :submit="{ label: 'Create account' }" @submit="onSubmit">
         <template #description>
-            Already have an account? <ULink to="/login" class="text-primary font-medium">Login</ULink>.
+            Already have an account? <NuxtLink to="/login" class="text-primary font-medium">Login</NuxtLink>.
         </template>
 
         <template #footer>
-            By signing up, you agree to our <ULink to="/" class="text-primary font-medium">Terms of Service</ULink>.
+            By signing up, you agree to our <NuxtLink to="/" class="text-primary font-medium">Terms of Service</NuxtLink>.
         </template>
     </UAuthForm>
 </template>
@@ -67,13 +67,13 @@
 
     const schema = z.object({
         name: z.string().min(1, 'Name is required'),
-        email: z.email('Invalid email'),
+        email: z.string().email('Invalid email'),
         password: z.string().min(8, 'Must be at least 8 characters')
     })
 
-    type Schema = z.output < typeof schema >
+    type Schema = z.infer<typeof schema>
 
-        function onSubmit(payload: FormSubmitEvent < Schema > ) {
-            console.log('Submitted', payload)
-        }
+    function onSubmit(payload: FormSubmitEvent<Schema>) {
+        console.log('Submitted', payload)
+    }
 </script>

@@ -17,133 +17,14 @@ interface _GlobalComponents {
   BlocksLogo: typeof import("../../app/components/blocks/logo.vue")['default']
   MenusFooter: typeof import("../../app/components/menus/Footer.vue")['default']
   MenusHeader: typeof import("../../app/components/menus/Header.vue")['default']
+  MenusAccountMenu: typeof import("../../app/components/menus/accountMenu.vue")['default']
   MenusEcosystemmenu: typeof import("../../app/components/menus/ecosystemmenu.vue")['default']
   MenusLowernav: typeof import("../../app/components/menus/lowernav.vue")['default']
   MenusMobilesearch: typeof import("../../app/components/menus/mobilesearch.vue")['default']
   MenusSidebarnav: typeof import("../../app/components/menus/sidebarnav.vue")['default']
   MenusTopmenu: typeof import("../../app/components/menus/topmenu.vue")['default']
+  SearchFilters: typeof import("../../app/components/search/filters.vue")['default']
   Search: typeof import("../../app/components/search/search.vue")['default']
-  UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
-  UColorModeButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
-  UColorModeImage: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeImage.vue")['default']
-  UColorModeSelect: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeSelect.vue")['default']
-  UColorModeSwitch: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeSwitch.vue")['default']
-  UAccordion: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Accordion.vue")['default']
-  UAlert: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Alert.vue")['default']
-  UApp: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/App.vue")['default']
-  UAuthForm: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/AuthForm.vue")['default']
-  UAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Avatar.vue")['default']
-  UAvatarGroup: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/AvatarGroup.vue")['default']
-  UBadge: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Badge.vue")['default']
-  UBanner: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Banner.vue")['default']
-  UBlogPost: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/BlogPost.vue")['default']
-  UBlogPosts: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/BlogPosts.vue")['default']
-  UBreadcrumb: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Breadcrumb.vue")['default']
-  UButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Button.vue")['default']
-  UCalendar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Calendar.vue")['default']
-  UCard: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Card.vue")['default']
-  UCarousel: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Carousel.vue")['default']
-  UChangelogVersion: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChangelogVersion.vue")['default']
-  UChangelogVersions: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChangelogVersions.vue")['default']
-  UChatMessage: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatMessage.vue")['default']
-  UChatMessages: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatMessages.vue")['default']
-  UChatPalette: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPalette.vue")['default']
-  UChatPrompt: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPrompt.vue")['default']
-  UChatPromptSubmit: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPromptSubmit.vue")['default']
-  UCheckbox: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Checkbox.vue")['default']
-  UCheckboxGroup: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/CheckboxGroup.vue")['default']
-  UChip: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Chip.vue")['default']
-  UCollapsible: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Collapsible.vue")['default']
-  UColorPicker: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ColorPicker.vue")['default']
-  UCommandPalette: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/CommandPalette.vue")['default']
-  UContainer: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Container.vue")['default']
-  UContextMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ContextMenu.vue")['default']
-  UContextMenuContent: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ContextMenuContent.vue")['default']
-  UDashboardGroup: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardGroup.vue")['default']
-  UDashboardNavbar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardNavbar.vue")['default']
-  UDashboardPanel: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardPanel.vue")['default']
-  UDashboardResizeHandle: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardResizeHandle.vue")['default']
-  UDashboardSearch: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSearch.vue")['default']
-  UDashboardSearchButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSearchButton.vue")['default']
-  UDashboardSidebar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebar.vue")['default']
-  UDashboardSidebarCollapse: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebarCollapse.vue")['default']
-  UDashboardSidebarToggle: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebarToggle.vue")['default']
-  UDashboardToolbar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardToolbar.vue")['default']
-  UDrawer: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Drawer.vue")['default']
-  UDropdownMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DropdownMenu.vue")['default']
-  UDropdownMenuContent: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DropdownMenuContent.vue")['default']
-  UEditor: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Editor.vue")['default']
-  UEditorDragHandle: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorDragHandle.vue")['default']
-  UEditorEmojiMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorEmojiMenu.vue")['default']
-  UEditorMentionMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorMentionMenu.vue")['default']
-  UEditorSuggestionMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorSuggestionMenu.vue")['default']
-  UEditorToolbar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorToolbar.vue")['default']
-  UEmpty: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Empty.vue")['default']
-  UError: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Error.vue")['default']
-  UFieldGroup: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FieldGroup.vue")['default']
-  UFileUpload: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FileUpload.vue")['default']
-  UFooter: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Footer.vue")['default']
-  UFooterColumns: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FooterColumns.vue")['default']
-  UForm: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Form.vue")['default']
-  UFormField: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FormField.vue")['default']
-  UHeader: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Header.vue")['default']
-  UIcon: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Icon.vue")['default']
-  UInput: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Input.vue")['default']
-  UInputDate: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputDate.vue")['default']
-  UInputMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputMenu.vue")['default']
-  UInputNumber: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputNumber.vue")['default']
-  UInputTags: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputTags.vue")['default']
-  UInputTime: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputTime.vue")['default']
-  UKbd: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Kbd.vue")['default']
-  ULink: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Link.vue")['default']
-  ULinkBase: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/LinkBase.vue")['default']
-  UMain: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Main.vue")['default']
-  UMarquee: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Marquee.vue")['default']
-  UModal: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Modal.vue")['default']
-  UNavigationMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/NavigationMenu.vue")['default']
-  UOverlayProvider: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/OverlayProvider.vue")['default']
-  UPage: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Page.vue")['default']
-  UPageAnchors: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageAnchors.vue")['default']
-  UPageAside: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageAside.vue")['default']
-  UPageBody: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageBody.vue")['default']
-  UPageCTA: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageCTA.vue")['default']
-  UPageCard: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageCard.vue")['default']
-  UPageColumns: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageColumns.vue")['default']
-  UPageFeature: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageFeature.vue")['default']
-  UPageGrid: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageGrid.vue")['default']
-  UPageHeader: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageHeader.vue")['default']
-  UPageHero: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageHero.vue")['default']
-  UPageLinks: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageLinks.vue")['default']
-  UPageList: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageList.vue")['default']
-  UPageLogos: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageLogos.vue")['default']
-  UPageSection: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageSection.vue")['default']
-  UPagination: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Pagination.vue")['default']
-  UPinInput: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PinInput.vue")['default']
-  UPopover: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Popover.vue")['default']
-  UPricingPlan: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingPlan.vue")['default']
-  UPricingPlans: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingPlans.vue")['default']
-  UPricingTable: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingTable.vue")['default']
-  UProgress: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Progress.vue")['default']
-  URadioGroup: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/RadioGroup.vue")['default']
-  UScrollArea: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ScrollArea.vue")['default']
-  USelect: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Select.vue")['default']
-  USelectMenu: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/SelectMenu.vue")['default']
-  USeparator: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Separator.vue")['default']
-  USkeleton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Skeleton.vue")['default']
-  USlideover: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Slideover.vue")['default']
-  USlider: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Slider.vue")['default']
-  UStepper: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Stepper.vue")['default']
-  USwitch: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Switch.vue")['default']
-  UTable: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Table.vue")['default']
-  UTabs: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tabs.vue")['default']
-  UTextarea: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Textarea.vue")['default']
-  UTimeline: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Timeline.vue")['default']
-  UToast: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Toast.vue")['default']
-  UToaster: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Toaster.vue")['default']
-  UTooltip: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tooltip.vue")['default']
-  UTree: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tree.vue")['default']
-  UUser: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/User.vue")['default']
-  ULocaleSelect: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/locale/LocaleSelect.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   NuxtErrorBoundary: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -154,8 +35,10 @@ interface _GlobalComponents {
   NuxtLoadingIndicator: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
   NuxtTime: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']
   NuxtRouteAnnouncer: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']
-  NuxtImg: typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue")['default']
-  NuxtPicture: typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
+  NuxtImg: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']
+  NuxtPicture: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']
+  NuxtLinkLocale: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
+  SwitchLocalePathLink: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
   VitePwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
   NuxtPwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
   NuxtPwaAssets: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']
@@ -164,8 +47,122 @@ interface _GlobalComponents {
   PwaFaviconImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']
   PwaMaskableImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']
   PwaTransparentImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']
-  Icon: typeof import("../../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
-  ColorScheme: typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+  SfAccordionItem: typeof import("@storefront-ui/vue")['SfAccordionItem']
+  SfBadge: typeof import("@storefront-ui/vue")['SfBadge']
+  SfButton: typeof import("@storefront-ui/vue")['SfButton']
+  SfCheckbox: typeof import("@storefront-ui/vue")['SfCheckbox']
+  SfChip: typeof import("@storefront-ui/vue")['SfChip']
+  SfCounter: typeof import("@storefront-ui/vue")['SfCounter']
+  SfDrawer: typeof import("@storefront-ui/vue")['SfDrawer']
+  SfDropdown: typeof import("@storefront-ui/vue")['SfDropdown']
+  SfIconAdd: typeof import("@storefront-ui/vue")['SfIconAdd']
+  SfIconAddShoppingCart: typeof import("@storefront-ui/vue")['SfIconAddShoppingCart']
+  SfIconAlokai: typeof import("@storefront-ui/vue")['SfIconAlokai']
+  SfIconAlokaiFull: typeof import("@storefront-ui/vue")['SfIconAlokaiFull']
+  SfIconArrowBack: typeof import("@storefront-ui/vue")['SfIconArrowBack']
+  SfIconArrowDownward: typeof import("@storefront-ui/vue")['SfIconArrowDownward']
+  SfIconArrowForward: typeof import("@storefront-ui/vue")['SfIconArrowForward']
+  SfIconArrowUpward: typeof import("@storefront-ui/vue")['SfIconArrowUpward']
+  SfIconBase: typeof import("@storefront-ui/vue")['SfIconBase']
+  SfIconBlock: typeof import("@storefront-ui/vue")['SfIconBlock']
+  SfIconCalendarToday: typeof import("@storefront-ui/vue")['SfIconCalendarToday']
+  SfIconCall: typeof import("@storefront-ui/vue")['SfIconCall']
+  SfIconCancel: typeof import("@storefront-ui/vue")['SfIconCancel']
+  SfIconCheck: typeof import("@storefront-ui/vue")['SfIconCheck']
+  SfIconCheckBox: typeof import("@storefront-ui/vue")['SfIconCheckBox']
+  SfIconCheckBoxOutlineBlank: typeof import("@storefront-ui/vue")['SfIconCheckBoxOutlineBlank']
+  SfIconCheckCircle: typeof import("@storefront-ui/vue")['SfIconCheckCircle']
+  SfIconChevronLeft: typeof import("@storefront-ui/vue")['SfIconChevronLeft']
+  SfIconChevronRight: typeof import("@storefront-ui/vue")['SfIconChevronRight']
+  SfIconCircle: typeof import("@storefront-ui/vue")['SfIconCircle']
+  SfIconClose: typeof import("@storefront-ui/vue")['SfIconClose']
+  SfIconCloseSm: typeof import("@storefront-ui/vue")['SfIconCloseSm']
+  SfIconCompareArrows: typeof import("@storefront-ui/vue")['SfIconCompareArrows']
+  SfIconContactSupport: typeof import("@storefront-ui/vue")['SfIconContactSupport']
+  SfIconCreditCard: typeof import("@storefront-ui/vue")['SfIconCreditCard']
+  SfIconDelete: typeof import("@storefront-ui/vue")['SfIconDelete']
+  SfIconDownload: typeof import("@storefront-ui/vue")['SfIconDownload']
+  SfIconEmail: typeof import("@storefront-ui/vue")['SfIconEmail']
+  SfIconError: typeof import("@storefront-ui/vue")['SfIconError']
+  SfIconExpandLess: typeof import("@storefront-ui/vue")['SfIconExpandLess']
+  SfIconExpandMore: typeof import("@storefront-ui/vue")['SfIconExpandMore']
+  SfIconFacebook: typeof import("@storefront-ui/vue")['SfIconFacebook']
+  SfIconFavorite: typeof import("@storefront-ui/vue")['SfIconFavorite']
+  SfIconFavoriteFilled: typeof import("@storefront-ui/vue")['SfIconFavoriteFilled']
+  SfIconGridView: typeof import("@storefront-ui/vue")['SfIconGridView']
+  SfIconHelp: typeof import("@storefront-ui/vue")['SfIconHelp']
+  SfIconHome: typeof import("@storefront-ui/vue")['SfIconHome']
+  SfIconIndeterminateCheckBox: typeof import("@storefront-ui/vue")['SfIconIndeterminateCheckBox']
+  SfIconInfo: typeof import("@storefront-ui/vue")['SfIconInfo']
+  SfIconInstagram: typeof import("@storefront-ui/vue")['SfIconInstagram']
+  SfIconLanguage: typeof import("@storefront-ui/vue")['SfIconLanguage']
+  SfIconLocalShipping: typeof import("@storefront-ui/vue")['SfIconLocalShipping']
+  SfIconLocalFireDepartment: typeof import("@storefront-ui/vue")['SfIconLocal_fire_department']
+  SfIconLocationOn: typeof import("@storefront-ui/vue")['SfIconLocationOn']
+  SfIconLocationOnFilled: typeof import("@storefront-ui/vue")['SfIconLocationOnFilled']
+  SfIconLock: typeof import("@storefront-ui/vue")['SfIconLock']
+  SfIconLockOpen: typeof import("@storefront-ui/vue")['SfIconLockOpen']
+  SfIconLogin: typeof import("@storefront-ui/vue")['SfIconLogin']
+  SfIconLogout: typeof import("@storefront-ui/vue")['SfIconLogout']
+  SfIconMenu: typeof import("@storefront-ui/vue")['SfIconMenu']
+  SfIconMoreHoriz: typeof import("@storefront-ui/vue")['SfIconMoreHoriz']
+  SfIconMoreVert: typeof import("@storefront-ui/vue")['SfIconMoreVert']
+  SfIconOpenInNew: typeof import("@storefront-ui/vue")['SfIconOpenInNew']
+  SfIconOpenSource: typeof import("@storefront-ui/vue")['SfIconOpenSource']
+  SfIconPackage: typeof import("@storefront-ui/vue")['SfIconPackage']
+  SfIconPercent: typeof import("@storefront-ui/vue")['SfIconPercent']
+  SfIconPerson: typeof import("@storefront-ui/vue")['SfIconPerson']
+  SfIconPinterest: typeof import("@storefront-ui/vue")['SfIconPinterest']
+  SfIconPublishedWithChanges: typeof import("@storefront-ui/vue")['SfIconPublishedWithChanges']
+  SfIconRadioButtonChecked: typeof import("@storefront-ui/vue")['SfIconRadioButtonChecked']
+  SfIconRadioButtonUnchecked: typeof import("@storefront-ui/vue")['SfIconRadioButtonUnchecked']
+  SfIconReact: typeof import("@storefront-ui/vue")['SfIconReact']
+  SfIconRemove: typeof import("@storefront-ui/vue")['SfIconRemove']
+  SfIconRemoveShoppingCart: typeof import("@storefront-ui/vue")['SfIconRemoveShoppingCart']
+  SfIconSafetyCheck: typeof import("@storefront-ui/vue")['SfIconSafetyCheck']
+  SfIconSchedule: typeof import("@storefront-ui/vue")['SfIconSchedule']
+  SfIconSearch: typeof import("@storefront-ui/vue")['SfIconSearch']
+  SfIconSell: typeof import("@storefront-ui/vue")['SfIconSell']
+  SfIconShare: typeof import("@storefront-ui/vue")['SfIconShare']
+  SfIconShoppingCart: typeof import("@storefront-ui/vue")['SfIconShoppingCart']
+  SfIconShoppingCartCheckout: typeof import("@storefront-ui/vue")['SfIconShoppingCartCheckout']
+  SfIconSort: typeof import("@storefront-ui/vue")['SfIconSort']
+  SfIconStar: typeof import("@storefront-ui/vue")['SfIconStar']
+  SfIconStarFilled: typeof import("@storefront-ui/vue")['SfIconStarFilled']
+  SfIconStarHalf: typeof import("@storefront-ui/vue")['SfIconStarHalf']
+  SfIconThumbDown: typeof import("@storefront-ui/vue")['SfIconThumbDown']
+  SfIconThumbUp: typeof import("@storefront-ui/vue")['SfIconThumbUp']
+  SfIconTune: typeof import("@storefront-ui/vue")['SfIconTune']
+  SfIconTwitter: typeof import("@storefront-ui/vue")['SfIconTwitter']
+  SfIconUndo: typeof import("@storefront-ui/vue")['SfIconUndo']
+  SfIconUnfoldMore: typeof import("@storefront-ui/vue")['SfIconUnfoldMore']
+  SfIconUpload: typeof import("@storefront-ui/vue")['SfIconUpload']
+  SfIconViewList: typeof import("@storefront-ui/vue")['SfIconViewList']
+  SfIconVisibility: typeof import("@storefront-ui/vue")['SfIconVisibility']
+  SfIconVisibilityOff: typeof import("@storefront-ui/vue")['SfIconVisibilityOff']
+  SfIconVsfDiamond: typeof import("@storefront-ui/vue")['SfIconVsfDiamond']
+  SfIconVuejs: typeof import("@storefront-ui/vue")['SfIconVuejs']
+  SfIconVuestorefront: typeof import("@storefront-ui/vue")['SfIconVuestorefront']
+  SfIconWarehouse: typeof import("@storefront-ui/vue")['SfIconWarehouse']
+  SfIconWarning: typeof import("@storefront-ui/vue")['SfIconWarning']
+  SfIconYoutube: typeof import("@storefront-ui/vue")['SfIconYoutube']
+  SfInput: typeof import("@storefront-ui/vue")['SfInput']
+  SfLink: typeof import("@storefront-ui/vue")['SfLink']
+  SfListItem: typeof import("@storefront-ui/vue")['SfListItem']
+  SfLoaderCircular: typeof import("@storefront-ui/vue")['SfLoaderCircular']
+  SfLoaderLinear: typeof import("@storefront-ui/vue")['SfLoaderLinear']
+  SfModal: typeof import("@storefront-ui/vue")['SfModal']
+  SfProgressCircular: typeof import("@storefront-ui/vue")['SfProgressCircular']
+  SfProgressLinear: typeof import("@storefront-ui/vue")['SfProgressLinear']
+  SfRadio: typeof import("@storefront-ui/vue")['SfRadio']
+  SfRating: typeof import("@storefront-ui/vue")['SfRating']
+  SfRatingButton: typeof import("@storefront-ui/vue")['SfRatingButton']
+  SfScrollable: typeof import("@storefront-ui/vue")['SfScrollable']
+  SfSelect: typeof import("@storefront-ui/vue")['SfSelect']
+  SfSwitch: typeof import("@storefront-ui/vue")['SfSwitch']
+  SfTextarea: typeof import("@storefront-ui/vue")['SfTextarea']
+  SfThumbnail: typeof import("@storefront-ui/vue")['SfThumbnail']
+  SfTooltip: typeof import("@storefront-ui/vue")['SfTooltip']
   NuxtPage: typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']
   NoScript: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']
   Link: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -180,133 +177,14 @@ interface _GlobalComponents {
   LazyBlocksLogo: LazyComponent<typeof import("../../app/components/blocks/logo.vue")['default']>
   LazyMenusFooter: LazyComponent<typeof import("../../app/components/menus/Footer.vue")['default']>
   LazyMenusHeader: LazyComponent<typeof import("../../app/components/menus/Header.vue")['default']>
+  LazyMenusAccountMenu: LazyComponent<typeof import("../../app/components/menus/accountMenu.vue")['default']>
   LazyMenusEcosystemmenu: LazyComponent<typeof import("../../app/components/menus/ecosystemmenu.vue")['default']>
   LazyMenusLowernav: LazyComponent<typeof import("../../app/components/menus/lowernav.vue")['default']>
   LazyMenusMobilesearch: LazyComponent<typeof import("../../app/components/menus/mobilesearch.vue")['default']>
   LazyMenusSidebarnav: LazyComponent<typeof import("../../app/components/menus/sidebarnav.vue")['default']>
   LazyMenusTopmenu: LazyComponent<typeof import("../../app/components/menus/topmenu.vue")['default']>
+  LazySearchFilters: LazyComponent<typeof import("../../app/components/search/filters.vue")['default']>
   LazySearch: LazyComponent<typeof import("../../app/components/search/search.vue")['default']>
-  LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
-  LazyUColorModeButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>
-  LazyUColorModeImage: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeImage.vue")['default']>
-  LazyUColorModeSelect: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeSelect.vue")['default']>
-  LazyUColorModeSwitch: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeSwitch.vue")['default']>
-  LazyUAccordion: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Accordion.vue")['default']>
-  LazyUAlert: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Alert.vue")['default']>
-  LazyUApp: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/App.vue")['default']>
-  LazyUAuthForm: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/AuthForm.vue")['default']>
-  LazyUAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Avatar.vue")['default']>
-  LazyUAvatarGroup: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/AvatarGroup.vue")['default']>
-  LazyUBadge: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Badge.vue")['default']>
-  LazyUBanner: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Banner.vue")['default']>
-  LazyUBlogPost: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/BlogPost.vue")['default']>
-  LazyUBlogPosts: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/BlogPosts.vue")['default']>
-  LazyUBreadcrumb: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Breadcrumb.vue")['default']>
-  LazyUButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Button.vue")['default']>
-  LazyUCalendar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Calendar.vue")['default']>
-  LazyUCard: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Card.vue")['default']>
-  LazyUCarousel: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Carousel.vue")['default']>
-  LazyUChangelogVersion: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChangelogVersion.vue")['default']>
-  LazyUChangelogVersions: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChangelogVersions.vue")['default']>
-  LazyUChatMessage: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatMessage.vue")['default']>
-  LazyUChatMessages: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatMessages.vue")['default']>
-  LazyUChatPalette: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPalette.vue")['default']>
-  LazyUChatPrompt: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPrompt.vue")['default']>
-  LazyUChatPromptSubmit: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ChatPromptSubmit.vue")['default']>
-  LazyUCheckbox: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Checkbox.vue")['default']>
-  LazyUCheckboxGroup: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/CheckboxGroup.vue")['default']>
-  LazyUChip: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Chip.vue")['default']>
-  LazyUCollapsible: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Collapsible.vue")['default']>
-  LazyUColorPicker: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ColorPicker.vue")['default']>
-  LazyUCommandPalette: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/CommandPalette.vue")['default']>
-  LazyUContainer: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Container.vue")['default']>
-  LazyUContextMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ContextMenu.vue")['default']>
-  LazyUContextMenuContent: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ContextMenuContent.vue")['default']>
-  LazyUDashboardGroup: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardGroup.vue")['default']>
-  LazyUDashboardNavbar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardNavbar.vue")['default']>
-  LazyUDashboardPanel: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardPanel.vue")['default']>
-  LazyUDashboardResizeHandle: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardResizeHandle.vue")['default']>
-  LazyUDashboardSearch: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSearch.vue")['default']>
-  LazyUDashboardSearchButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSearchButton.vue")['default']>
-  LazyUDashboardSidebar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebar.vue")['default']>
-  LazyUDashboardSidebarCollapse: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebarCollapse.vue")['default']>
-  LazyUDashboardSidebarToggle: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardSidebarToggle.vue")['default']>
-  LazyUDashboardToolbar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DashboardToolbar.vue")['default']>
-  LazyUDrawer: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Drawer.vue")['default']>
-  LazyUDropdownMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DropdownMenu.vue")['default']>
-  LazyUDropdownMenuContent: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/DropdownMenuContent.vue")['default']>
-  LazyUEditor: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Editor.vue")['default']>
-  LazyUEditorDragHandle: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorDragHandle.vue")['default']>
-  LazyUEditorEmojiMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorEmojiMenu.vue")['default']>
-  LazyUEditorMentionMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorMentionMenu.vue")['default']>
-  LazyUEditorSuggestionMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorSuggestionMenu.vue")['default']>
-  LazyUEditorToolbar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/EditorToolbar.vue")['default']>
-  LazyUEmpty: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Empty.vue")['default']>
-  LazyUError: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Error.vue")['default']>
-  LazyUFieldGroup: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FieldGroup.vue")['default']>
-  LazyUFileUpload: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FileUpload.vue")['default']>
-  LazyUFooter: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Footer.vue")['default']>
-  LazyUFooterColumns: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FooterColumns.vue")['default']>
-  LazyUForm: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Form.vue")['default']>
-  LazyUFormField: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/FormField.vue")['default']>
-  LazyUHeader: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Header.vue")['default']>
-  LazyUIcon: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Icon.vue")['default']>
-  LazyUInput: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Input.vue")['default']>
-  LazyUInputDate: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputDate.vue")['default']>
-  LazyUInputMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputMenu.vue")['default']>
-  LazyUInputNumber: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputNumber.vue")['default']>
-  LazyUInputTags: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputTags.vue")['default']>
-  LazyUInputTime: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/InputTime.vue")['default']>
-  LazyUKbd: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Kbd.vue")['default']>
-  LazyULink: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Link.vue")['default']>
-  LazyULinkBase: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/LinkBase.vue")['default']>
-  LazyUMain: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Main.vue")['default']>
-  LazyUMarquee: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Marquee.vue")['default']>
-  LazyUModal: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Modal.vue")['default']>
-  LazyUNavigationMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/NavigationMenu.vue")['default']>
-  LazyUOverlayProvider: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/OverlayProvider.vue")['default']>
-  LazyUPage: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Page.vue")['default']>
-  LazyUPageAnchors: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageAnchors.vue")['default']>
-  LazyUPageAside: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageAside.vue")['default']>
-  LazyUPageBody: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageBody.vue")['default']>
-  LazyUPageCTA: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageCTA.vue")['default']>
-  LazyUPageCard: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageCard.vue")['default']>
-  LazyUPageColumns: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageColumns.vue")['default']>
-  LazyUPageFeature: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageFeature.vue")['default']>
-  LazyUPageGrid: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageGrid.vue")['default']>
-  LazyUPageHeader: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageHeader.vue")['default']>
-  LazyUPageHero: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageHero.vue")['default']>
-  LazyUPageLinks: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageLinks.vue")['default']>
-  LazyUPageList: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageList.vue")['default']>
-  LazyUPageLogos: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageLogos.vue")['default']>
-  LazyUPageSection: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PageSection.vue")['default']>
-  LazyUPagination: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Pagination.vue")['default']>
-  LazyUPinInput: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PinInput.vue")['default']>
-  LazyUPopover: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Popover.vue")['default']>
-  LazyUPricingPlan: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingPlan.vue")['default']>
-  LazyUPricingPlans: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingPlans.vue")['default']>
-  LazyUPricingTable: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/PricingTable.vue")['default']>
-  LazyUProgress: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Progress.vue")['default']>
-  LazyURadioGroup: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/RadioGroup.vue")['default']>
-  LazyUScrollArea: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/ScrollArea.vue")['default']>
-  LazyUSelect: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Select.vue")['default']>
-  LazyUSelectMenu: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/SelectMenu.vue")['default']>
-  LazyUSeparator: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Separator.vue")['default']>
-  LazyUSkeleton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Skeleton.vue")['default']>
-  LazyUSlideover: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Slideover.vue")['default']>
-  LazyUSlider: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Slider.vue")['default']>
-  LazyUStepper: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Stepper.vue")['default']>
-  LazyUSwitch: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Switch.vue")['default']>
-  LazyUTable: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Table.vue")['default']>
-  LazyUTabs: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tabs.vue")['default']>
-  LazyUTextarea: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Textarea.vue")['default']>
-  LazyUTimeline: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Timeline.vue")['default']>
-  LazyUToast: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Toast.vue")['default']>
-  LazyUToaster: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Toaster.vue")['default']>
-  LazyUTooltip: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tooltip.vue")['default']>
-  LazyUTree: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/Tree.vue")['default']>
-  LazyUUser: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/User.vue")['default']>
-  LazyULocaleSelect: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/locale/LocaleSelect.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   LazyNuxtErrorBoundary: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
@@ -317,8 +195,10 @@ interface _GlobalComponents {
   LazyNuxtLoadingIndicator: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']>
   LazyNuxtTime: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']>
   LazyNuxtRouteAnnouncer: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']>
-  LazyNuxtImg: LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue")['default']>
-  LazyNuxtPicture: LazyComponent<typeof import("../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']>
+  LazyNuxtImg: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']>
+  LazyNuxtPicture: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']>
+  LazyNuxtLinkLocale: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
+  LazySwitchLocalePathLink: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
   LazyVitePwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
   LazyNuxtPwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
   LazyNuxtPwaAssets: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']>
@@ -327,8 +207,122 @@ interface _GlobalComponents {
   LazyPwaFaviconImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']>
   LazyPwaMaskableImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']>
   LazyPwaTransparentImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']>
-  LazyIcon: LazyComponent<typeof import("../../node_modules/@nuxt/icon/dist/runtime/components/index")['default']>
-  LazyColorScheme: LazyComponent<typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']>
+  LazySfAccordionItem: LazyComponent<typeof import("@storefront-ui/vue")['SfAccordionItem']>
+  LazySfBadge: LazyComponent<typeof import("@storefront-ui/vue")['SfBadge']>
+  LazySfButton: LazyComponent<typeof import("@storefront-ui/vue")['SfButton']>
+  LazySfCheckbox: LazyComponent<typeof import("@storefront-ui/vue")['SfCheckbox']>
+  LazySfChip: LazyComponent<typeof import("@storefront-ui/vue")['SfChip']>
+  LazySfCounter: LazyComponent<typeof import("@storefront-ui/vue")['SfCounter']>
+  LazySfDrawer: LazyComponent<typeof import("@storefront-ui/vue")['SfDrawer']>
+  LazySfDropdown: LazyComponent<typeof import("@storefront-ui/vue")['SfDropdown']>
+  LazySfIconAdd: LazyComponent<typeof import("@storefront-ui/vue")['SfIconAdd']>
+  LazySfIconAddShoppingCart: LazyComponent<typeof import("@storefront-ui/vue")['SfIconAddShoppingCart']>
+  LazySfIconAlokai: LazyComponent<typeof import("@storefront-ui/vue")['SfIconAlokai']>
+  LazySfIconAlokaiFull: LazyComponent<typeof import("@storefront-ui/vue")['SfIconAlokaiFull']>
+  LazySfIconArrowBack: LazyComponent<typeof import("@storefront-ui/vue")['SfIconArrowBack']>
+  LazySfIconArrowDownward: LazyComponent<typeof import("@storefront-ui/vue")['SfIconArrowDownward']>
+  LazySfIconArrowForward: LazyComponent<typeof import("@storefront-ui/vue")['SfIconArrowForward']>
+  LazySfIconArrowUpward: LazyComponent<typeof import("@storefront-ui/vue")['SfIconArrowUpward']>
+  LazySfIconBase: LazyComponent<typeof import("@storefront-ui/vue")['SfIconBase']>
+  LazySfIconBlock: LazyComponent<typeof import("@storefront-ui/vue")['SfIconBlock']>
+  LazySfIconCalendarToday: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCalendarToday']>
+  LazySfIconCall: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCall']>
+  LazySfIconCancel: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCancel']>
+  LazySfIconCheck: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCheck']>
+  LazySfIconCheckBox: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCheckBox']>
+  LazySfIconCheckBoxOutlineBlank: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCheckBoxOutlineBlank']>
+  LazySfIconCheckCircle: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCheckCircle']>
+  LazySfIconChevronLeft: LazyComponent<typeof import("@storefront-ui/vue")['SfIconChevronLeft']>
+  LazySfIconChevronRight: LazyComponent<typeof import("@storefront-ui/vue")['SfIconChevronRight']>
+  LazySfIconCircle: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCircle']>
+  LazySfIconClose: LazyComponent<typeof import("@storefront-ui/vue")['SfIconClose']>
+  LazySfIconCloseSm: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCloseSm']>
+  LazySfIconCompareArrows: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCompareArrows']>
+  LazySfIconContactSupport: LazyComponent<typeof import("@storefront-ui/vue")['SfIconContactSupport']>
+  LazySfIconCreditCard: LazyComponent<typeof import("@storefront-ui/vue")['SfIconCreditCard']>
+  LazySfIconDelete: LazyComponent<typeof import("@storefront-ui/vue")['SfIconDelete']>
+  LazySfIconDownload: LazyComponent<typeof import("@storefront-ui/vue")['SfIconDownload']>
+  LazySfIconEmail: LazyComponent<typeof import("@storefront-ui/vue")['SfIconEmail']>
+  LazySfIconError: LazyComponent<typeof import("@storefront-ui/vue")['SfIconError']>
+  LazySfIconExpandLess: LazyComponent<typeof import("@storefront-ui/vue")['SfIconExpandLess']>
+  LazySfIconExpandMore: LazyComponent<typeof import("@storefront-ui/vue")['SfIconExpandMore']>
+  LazySfIconFacebook: LazyComponent<typeof import("@storefront-ui/vue")['SfIconFacebook']>
+  LazySfIconFavorite: LazyComponent<typeof import("@storefront-ui/vue")['SfIconFavorite']>
+  LazySfIconFavoriteFilled: LazyComponent<typeof import("@storefront-ui/vue")['SfIconFavoriteFilled']>
+  LazySfIconGridView: LazyComponent<typeof import("@storefront-ui/vue")['SfIconGridView']>
+  LazySfIconHelp: LazyComponent<typeof import("@storefront-ui/vue")['SfIconHelp']>
+  LazySfIconHome: LazyComponent<typeof import("@storefront-ui/vue")['SfIconHome']>
+  LazySfIconIndeterminateCheckBox: LazyComponent<typeof import("@storefront-ui/vue")['SfIconIndeterminateCheckBox']>
+  LazySfIconInfo: LazyComponent<typeof import("@storefront-ui/vue")['SfIconInfo']>
+  LazySfIconInstagram: LazyComponent<typeof import("@storefront-ui/vue")['SfIconInstagram']>
+  LazySfIconLanguage: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLanguage']>
+  LazySfIconLocalShipping: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLocalShipping']>
+  LazySfIconLocalFireDepartment: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLocal_fire_department']>
+  LazySfIconLocationOn: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLocationOn']>
+  LazySfIconLocationOnFilled: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLocationOnFilled']>
+  LazySfIconLock: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLock']>
+  LazySfIconLockOpen: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLockOpen']>
+  LazySfIconLogin: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLogin']>
+  LazySfIconLogout: LazyComponent<typeof import("@storefront-ui/vue")['SfIconLogout']>
+  LazySfIconMenu: LazyComponent<typeof import("@storefront-ui/vue")['SfIconMenu']>
+  LazySfIconMoreHoriz: LazyComponent<typeof import("@storefront-ui/vue")['SfIconMoreHoriz']>
+  LazySfIconMoreVert: LazyComponent<typeof import("@storefront-ui/vue")['SfIconMoreVert']>
+  LazySfIconOpenInNew: LazyComponent<typeof import("@storefront-ui/vue")['SfIconOpenInNew']>
+  LazySfIconOpenSource: LazyComponent<typeof import("@storefront-ui/vue")['SfIconOpenSource']>
+  LazySfIconPackage: LazyComponent<typeof import("@storefront-ui/vue")['SfIconPackage']>
+  LazySfIconPercent: LazyComponent<typeof import("@storefront-ui/vue")['SfIconPercent']>
+  LazySfIconPerson: LazyComponent<typeof import("@storefront-ui/vue")['SfIconPerson']>
+  LazySfIconPinterest: LazyComponent<typeof import("@storefront-ui/vue")['SfIconPinterest']>
+  LazySfIconPublishedWithChanges: LazyComponent<typeof import("@storefront-ui/vue")['SfIconPublishedWithChanges']>
+  LazySfIconRadioButtonChecked: LazyComponent<typeof import("@storefront-ui/vue")['SfIconRadioButtonChecked']>
+  LazySfIconRadioButtonUnchecked: LazyComponent<typeof import("@storefront-ui/vue")['SfIconRadioButtonUnchecked']>
+  LazySfIconReact: LazyComponent<typeof import("@storefront-ui/vue")['SfIconReact']>
+  LazySfIconRemove: LazyComponent<typeof import("@storefront-ui/vue")['SfIconRemove']>
+  LazySfIconRemoveShoppingCart: LazyComponent<typeof import("@storefront-ui/vue")['SfIconRemoveShoppingCart']>
+  LazySfIconSafetyCheck: LazyComponent<typeof import("@storefront-ui/vue")['SfIconSafetyCheck']>
+  LazySfIconSchedule: LazyComponent<typeof import("@storefront-ui/vue")['SfIconSchedule']>
+  LazySfIconSearch: LazyComponent<typeof import("@storefront-ui/vue")['SfIconSearch']>
+  LazySfIconSell: LazyComponent<typeof import("@storefront-ui/vue")['SfIconSell']>
+  LazySfIconShare: LazyComponent<typeof import("@storefront-ui/vue")['SfIconShare']>
+  LazySfIconShoppingCart: LazyComponent<typeof import("@storefront-ui/vue")['SfIconShoppingCart']>
+  LazySfIconShoppingCartCheckout: LazyComponent<typeof import("@storefront-ui/vue")['SfIconShoppingCartCheckout']>
+  LazySfIconSort: LazyComponent<typeof import("@storefront-ui/vue")['SfIconSort']>
+  LazySfIconStar: LazyComponent<typeof import("@storefront-ui/vue")['SfIconStar']>
+  LazySfIconStarFilled: LazyComponent<typeof import("@storefront-ui/vue")['SfIconStarFilled']>
+  LazySfIconStarHalf: LazyComponent<typeof import("@storefront-ui/vue")['SfIconStarHalf']>
+  LazySfIconThumbDown: LazyComponent<typeof import("@storefront-ui/vue")['SfIconThumbDown']>
+  LazySfIconThumbUp: LazyComponent<typeof import("@storefront-ui/vue")['SfIconThumbUp']>
+  LazySfIconTune: LazyComponent<typeof import("@storefront-ui/vue")['SfIconTune']>
+  LazySfIconTwitter: LazyComponent<typeof import("@storefront-ui/vue")['SfIconTwitter']>
+  LazySfIconUndo: LazyComponent<typeof import("@storefront-ui/vue")['SfIconUndo']>
+  LazySfIconUnfoldMore: LazyComponent<typeof import("@storefront-ui/vue")['SfIconUnfoldMore']>
+  LazySfIconUpload: LazyComponent<typeof import("@storefront-ui/vue")['SfIconUpload']>
+  LazySfIconViewList: LazyComponent<typeof import("@storefront-ui/vue")['SfIconViewList']>
+  LazySfIconVisibility: LazyComponent<typeof import("@storefront-ui/vue")['SfIconVisibility']>
+  LazySfIconVisibilityOff: LazyComponent<typeof import("@storefront-ui/vue")['SfIconVisibilityOff']>
+  LazySfIconVsfDiamond: LazyComponent<typeof import("@storefront-ui/vue")['SfIconVsfDiamond']>
+  LazySfIconVuejs: LazyComponent<typeof import("@storefront-ui/vue")['SfIconVuejs']>
+  LazySfIconVuestorefront: LazyComponent<typeof import("@storefront-ui/vue")['SfIconVuestorefront']>
+  LazySfIconWarehouse: LazyComponent<typeof import("@storefront-ui/vue")['SfIconWarehouse']>
+  LazySfIconWarning: LazyComponent<typeof import("@storefront-ui/vue")['SfIconWarning']>
+  LazySfIconYoutube: LazyComponent<typeof import("@storefront-ui/vue")['SfIconYoutube']>
+  LazySfInput: LazyComponent<typeof import("@storefront-ui/vue")['SfInput']>
+  LazySfLink: LazyComponent<typeof import("@storefront-ui/vue")['SfLink']>
+  LazySfListItem: LazyComponent<typeof import("@storefront-ui/vue")['SfListItem']>
+  LazySfLoaderCircular: LazyComponent<typeof import("@storefront-ui/vue")['SfLoaderCircular']>
+  LazySfLoaderLinear: LazyComponent<typeof import("@storefront-ui/vue")['SfLoaderLinear']>
+  LazySfModal: LazyComponent<typeof import("@storefront-ui/vue")['SfModal']>
+  LazySfProgressCircular: LazyComponent<typeof import("@storefront-ui/vue")['SfProgressCircular']>
+  LazySfProgressLinear: LazyComponent<typeof import("@storefront-ui/vue")['SfProgressLinear']>
+  LazySfRadio: LazyComponent<typeof import("@storefront-ui/vue")['SfRadio']>
+  LazySfRating: LazyComponent<typeof import("@storefront-ui/vue")['SfRating']>
+  LazySfRatingButton: LazyComponent<typeof import("@storefront-ui/vue")['SfRatingButton']>
+  LazySfScrollable: LazyComponent<typeof import("@storefront-ui/vue")['SfScrollable']>
+  LazySfSelect: LazyComponent<typeof import("@storefront-ui/vue")['SfSelect']>
+  LazySfSwitch: LazyComponent<typeof import("@storefront-ui/vue")['SfSwitch']>
+  LazySfTextarea: LazyComponent<typeof import("@storefront-ui/vue")['SfTextarea']>
+  LazySfThumbnail: LazyComponent<typeof import("@storefront-ui/vue")['SfThumbnail']>
+  LazySfTooltip: LazyComponent<typeof import("@storefront-ui/vue")['SfTooltip']>
   LazyNuxtPage: LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']>
   LazyNoScript: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
   LazyLink: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']>

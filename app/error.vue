@@ -1,71 +1,49 @@
-<script setup lang="ts">
-  import type {
-    NuxtError
-  } from '#app'
-
-  defineProps({
-    error: {
-      type: Object as PropType < NuxtError > ,
-      required: true
-    }
-  })
-
-  useHead({
-    htmlAttrs: {
-      lang: 'en'
-    }
-  })
-
-  useSeoMeta({
-    title: 'Page not found',
-    description: 'We are sorry but this page could not be found.'
-  })
-
-  const {
-    data: navigation
-  } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-    transform: data => data.find(item => item.path === '/docs')?.children || []
-  })
-  const {
-    data: files
-  } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-    server: false
-  })
-
-  const links = [{
-    label: 'Docs',
-    icon: 'i-lucide-book',
-    to: '/docs/getting-started'
-  }, {
-    label: 'Pricing',
-    icon: 'i-lucide-credit-card',
-    to: '/pricing'
-  }, {
-    label: 'Blog',
-    icon: 'i-lucide-pencil',
-    to: '/blog'
-  }]
-</script>
-
 <template>
-  <div>
-    <AppHeader />
+    <div>
+        <section data-bs-version="5.1" class="header18 cid-v0WfSD6Mxt mbr-fullscreen"
+            data-bg-video="https://www.youtube.com/watch?v=2Gg6Seob5Mg" id="header18-3">
 
-    <UMain>
-      <UContainer>
-        <UPage>
-          <UError :error="error" />
-        </UPage>
-      </UContainer>
-    </UMain>
 
-    <AppFooter />
+            <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="content-wrap col-12 col-md-12">
+                        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+                            <strong>{{ page?.name || 'Error Page' }}</strong>
+                        </h1>
 
-    <ClientOnly>
-      <LazyUContentSearch :files="files" shortcut="meta_k" :navigation="navigation" :links="links"
-        :fuse="{ resultLimit: 42 }" />
-    </ClientOnly>
+                        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7" v-html="page?.content || 'An unexpected error has occurred.'"></p>
 
-    <UToaster />
-  </div>
+                        <div class="mbr-section-btn">
+                            <NuxtLink class="btn btn-white-outline display-7" :to="page?.link">
+                                {{ page?.repeaterTextBox?.[1]?.name }}
+                            </NuxtLink>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </template>
+
+<script setup>
+    const route = useRoute();
+    const {
+        $directus,
+        $readItems
+    } = useNuxtApp()
+
+    const {
+        data: page
+    } = await useAsyncData('page', () => {
+        return $directus.request($readItems('pages', {
+            filter: {
+                id: {
+                    _eq: 16
+                }
+            },
+            fields: ['*'],
+            limit: 1
+        })).then(response => response?.[0]) // Get first item from response
+    })
+</script>

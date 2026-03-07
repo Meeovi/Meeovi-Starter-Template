@@ -2,15 +2,29 @@
   <div>
     <NuxtPwaManifest />
     <NuxtLoadingIndicator />
-    <UApp>
-      <Header />
+    <v-responsive class="border rounded">
+      <v-app :theme="theme?.global?.name?.value" class="auto-text">
+        <Header :drawer="drawer" @toggle-drawer="drawer = !drawer" />
 
-      <UMain>
-        <slot />
-      </UMain>
-      
-      <Footer />
-    </UApp>
+        <v-main>
+          <v-card>
+            <v-layout>
+              <v-navigation-drawer v-model="drawer" temporary>
+                <sidebarnav />
+                <v-spacer />
+              </v-navigation-drawer>
+
+              <v-main id="sidebarNav" />
+              <main id="mainSection">
+                <slot />
+              </main>
+            </v-layout>
+          </v-card>
+
+          <Footer />
+        </v-main>
+      </v-app>
+    </v-responsive>
 
     <ClientOnly>
       <div v-if="$pwa?.offlineReady || $pwa?.needRefresh" class="pwa-toast" role="alert">
@@ -22,12 +36,12 @@
             New content available, click on reload button to update.
           </span>
         </div>
-        <UButton v-if="$pwa.needRefresh" @click="$pwa.updateServiceWorker()">
+        <v-btn v-if="$pwa.needRefresh" @click="$pwa.updateServiceWorker()">
           Reload
-        </UButton>
-        <UButton @click="$pwa.cancelPrompt()">
+        </v-btn>
+        <v-btn @click="$pwa.cancelPrompt()">
           Close
-        </UButton>
+        </v-btn>
       </div>
       <div v-if="$pwa?.showInstallPrompt && !$pwa?.offlineReady && !$pwa?.needRefresh" class="pwa-toast" role="alert">
         <div class="message">
@@ -35,12 +49,12 @@
             Install PWA
           </span>
         </div>
-        <UButton @click="$pwa.install()">
+        <v-btn @click="$pwa.install()">
           Install
-        </UButton>
-        <UButton @click="$pwa.cancelInstall()">
+        </v-btn>
+        <v-btn @click="$pwa.cancelInstall()">
           Cancel
-        </UButton>
+        </v-btn>
       </div>
     </ClientOnly>
   </div>
@@ -50,10 +64,35 @@
   import Footer from '../components/menus/Footer.vue'
   import sidebarnav from '../components/menus/sidebarnav.vue'
   import Header from '../components/menus/Header.vue'
+  import {
+    ref,
+    watch,
+    onMounted
+  } from 'vue'
+  import {
+    useTheme
+  } from 'vuetify'
 
-  useSeoMeta({
-    title: 'Starter Template'
+  const drawer = ref(null)
+  const theme = useTheme()
+
+  const STORAGE_KEY = 'elite-theme'
+
+  // Load saved theme on mount
+  onMounted(() => {
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (stored) {
+      theme.global.name.value = stored
+    }
   })
+
+  // Save theme when it changes
+  watch(
+    () => theme.global.name.value,
+    (val) => {
+      if (val) localStorage.setItem(STORAGE_KEY, val)
+    }
+  )
 </script>
 
 <style>

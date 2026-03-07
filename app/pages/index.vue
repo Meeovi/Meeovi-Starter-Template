@@ -80,7 +80,6 @@
 </template>
 
 <script setup>
-    useHead({
-        title: 'Starter Template',
-    })
+
+
 </script>

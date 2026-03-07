@@ -1,14 +1,14 @@
 <template>
-    <UCard variant="text" class="lowerBar">
+    <v-card variant="text" class="lowerBar">
         <v-tabs v-model="tab" :bg-color="lowerbar?.color" :color="lowerbar?.colortext" align-tabs="center">
             <div v-for="(menu, index) in lowerbar?.menus" :key="index">
                 <v-tab :value="menu?.value">
-                    <UButton variant="text" :style="`color: ${lowerbar?.colortext} !important`"
-                        :href="menu?.url">{{ menu?.name }}</UButton>
+                    <v-btn variant="text" :style="`color: ${lowerbar?.colortext} !important`"
+                        :href="menu?.url">{{ menu?.name }}</v-btn>
                 </v-tab>
             </div>
         </v-tabs>
-    </UCard>
+    </v-card>
 </template>
 
 <script setup>
