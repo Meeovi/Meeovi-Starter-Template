@@ -42,7 +42,15 @@
     const {
         data: eco
     } = await useAsyncData('eco', () => {
-        return $directus.request($readItem('navigation', '12'))
+        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+            return {
+                menus: [],
+            }
+        }
+
+        return $directus.request($readItem('navigation', '12')).catch(() => ({
+            menus: [],
+        }))
     })
 
     // Add this computed property to filter active menus

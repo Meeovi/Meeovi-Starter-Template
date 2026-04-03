@@ -14,17 +14,68 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  AlertsOfflineAlert: typeof import("../../app/components/alerts/OfflineAlert.vue")['default']
+  BlocksGlobalAlert: typeof import("../../app/components/blocks/GlobalAlert.vue")['default']
   BlocksLogo: typeof import("../../app/components/blocks/logo.vue")['default']
+  IndicatorsConnectionStatus: typeof import("../../app/components/indicators/ConnectionStatus.vue")['default']
   MenusFooter: typeof import("../../app/components/menus/Footer.vue")['default']
   MenusHeader: typeof import("../../app/components/menus/Header.vue")['default']
   MenusAccountMenu: typeof import("../../app/components/menus/accountMenu.vue")['default']
   MenusEcosystemmenu: typeof import("../../app/components/menus/ecosystemmenu.vue")['default']
-  MenusLowernav: typeof import("../../app/components/menus/lowernav.vue")['default']
   MenusMobilesearch: typeof import("../../app/components/menus/mobilesearch.vue")['default']
   MenusSidebarnav: typeof import("../../app/components/menus/sidebarnav.vue")['default']
   MenusTopmenu: typeof import("../../app/components/menus/topmenu.vue")['default']
-  SearchFilters: typeof import("../../app/components/search/filters.vue")['default']
+  SearchSkeleton: typeof import("../../app/components/search/SearchSkeleton.vue")['default']
+  SearchWrapper: typeof import("../../app/components/search/SearchWrapper.vue")['default']
+  SearchFilters: typeof import("../../app/components/search/filters/filters.vue")['default']
   Search: typeof import("../../app/components/search/search.vue")['default']
+  BoundariesErrorBoundary: typeof import("../../../../../layers/shared/app/components/boundaries/ErrorBoundary.vue")['default']
+  DropdownsCssOnlyDropdown: typeof import("../../../../../layers/shared/app/components/dropdowns/CssOnlyDropdown.vue")['default']
+  Gallery: typeof import("../../../../../layers/shared/app/components/gallery/Gallery.vue")['default']
+  Heading: typeof import("../../../../../layers/shared/app/components/heading/Heading.vue")['default']
+  HeadingTypes: typeof import("../../../../../layers/shared/app/components/heading/types")['default']
+  MediaAudioGallery: typeof import("../../../../../layers/shared/app/components/media/audioGallery.vue")['default']
+  MediaDragDropUpload: typeof import("../../../../../layers/shared/app/components/media/dragDropUpload.vue")['default']
+  MediaFullscreenMediaModal: typeof import("../../../../../layers/shared/app/components/media/fullscreenMediaModal.vue")['default']
+  MediaImageCard: typeof import("../../../../../layers/shared/app/components/media/imageCard.vue")['default']
+  MediaImageGallery: typeof import("../../../../../layers/shared/app/components/media/imageGallery.vue")['default']
+  MediaCard: typeof import("../../../../../layers/shared/app/components/media/mediaCard.vue")['default']
+  MediaCarousel: typeof import("../../../../../layers/shared/app/components/media/mediaCarousel.vue")['default']
+  MediaFolderSidebar: typeof import("../../../../../layers/shared/app/components/media/mediaFolderSidebar.vue")['default']
+  MediaPlayer: typeof import("../../../../../layers/shared/app/components/media/mediaPlayer.vue")['default']
+  MediaSearchBar: typeof import("../../../../../layers/shared/app/components/media/mediaSearchBar.vue")['default']
+  MediaVideoGallery: typeof import("../../../../../layers/shared/app/components/media/videoGallery.vue")['default']
+  MenusLayoutNotifications: typeof import("../../../../../layers/shared/app/components/menus/LayoutNotifications.vue")['default']
+  MenusHellobar: typeof import("../../../../../layers/shared/app/components/menus/hellobar.vue")['default']
+  NewsletterBox: typeof import("../../../../../layers/shared/app/components/newsletterBox.vue")['default']
+  UiFooter: typeof import("../../../../../layers/shared/app/components/ui/Footer.vue")['default']
+  UiMButton: typeof import("../../../../../layers/shared/app/components/ui/MButton.vue")['default']
+  UiMotionable: typeof import("../../../../../layers/shared/app/components/ui/Motionable.vue")['default']
+  UiNavbarBottom: typeof import("../../../../../layers/shared/app/components/ui/NavbarBottom.vue")['default']
+  UiNavbarTop: typeof import("../../../../../layers/shared/app/components/ui/NavbarTop.vue")['default']
+  UiPageBuilder: typeof import("../../../../../layers/shared/app/components/ui/PageBuilder.vue")['default']
+  UiRadialProgress: typeof import("../../../../../layers/shared/app/components/ui/RadialProgress.vue")['default']
+  UiScrollTop: typeof import("../../../../../layers/shared/app/components/ui/ScrollTop.vue")['default']
+  UiFormsBooleanInput: typeof import("../../../../../layers/shared/app/components/ui/forms/BooleanInput.vue")['default']
+  UiFormsContentFormElement: typeof import("../../../../../layers/shared/app/components/ui/forms/ContentFormElement.vue")['default']
+  UiFormsDateTime: typeof import("../../../../../layers/shared/app/components/ui/forms/DateTime.vue")['default']
+  UiFormsDirectusFormElement: typeof import("../../../../../layers/shared/app/components/ui/forms/DirectusFormElement.vue")['default']
+  UiFormsDynamicTableElement: typeof import("../../../../../layers/shared/app/components/ui/forms/DynamicTableElement.vue")['default']
+  UiFormsFileInput: typeof import("../../../../../layers/shared/app/components/ui/forms/FileInput.vue")['default']
+  UiFormsFormField: typeof import("../../../../../layers/shared/app/components/ui/forms/FormField.vue")['default']
+  UiFormsRelationSelect: typeof import("../../../../../layers/shared/app/components/ui/forms/RelationSelect.vue")['default']
+  UiFormsRepeaterInput: typeof import("../../../../../layers/shared/app/components/ui/forms/RepeaterInput.vue")['default']
+  UiFormsSelectInput: typeof import("../../../../../layers/shared/app/components/ui/forms/SelectInput.vue")['default']
+  UiFormsTextArea: typeof import("../../../../../layers/shared/app/components/ui/forms/TextArea.vue")['default']
+  UiFormsTextInput: typeof import("../../../../../layers/shared/app/components/ui/forms/TextInput.vue")['default']
+  UiFormsTiptapEditor: typeof import("../../../../../layers/shared/app/components/ui/forms/TiptapEditor.vue")['default']
+  "UiForms[collection]": typeof import("../../../../../layers/shared/app/components/ui/forms/[collection].vue")['default']
+  UiStudio: typeof import("../../../../../layers/shared/app/components/ui/studio/index.vue")['default']
+  AuthProfileEditor: typeof import("../../../../../layers/auth/app/components/AuthProfileEditor.vue")['default']
+  SSOProvisioningManager: typeof import("../../../../../layers/auth/app/components/SSOProvisioningManager.vue")['default']
+  BlocksLogoutButton: typeof import("../../../../../layers/auth/app/components/blocks/logoutButton.vue")['default']
+  MenusMyaccountmenu: typeof import("../../../../../layers/auth/app/components/menus/myaccountmenu.vue")['default']
+  MenusSidebartop: typeof import("../../../../../layers/auth/app/components/menus/sidebartop.vue")['default']
   NuxtWelcome: typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']
   NuxtLayout: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
   NuxtErrorBoundary: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']
@@ -35,18 +86,12 @@ interface _GlobalComponents {
   NuxtLoadingIndicator: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']
   NuxtTime: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']
   NuxtRouteAnnouncer: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']
-  NuxtImg: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']
-  NuxtPicture: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']
-  NuxtLinkLocale: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
-  SwitchLocalePathLink: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
-  VitePwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
-  NuxtPwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
-  NuxtPwaAssets: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']
-  PwaAppleImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleImage")['default']
-  PwaAppleSplashScreenImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleSplashScreenImage")['default']
-  PwaFaviconImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']
-  PwaMaskableImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']
-  PwaTransparentImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']
+  NuxtAnnouncer: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-announcer")['default']
+  NuxtImg: typeof import("../../../../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue")['default']
+  NuxtPicture: typeof import("../../../../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']
+  TiptapEditorContent: typeof import("@tiptap/vue-3")['EditorContent']
+  TiptapFloatingMenu: typeof import("@tiptap/vue-3/menus")['FloatingMenu']
+  TiptapBubbleMenu: typeof import("@tiptap/vue-3/menus")['BubbleMenu']
   SfAccordionItem: typeof import("@storefront-ui/vue")['SfAccordionItem']
   SfBadge: typeof import("@storefront-ui/vue")['SfBadge']
   SfButton: typeof import("@storefront-ui/vue")['SfButton']
@@ -163,6 +208,16 @@ interface _GlobalComponents {
   SfTextarea: typeof import("@storefront-ui/vue")['SfTextarea']
   SfThumbnail: typeof import("@storefront-ui/vue")['SfThumbnail']
   SfTooltip: typeof import("@storefront-ui/vue")['SfTooltip']
+  NuxtLinkLocale: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']
+  SwitchLocalePathLink: typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']
+  VitePwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
+  NuxtPwaManifest: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']
+  NuxtPwaAssets: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']
+  PwaAppleImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleImage")['default']
+  PwaAppleSplashScreenImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleSplashScreenImage")['default']
+  PwaFaviconImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']
+  PwaMaskableImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']
+  PwaTransparentImage: typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']
   NuxtPage: typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']
   NoScript: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']
   Link: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']
@@ -173,18 +228,92 @@ interface _GlobalComponents {
   Head: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Head']
   Html: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']
   Body: typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']
+  SchemaOrgArticle: typeof import("@unhead/schema-org/vue")['SchemaOrgArticle']
+  SchemaOrgBreadcrumb: typeof import("@unhead/schema-org/vue")['SchemaOrgBreadcrumb']
+  SchemaOrgComment: typeof import("@unhead/schema-org/vue")['SchemaOrgComment']
+  SchemaOrgEvent: typeof import("@unhead/schema-org/vue")['SchemaOrgEvent']
+  SchemaOrgFoodEstablishment: typeof import("@unhead/schema-org/vue")['SchemaOrgFoodEstablishment']
+  SchemaOrgHowTo: typeof import("@unhead/schema-org/vue")['SchemaOrgHowTo']
+  SchemaOrgImage: typeof import("@unhead/schema-org/vue")['SchemaOrgImage']
+  SchemaOrgJobPosting: typeof import("@unhead/schema-org/vue")['SchemaOrgJobPosting']
+  SchemaOrgLocalBusiness: typeof import("@unhead/schema-org/vue")['SchemaOrgLocalBusiness']
+  SchemaOrgOrganization: typeof import("@unhead/schema-org/vue")['SchemaOrgOrganization']
+  SchemaOrgPerson: typeof import("@unhead/schema-org/vue")['SchemaOrgPerson']
+  SchemaOrgProduct: typeof import("@unhead/schema-org/vue")['SchemaOrgProduct']
+  SchemaOrgQuestion: typeof import("@unhead/schema-org/vue")['SchemaOrgQuestion']
+  SchemaOrgRecipe: typeof import("@unhead/schema-org/vue")['SchemaOrgRecipe']
+  SchemaOrgReview: typeof import("@unhead/schema-org/vue")['SchemaOrgReview']
+  SchemaOrgVideo: typeof import("@unhead/schema-org/vue")['SchemaOrgVideo']
+  SchemaOrgWebPage: typeof import("@unhead/schema-org/vue")['SchemaOrgWebPage']
+  SchemaOrgWebSite: typeof import("@unhead/schema-org/vue")['SchemaOrgWebSite']
+  SchemaOrgMovie: typeof import("@unhead/schema-org/vue")['SchemaOrgMovie']
+  SchemaOrgCourse: typeof import("@unhead/schema-org/vue")['SchemaOrgCourse']
+  SchemaOrgItemList: typeof import("@unhead/schema-org/vue")['SchemaOrgItemList']
+  SchemaOrgBook: typeof import("@unhead/schema-org/vue")['SchemaOrgBook']
+  SchemaOrgSoftwareApp: typeof import("@unhead/schema-org/vue")['SchemaOrgSoftwareApp']
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  LazyAlertsOfflineAlert: LazyComponent<typeof import("../../app/components/alerts/OfflineAlert.vue")['default']>
+  LazyBlocksGlobalAlert: LazyComponent<typeof import("../../app/components/blocks/GlobalAlert.vue")['default']>
   LazyBlocksLogo: LazyComponent<typeof import("../../app/components/blocks/logo.vue")['default']>
+  LazyIndicatorsConnectionStatus: LazyComponent<typeof import("../../app/components/indicators/ConnectionStatus.vue")['default']>
   LazyMenusFooter: LazyComponent<typeof import("../../app/components/menus/Footer.vue")['default']>
   LazyMenusHeader: LazyComponent<typeof import("../../app/components/menus/Header.vue")['default']>
   LazyMenusAccountMenu: LazyComponent<typeof import("../../app/components/menus/accountMenu.vue")['default']>
   LazyMenusEcosystemmenu: LazyComponent<typeof import("../../app/components/menus/ecosystemmenu.vue")['default']>
-  LazyMenusLowernav: LazyComponent<typeof import("../../app/components/menus/lowernav.vue")['default']>
   LazyMenusMobilesearch: LazyComponent<typeof import("../../app/components/menus/mobilesearch.vue")['default']>
   LazyMenusSidebarnav: LazyComponent<typeof import("../../app/components/menus/sidebarnav.vue")['default']>
   LazyMenusTopmenu: LazyComponent<typeof import("../../app/components/menus/topmenu.vue")['default']>
-  LazySearchFilters: LazyComponent<typeof import("../../app/components/search/filters.vue")['default']>
+  LazySearchSkeleton: LazyComponent<typeof import("../../app/components/search/SearchSkeleton.vue")['default']>
+  LazySearchWrapper: LazyComponent<typeof import("../../app/components/search/SearchWrapper.vue")['default']>
+  LazySearchFilters: LazyComponent<typeof import("../../app/components/search/filters/filters.vue")['default']>
   LazySearch: LazyComponent<typeof import("../../app/components/search/search.vue")['default']>
+  LazyBoundariesErrorBoundary: LazyComponent<typeof import("../../../../../layers/shared/app/components/boundaries/ErrorBoundary.vue")['default']>
+  LazyDropdownsCssOnlyDropdown: LazyComponent<typeof import("../../../../../layers/shared/app/components/dropdowns/CssOnlyDropdown.vue")['default']>
+  LazyGallery: LazyComponent<typeof import("../../../../../layers/shared/app/components/gallery/Gallery.vue")['default']>
+  LazyHeading: LazyComponent<typeof import("../../../../../layers/shared/app/components/heading/Heading.vue")['default']>
+  LazyHeadingTypes: LazyComponent<typeof import("../../../../../layers/shared/app/components/heading/types")['default']>
+  LazyMediaAudioGallery: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/audioGallery.vue")['default']>
+  LazyMediaDragDropUpload: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/dragDropUpload.vue")['default']>
+  LazyMediaFullscreenMediaModal: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/fullscreenMediaModal.vue")['default']>
+  LazyMediaImageCard: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/imageCard.vue")['default']>
+  LazyMediaImageGallery: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/imageGallery.vue")['default']>
+  LazyMediaCard: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaCard.vue")['default']>
+  LazyMediaCarousel: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaCarousel.vue")['default']>
+  LazyMediaFolderSidebar: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaFolderSidebar.vue")['default']>
+  LazyMediaPlayer: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaPlayer.vue")['default']>
+  LazyMediaSearchBar: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/mediaSearchBar.vue")['default']>
+  LazyMediaVideoGallery: LazyComponent<typeof import("../../../../../layers/shared/app/components/media/videoGallery.vue")['default']>
+  LazyMenusLayoutNotifications: LazyComponent<typeof import("../../../../../layers/shared/app/components/menus/LayoutNotifications.vue")['default']>
+  LazyMenusHellobar: LazyComponent<typeof import("../../../../../layers/shared/app/components/menus/hellobar.vue")['default']>
+  LazyNewsletterBox: LazyComponent<typeof import("../../../../../layers/shared/app/components/newsletterBox.vue")['default']>
+  LazyUiFooter: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Footer.vue")['default']>
+  LazyUiMButton: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/MButton.vue")['default']>
+  LazyUiMotionable: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/Motionable.vue")['default']>
+  LazyUiNavbarBottom: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/NavbarBottom.vue")['default']>
+  LazyUiNavbarTop: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/NavbarTop.vue")['default']>
+  LazyUiPageBuilder: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/PageBuilder.vue")['default']>
+  LazyUiRadialProgress: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/RadialProgress.vue")['default']>
+  LazyUiScrollTop: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/ScrollTop.vue")['default']>
+  LazyUiFormsBooleanInput: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/BooleanInput.vue")['default']>
+  LazyUiFormsContentFormElement: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/ContentFormElement.vue")['default']>
+  LazyUiFormsDateTime: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DateTime.vue")['default']>
+  LazyUiFormsDirectusFormElement: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DirectusFormElement.vue")['default']>
+  LazyUiFormsDynamicTableElement: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/DynamicTableElement.vue")['default']>
+  LazyUiFormsFileInput: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/FileInput.vue")['default']>
+  LazyUiFormsFormField: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/FormField.vue")['default']>
+  LazyUiFormsRelationSelect: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/RelationSelect.vue")['default']>
+  LazyUiFormsRepeaterInput: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/RepeaterInput.vue")['default']>
+  LazyUiFormsSelectInput: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/SelectInput.vue")['default']>
+  LazyUiFormsTextArea: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TextArea.vue")['default']>
+  LazyUiFormsTextInput: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TextInput.vue")['default']>
+  LazyUiFormsTiptapEditor: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/TiptapEditor.vue")['default']>
+  "LazyUiForms[collection]": LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/forms/[collection].vue")['default']>
+  LazyUiStudio: LazyComponent<typeof import("../../../../../layers/shared/app/components/ui/studio/index.vue")['default']>
+  LazyAuthProfileEditor: LazyComponent<typeof import("../../../../../layers/auth/app/components/AuthProfileEditor.vue")['default']>
+  LazySSOProvisioningManager: LazyComponent<typeof import("../../../../../layers/auth/app/components/SSOProvisioningManager.vue")['default']>
+  LazyBlocksLogoutButton: LazyComponent<typeof import("../../../../../layers/auth/app/components/blocks/logoutButton.vue")['default']>
+  LazyMenusMyaccountmenu: LazyComponent<typeof import("../../../../../layers/auth/app/components/menus/myaccountmenu.vue")['default']>
+  LazyMenusSidebartop: LazyComponent<typeof import("../../../../../layers/auth/app/components/menus/sidebartop.vue")['default']>
   LazyNuxtWelcome: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
   LazyNuxtLayout: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
   LazyNuxtErrorBoundary: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-error-boundary.vue")['default']>
@@ -195,18 +324,12 @@ interface _GlobalComponents {
   LazyNuxtLoadingIndicator: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-loading-indicator")['default']>
   LazyNuxtTime: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-time.vue")['default']>
   LazyNuxtRouteAnnouncer: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-route-announcer")['default']>
-  LazyNuxtImg: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtImg']>
-  LazyNuxtPicture: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-stubs")['NuxtPicture']>
-  LazyNuxtLinkLocale: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
-  LazySwitchLocalePathLink: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
-  LazyVitePwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
-  LazyNuxtPwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
-  LazyNuxtPwaAssets: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']>
-  LazyPwaAppleImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleImage")['default']>
-  LazyPwaAppleSplashScreenImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleSplashScreenImage")['default']>
-  LazyPwaFaviconImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']>
-  LazyPwaMaskableImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']>
-  LazyPwaTransparentImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']>
+  LazyNuxtAnnouncer: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-announcer")['default']>
+  LazyNuxtImg: LazyComponent<typeof import("../../../../../node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue")['default']>
+  LazyNuxtPicture: LazyComponent<typeof import("../../../../../node_modules/@nuxt/image/dist/runtime/components/NuxtPicture.vue")['default']>
+  LazyTiptapEditorContent: LazyComponent<typeof import("@tiptap/vue-3")['EditorContent']>
+  LazyTiptapFloatingMenu: LazyComponent<typeof import("@tiptap/vue-3/menus")['FloatingMenu']>
+  LazyTiptapBubbleMenu: LazyComponent<typeof import("@tiptap/vue-3/menus")['BubbleMenu']>
   LazySfAccordionItem: LazyComponent<typeof import("@storefront-ui/vue")['SfAccordionItem']>
   LazySfBadge: LazyComponent<typeof import("@storefront-ui/vue")['SfBadge']>
   LazySfButton: LazyComponent<typeof import("@storefront-ui/vue")['SfButton']>
@@ -323,6 +446,16 @@ interface _GlobalComponents {
   LazySfTextarea: LazyComponent<typeof import("@storefront-ui/vue")['SfTextarea']>
   LazySfThumbnail: LazyComponent<typeof import("@storefront-ui/vue")['SfThumbnail']>
   LazySfTooltip: LazyComponent<typeof import("@storefront-ui/vue")['SfTooltip']>
+  LazyNuxtLinkLocale: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/NuxtLinkLocale")['default']>
+  LazySwitchLocalePathLink: LazyComponent<typeof import("../../node_modules/@nuxtjs/i18n/dist/runtime/components/SwitchLocalePathLink")['default']>
+  LazyVitePwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
+  LazyNuxtPwaManifest: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/VitePwaManifest")['default']>
+  LazyNuxtPwaAssets: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/NuxtPwaAssets")['default']>
+  LazyPwaAppleImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleImage")['default']>
+  LazyPwaAppleSplashScreenImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaAppleSplashScreenImage")['default']>
+  LazyPwaFaviconImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaFaviconImage")['default']>
+  LazyPwaMaskableImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaMaskableImage")['default']>
+  LazyPwaTransparentImage: LazyComponent<typeof import("../../node_modules/@vite-pwa/nuxt/dist/runtime/components/nuxt4/PwaTransparentImage")['default']>
   LazyNuxtPage: LazyComponent<typeof import("../../node_modules/nuxt/dist/pages/runtime/page")['default']>
   LazyNoScript: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['NoScript']>
   LazyLink: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Link']>
@@ -333,6 +466,29 @@ interface _GlobalComponents {
   LazyHead: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Head']>
   LazyHtml: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Html']>
   LazyBody: LazyComponent<typeof import("../../node_modules/nuxt/dist/head/runtime/components")['Body']>
+  LazySchemaOrgArticle: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgArticle']>
+  LazySchemaOrgBreadcrumb: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgBreadcrumb']>
+  LazySchemaOrgComment: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgComment']>
+  LazySchemaOrgEvent: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgEvent']>
+  LazySchemaOrgFoodEstablishment: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgFoodEstablishment']>
+  LazySchemaOrgHowTo: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgHowTo']>
+  LazySchemaOrgImage: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgImage']>
+  LazySchemaOrgJobPosting: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgJobPosting']>
+  LazySchemaOrgLocalBusiness: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgLocalBusiness']>
+  LazySchemaOrgOrganization: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgOrganization']>
+  LazySchemaOrgPerson: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgPerson']>
+  LazySchemaOrgProduct: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgProduct']>
+  LazySchemaOrgQuestion: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgQuestion']>
+  LazySchemaOrgRecipe: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgRecipe']>
+  LazySchemaOrgReview: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgReview']>
+  LazySchemaOrgVideo: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgVideo']>
+  LazySchemaOrgWebPage: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgWebPage']>
+  LazySchemaOrgWebSite: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgWebSite']>
+  LazySchemaOrgMovie: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgMovie']>
+  LazySchemaOrgCourse: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgCourse']>
+  LazySchemaOrgItemList: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgItemList']>
+  LazySchemaOrgBook: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgBook']>
+  LazySchemaOrgSoftwareApp: LazyComponent<typeof import("@unhead/schema-org/vue")['SchemaOrgSoftwareApp']>
   LazyNuxtIsland: LazyComponent<typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']>
 }
 

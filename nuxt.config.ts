@@ -1,8 +1,19 @@
 import process from 'node:process'
+import {
+  useLayers
+} from 'nuxt-layers-utils'
 
 const sw = process.env.SW === 'true'
 
+const layers = useLayers(__dirname, {
+  shared: '../../../layers/shared',
+  auth: '../../../layers/auth',
+})
+
 export default defineNuxtConfig({
+  extends: layers.extends(),
+  alias: layers.alias('#'),
+
   app: {
     baseURL: '/',
     head: {
@@ -13,10 +24,10 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      titleTemplate: `%s - ${process.env.NUXT_PUBLIC_SITE_NAME || 'Meeovi Starter Template'}`,
+      titleTemplate: `%s - ${process.env.NUXT_PUBLIC_SITE_NAME || 'M Framework Starter Template'}`,
       meta: [{
           name: 'description',
-          content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'Meeovi Starter Template'}`
+          content: `${process.env.NUXT_PUBLIC_SITE_DESCRIPTION || 'M Framework Starter Template'}`
         },
         {
           name: 'viewport',
@@ -36,7 +47,7 @@ export default defineNuxtConfig({
   },
 
   appConfig: {
-    titleSuffix: `${process.env.NUXT_PUBLIC_SITE_NAME || ' - Meeovi Starter Template'}`
+    titleSuffix: `${process.env.NUXT_PUBLIC_SITE_NAME || ' - M Framework Starter Template'}`
   },
 
   css: [
@@ -46,9 +57,11 @@ export default defineNuxtConfig({
     'assets/bootstrap/css/bootstrap-reboot.min.css',
     'assets/theme/css/style.css',
     'assets/mobirise/css/mbr-additional.css',
+    'assets/styles/app.css',
     'assets/styles/main.css',
     'assets/styles/mobile.css',
     'assets/styles/styles.css',
+    'assets/styles/header-stability.css',
   ],
 
   modules: [
@@ -99,8 +112,8 @@ export default defineNuxtConfig({
     filename: sw ? 'sw.ts' : undefined,
     registerType: 'autoUpdate',
     manifest: {
-      name: process.env.NUXT_PUBLIC_SITE_NAME || 'Meeovi Starter Template',
-      short_name: process.env.NUXT_PUBLIC_SITE_NAME || 'Meeovi Starter Template',
+      name: process.env.NUXT_PUBLIC_SITE_NAME || 'M Framework Starter Template',
+      short_name: process.env.NUXT_PUBLIC_SITE_NAME || 'M Framework Starter Template',
       theme_color: '#ffffff',
       icons: [{
           src: 'pwa-192x192.png',
@@ -155,7 +168,7 @@ export default defineNuxtConfig({
         baseUrl: process.env.MAGENTO_BASE_URL || '',
         accessToken: process.env.MAGENTO_ACCESS_TOKEN || ''
       },
-      appName: process.env.APP_NAME || 'Meeovi Starter',
+      appName: process.env.APP_NAME || 'M Framework Starter',
       // expose a public search index name for client-side components (optional)
       search: {
         index: process.env.NUXT_PUBLIC_SEARCH_INDEX || process.env.NUXT_PUBLIC_OPENSEARCH_INDEX || process.env.NUXT_PUBLIC_SEARCHKIT_INDEX || process.env.OPENSEARCH_INDEX || process.env.SEARCH_INDEX || ''
@@ -170,8 +183,17 @@ export default defineNuxtConfig({
   },
 
   vite: {
-    define: {
-      'process.env.DEBUG': false
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'workbox-window',
+        'grapesjs',
+        '@better-auth/stripe/client',
+        'better-auth/client/plugins',
+        'better-auth/vue',
+        'better-auth/client',
+      ]
     }
   },
 

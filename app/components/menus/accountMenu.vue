@@ -28,6 +28,14 @@
     const {
         data: navAccount
     } = await useAsyncData('navAccount', () => {
-        return $directus.request($readItem('navigation', '2'))
+        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+            return {
+                menus: [],
+            }
+        }
+
+        return $directus.request($readItem('navigation', '2')).catch(() => ({
+            menus: [],
+        }))
     })
 </script>

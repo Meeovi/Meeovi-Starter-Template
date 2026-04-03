@@ -23,6 +23,10 @@
   const {
     data: topmenu
   } = await useAsyncData('topmenu', () => {
+    if (!$directus || typeof $directus.request !== 'function' || typeof $readItems !== 'function') {
+      return []
+    }
+
     return $directus.request(
       $readItems('about_departments', {
         fields: ['*', 'image.*', 'pages.pages_id.*'],
@@ -32,6 +36,6 @@
           }
         }
       })
-    )
+    ).catch(() => [])
   })
 </script>

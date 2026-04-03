@@ -22,9 +22,6 @@
       "vue-router/auto-routes": [
         "../node_modules/vue-router/vue-router-auto-routes"
       ],
-      "unplugin-vue-router/client": [
-        "../node_modules/unplugin-vue-router/client"
-      ],
       "@nuxt/schema": [
         "../node_modules/@nuxt/schema"
       ],
@@ -33,6 +30,30 @@
       ],
       "vite/client": [
         "../node_modules/vite/client"
+      ],
+      "@nuxtjs/robots": [
+        "../../../../node_modules/@nuxtjs/robots"
+      ],
+      "@nuxtjs/sitemap": [
+        "../../../../node_modules/@nuxtjs/sitemap"
+      ],
+      "nuxt-link-checker": [
+        "../../../../node_modules/nuxt-link-checker"
+      ],
+      "nuxt-og-image": [
+        "../../../../node_modules/nuxt-og-image"
+      ],
+      "nuxt-schema-org": [
+        "../../../../node_modules/nuxt-schema-org"
+      ],
+      "nuxt-seo-utils": [
+        "../../../../node_modules/nuxt-seo-utils"
+      ],
+      "nuxt-site-config": [
+        "../../../../node_modules/nuxt-site-config"
+      ],
+      "@tiptap/vue-3": [
+        "../../../../node_modules/@tiptap/vue-3"
       ],
       "vue-i18n": [
         "../node_modules/vue-i18n/dist/vue-i18n",
@@ -111,16 +132,28 @@
         "../*"
       ],
       "#shared": [
-        "../shared"
+        "../../../../layers/shared"
       ],
       "#shared/*": [
-        "../shared/*"
+        "../../../../layers/shared/*"
       ],
       "#server": [
         "../server"
       ],
       "#server/*": [
         "../server/*"
+      ],
+      "#auth": [
+        "../../../../layers/auth"
+      ],
+      "#auth/*": [
+        "../../../../layers/auth/*"
+      ],
+      "#layers/shared": [
+        "../../../../layers/shared"
+      ],
+      "#layers/shared/*": [
+        "../../../../layers/shared/*"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -151,6 +184,51 @@
       ],
       "#imports": [
         "./imports"
+      ],
+      "#site-config": [
+        "../../../../node_modules/nuxt-site-config/dist/runtime"
+      ],
+      "#site-config/*": [
+        "../../../../node_modules/nuxt-site-config/dist/runtime/*"
+      ],
+      "#robots": [
+        "../../../../node_modules/@nuxtjs/robots/dist/runtime"
+      ],
+      "#robots/*": [
+        "../../../../node_modules/@nuxtjs/robots/dist/runtime/*"
+      ],
+      "#sitemap": [
+        "../../../../node_modules/@nuxtjs/sitemap/dist/runtime"
+      ],
+      "#sitemap/*": [
+        "../../../../node_modules/@nuxtjs/sitemap/dist/runtime/*"
+      ],
+      "#link-checker": [
+        "../../../../node_modules/nuxt-link-checker/dist/runtime"
+      ],
+      "#link-checker/*": [
+        "../../../../node_modules/nuxt-link-checker/dist/runtime/*"
+      ],
+      "#og-image": [
+        "../../../../node_modules/nuxt-og-image/dist/shared/runtime"
+      ],
+      "#og-image-cache": [
+        "../../../../node_modules/nuxt-og-image/dist/runtime/server/og-image/cache/lru"
+      ],
+      "#og-image/emoji-transform": [
+        "../../../../node_modules/nuxt-og-image/dist/runtime/server/og-image/core/transforms/emojis/fetch"
+      ],
+      "#schema-org": [
+        "../../../../node_modules/nuxt-schema-org/dist/runtime"
+      ],
+      "#schema-org/*": [
+        "../../../../node_modules/nuxt-schema-org/dist/runtime/*"
+      ],
+      "#seo-utils": [
+        "../../../../node_modules/nuxt-seo-utils/dist/runtime"
+      ],
+      "#seo-utils/*": [
+        "../../../../node_modules/nuxt-seo-utils/dist/runtime/*"
       ],
       "#tailwindcss": [
         "./tailwind"
@@ -195,7 +273,17 @@
     "../modules/*/shared/**/*",
     "../layers/*/shared/**/*",
     "../*.d.ts",
-    "../layers/*/*.d.ts"
+    "../layers/*/*.d.ts",
+    "../../../../layers/shared/shared/**/*",
+    "../../../../layers/shared/modules/*/shared/**/*",
+    "../../../../layers/shared/layers/*/shared/**/*",
+    "../../../../layers/shared/*.d.ts",
+    "../../../../layers/shared/layers/*/*.d.ts",
+    "../../../../layers/auth/shared/**/*",
+    "../../../../layers/auth/modules/*/shared/**/*",
+    "../../../../layers/auth/layers/*/shared/**/*",
+    "../../../../layers/auth/*.d.ts",
+    "../../../../layers/auth/layers/*/*.d.ts"
   ],
   "exclude": []
 }

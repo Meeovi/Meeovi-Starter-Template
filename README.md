@@ -1,140 +1,45 @@
-# Meeovi Starter Template (Nuxt 4)
+# M Framework Starter Template (Nuxt 4)
 
-A production-ready, backend-agnostic starter template for building Meeovi-powered applications using Nuxt 4.
+A production-ready, backend-agnostic starter template with built-in authentication, authorization, and search.
 
-## Features
+## What is Included
 
-- Plug-and-play Meeovi layers
-- Adapter-driven authentication and search
-- Dynamic backend adapters (Directus, Magento, mock, custom)
-- Lightweight UI and minimal coupling to backend implementations
+- Authentication via GraphQL mutations (`login`, `signup`, `logout`) and session query (`me`)
+- Authorization helpers for role-based route protection (`admin` middleware + `useAuthorization`)
+- Search composable and UI connected to GraphQL `search` query
+- Unified GraphQL gateway endpoint through `@mframework/api` + `@mframework/api-client`
+- Nuxt SEO is a collection of modules that handle all of the technical aspects in growing sites traffic organically.
 
-## Quickstart
+## Key Paths
 
-1. Clone the repository and open the starter folder:
+- `app/composables/useAuth.ts`: auth/session lifecycle
+- `app/composables/useCurrentUser.ts`: current user state from `me`
+- `app/composables/useAuthorization.ts`: role checks (`hasRole`, `requireRole`)
+- `app/composables/useSearch.ts`: typed search state/query flow
+- `app/middleware/auth.global.ts`: auth route guard
+- `app/middleware/admin.ts`: role-based admin guard
+- `server/utils/auth.ts`: server-side `requireAuth` / `requireRole` helpers
 
-```bash
-git clone https://github.com/meeovi/starter-template my-app
-cd my-app
-```
+## Environment
 
-2. Install dependencies:
+Copy `.env.example` and set at minimum:
+
+- `MAPI_ENDPOINT`
+- `NUXT_PUBLIC_SEARCH_INDEX` (optional default index)
+
+## Run
 
 ```bash
 npm install
-```
-
-3. Install a backend adapter (example: Directus):
-
-```bash
-npm install @mframework/adapter-directus
-```
-
-4. Configure environment variables
-
-Copy the example environment file and set provider/runtime values:
-
-```bash
-cp .env.example .env
-```
-
-Common env vars
-
-- `MEEOVI_PROVIDER` — adapter identifier (e.g. `directus`, `mock`)
-- `DIRECTUS_URL` — Directus base URL (when using Directus)
-- `DIRECTUS_STATIC_TOKEN` — optional static token for server-side requests
-
-5. Run in development:
-
-```bash
 npm run dev
 ```
 
-Build for production:
+## GraphQL Contract (Expected)
 
-```bash
-npm run build
-npm run preview
-```
+- `query Me { me { id name email role } }`
+- `mutation Login($email: String!, $password: String!)`
+- `mutation Signup($email: String!, $password: String!, $name: String)`
+- `mutation Logout`
+- `query Search($q: String!, $page: Int)`
 
-> Note: If you enable prerendering, ensure the production runtime config (or env vars) give the app access to any backend endpoints it prerenders, or use the mock adapter to avoid prerender/network errors.
-
-## Project layout (high level)
-
-- `app/` — Nuxt app code
-- `app/plugins/` — adapter + Directus initializers and client plugins
-- `layers/` — reusable Meeovi layers (auth, search, shared, etc.)
-- `packages/` — adapters and shared packages
-
-## Using adapters
-
-The runtime adapter is available via the Nuxt app instance and used by pages and composables:
-
-```ts
-const { $meeoviAdapter } = useNuxtApp()
-await $meeoviAdapter.auth.login({ email, password })
-const results = await $meeoviAdapter.search.query('query')
-```
-
-There are also layer-provided composables such as `useAuth()` and `useSearch()` for convenience.
-
-## Directus specifics
-
-- The starter includes plugins that initialize and inject Directus helpers (when using the Directus SDK or adapter):
-  - `nuxtApp.$directus` — Directus client + helpers
-  - `nuxtApp.$readItems`, `nuxtApp.$readItem`, etc. — helper builders for Directus requests
-
-- During prerender/SSR the app must have access to the Directus endpoint (or use a mock adapter) to avoid runtime prerender errors (e.g. `$readItems is not a function` or network failures).
-
-## Mock adapter (local development)
-
-To develop without an external backend install the mock adapter:
-
-```bash
-npm install @mframework/adapter-mock
-export MEEOVI_PROVIDER=mock
-```
-
-## TypeScript typings (optional)
-
-Add a declaration to expose typed access to the runtime adapter:
-
-```ts
-// types/meeovi.d.ts
-import type { MeeoviAdapter } from '@/lib/sdk'
-
-declare module '#app' {
-  interface NuxtApp {
-    $meeoviAdapter: MeeoviAdapter
-  }
-}
-
-declare module 'vue' {
-  interface ComponentCustomProperties {
-    $meeoviAdapter: MeeoviAdapter
-  }
-}
-
-export {}
-```
-
-## Extending the template
-
-- Add or remove layers via `nuxt.config.ts` `extends`.
-- Implement or publish adapters under `packages/adapters` and install them into the starter as npm packages (or via workspace references).
-
-## Contributing
-
-Contributions are welcome. Please open issues and PRs in the main repository and follow the repo linting and commit conventions.
-
-## License
-
-MIT
-```ts
-
-// src/plugins/adapter.client.ts
-
-import { defineNuxtPlugin, useRuntimeConfig } from '#app'
-
-import { registerAdapter } from '@/lib/sdk'
-
+Keep backend implementations behind the GraphQL API so this starter remains flexible across providers.

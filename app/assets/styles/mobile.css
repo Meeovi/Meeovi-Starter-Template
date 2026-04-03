@@ -1,4 +1,9 @@
 /*************** Main Mobile CSS **************/
+@media (max-width: 600px) {
+  .search-entry {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 590px) {
     /* Increase specificity to avoid being overridden by other styles */
@@ -12,4 +17,79 @@
         top: -15px;
         position: relative;
     }
+}
+
+@media (max-width: 1024px) {
+  .results-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-toggle {
+    display: inline-flex;
+  }
+
+  .filters-sidebar {
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 340px;
+    position: fixed;
+    top: 0;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+    width: 85vw;
+    z-index: 20;
+  }
+
+  .filters-open .filters-sidebar {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .resultsPage {
+    padding: 0.6rem;
+  }
+
+  .toolbar-top {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .toolbar-sort {
+    min-width: 100%;
+  }
+
+  .toolbar-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 980px) {
+  .query-filters {
+    border-radius: 8px;
+    margin-bottom: 0.85rem;
+    padding: 0.85rem;
+  }
+
+  .query-filters__actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .query-filters {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .query-filters__option {
+    gap: 0.45rem;
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+  }
+
+  .query-filters__option span {
+    font-size: 0.88rem;
+  }
 }

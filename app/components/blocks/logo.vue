@@ -33,8 +33,18 @@
     const {
         data: blocksSiteoverview
     } = await useAsyncData('blocksSiteoverview', () => {
+        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+            return {
+                name: 'Meeovi',
+                media: [],
+            }
+        }
+
         return $directus.request($readItem('page_blocks', '19', {
             fields: ['*', 'media.*.*'],
+        })).catch(() => ({
+            name: 'Meeovi',
+            media: [],
         }))
     })
 </script>

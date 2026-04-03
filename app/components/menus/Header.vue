@@ -1,103 +1,65 @@
 <template>
     <div>
         <v-app-bar id="topnav" density="compact">
-            <template v-slot:prepend>
+            <template #prepend>
                 <v-btn variant="flat" @click="$emit('toggleDrawer')">
-                    <v-icon start icon="fas fa-bars"></v-icon> Menu
+                    <v-icon start icon="fas fa-bars" />
+                    Menu
                 </v-btn>
             </template>
 
-            <logo />
-            <v-spacer></v-spacer>
+            <div class="header-brand px-4 text-high-emphasis">
+                <Logo />
+            </div>
 
-            <mobilesearch />
+            <v-spacer />
 
-            <ClientOnly>
-                <Search />
-            </ClientOnly>
+            <mobilesearch class="mobile-search" />
 
-            <v-spacer></v-spacer>
+            <div class="desktop-search">
+                <SearchWrapper />
+            </div>
 
-            <div class="d-flex align-center flex-column flex-sm-row fill-height">
-                <v-col cols="3">
-                    <v-btn @click="toggleDark()" variant="text">
-                        <v-icon>
-                            {{ isDark ? 'fas:fa fa-moon' : 'fas:fa fa-sun' }}
-                        </v-icon>
-                    </v-btn>
-                </v-col>
-                <!--<v-col>
-                    <LayoutNotifications />
-                </v-col>-->
+            <v-spacer />
 
-                <v-col>
-                    <ecosystemmenu />
-                </v-col>
-                <v-col>
-                    <accountMenu />
-                </v-col>
+            <div class="d-flex align-center ga-2 pr-2">
+                <v-btn title="Health" icon="fas fa-heartbeat" href="/api/health" variant="text" />
+                <v-btn @click="toggleDark" variant="text">
+                    <v-icon>
+                        {{ isDark ? 'fas fa-moon' : 'fas fa-sun' }}
+                    </v-icon>
+                </v-btn>
+
+                <ecosystemmenu />
+
+                <accountMenu />
             </div>
         </v-app-bar>
     </div>
 </template>
 
 <script setup>
-    import {
-        ref,
-        onMounted,
-        watch,
-        computed
-    } from 'vue'
-    import {
-        useTheme
-    } from 'vuetify'
-    import logo from '../blocks/logo.vue'
-    import ecosystemmenu from './ecosystemmenu.vue'
-    import Search from '@mframework/layer-search/app/components/search.vue'
-    //import LayoutNotifications from './Notifications.vue'
-    import mobilesearch from './mobilesearch.vue'
-    import accountMenu from './accountMenu.vue'
+import { computed } from 'vue'
+import { useTheme } from 'vuetify'
+import SearchWrapper from '../search/SearchWrapper.vue'
+import Logo from '../blocks/logo.vue'
+import mobilesearch from './mobilesearch.vue'
+import ecosystemmenu from './ecosystemmenu.vue'
+import accountMenu from './accountMenu.vue'
 
-    defineProps({
-        drawer: {
-            type: Boolean,
-            default: false
-        }
-    })
+defineProps({
+    drawer: {
+        type: Boolean,
+        default: false,
+    },
+})
 
-    defineEmits(['toggleDrawer'])
+defineEmits(['toggleDrawer'])
 
-    const theme = useTheme()
-    const location = ref('bottom')
+const theme = useTheme()
+const isDark = computed(() => theme.global.name.value === 'dark')
 
-    // Local storage key
-    const STORAGE_KEY = 'elite-theme'
-
-    // isDark reflects the current theme name
-    const isDark = computed(() => theme.global.name.value === 'dark')
-
-    // Determine initial mode
-    onMounted(() => {
-        const stored = localStorage.getItem(STORAGE_KEY)
-
-        if (stored) {
-            // Use saved preference
-            theme.global.name.value = stored
-        } else {
-            // No preference — follow system
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            theme.global.name.value = prefersDark ? 'dark' : 'light'
-        }
-    })
-
-    // Toggle between themes
-    const toggleDark = () => { theme.global.name.value = isDark.value ? 'light' : 'dark' }
-
-    // Save preference whenever theme name changes
-    watch(
-        () => theme.global.name.value,
-        (val) => {
-            if (val) localStorage.setItem(STORAGE_KEY, val)
-        }
-    )
+const toggleDark = () => {
+    theme.global.name.value = isDark.value ? 'light' : 'dark'
+}
 </script>

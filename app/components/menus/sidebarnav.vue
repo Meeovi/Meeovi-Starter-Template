@@ -1,22 +1,9 @@
 <template>
-    <div>
-        <v-list v-for="item in navAccount?.menus" :key="item">
-            <v-list-item :title="item?.name" :value="item?.name" :prepend-icon="item?.icon" :href="item?.url">
-            </v-list-item>
-        </v-list>
+  <nav class="page" aria-label="Sidebar navigation">
+    <div class="results-toolbar">
+      <NuxtLink to="/" class="button-secondary">Overview</NuxtLink>
+      <NuxtLink to="/results" class="button-secondary">Search Demo</NuxtLink>
+      <a href="/api/health" class="button-secondary">Health API</a>
     </div>
+  </nav>
 </template>
-
-<script setup>
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
-    const route = useRoute()
-
-    const {
-        data: navAccount
-    } = await useAsyncData('navAccount', () => {
-        return $directus.request($readItem('navigation', '2'))
-    })
-</script>

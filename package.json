@@ -1,7 +1,7 @@
 {
    "name": "starter-template",
    "type": "module",
-   "version": "1.0.0",
+   "version": "0.0.5",
    "description": "Official M Framework starter template.",
    "author": "M Framework Labs (https://framework.meeovi.com)",
    "homepage": "https://framework.meeovi.com",
@@ -27,20 +27,17 @@
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@mframework/adapter-opensearch": "file:../../../packages/adapters/opensearch",
-      "@mframework/api": "file:../../../packages/modules/api",
-      "@mframework/api-client": "file:../../../packages/modules/api-client",
-      "@mframework/localization": "file:../../../packages/modules/localization",
-      "@nuxt/ui": "^3.3.7",
       "@nuxtjs/i18n": "^10.2.3",
       "@vite-pwa/nuxt": "^1.1.1",
-      "nuxt": "^4.3.1",
-      "vuetify-nuxt-module": "^0.19.5"
+      "alternate-search": "file:../../../packages/modules/alternate-search",
+      "instantsearch.css": "^8.6.0",
+      "nuxt": "^4.4.2",
+      "playwright-core": "^1.59.1",
+      "typescript": "^5.9.3",
+      "vue-instantsearch": "^4.24.0"
    },
    "devDependencies": {
       "@storefront-ui/nuxt": "^3.3.0",
-      "dotenv": "^17.3.1",
-      "eslint-plugin-nuxt-layers": "^0.2.0",
-      "tsx": "^4.21.0"
+      "nuxt-layers-utils": "^0.3.1"
    }
 }

@@ -3,14 +3,101 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
-    '/api/graphql': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/graphql.post').default>>>>
+    '/api/health': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/health.get').default>>>>
+    }
+    '/api/search/:index': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/search/[index]').default>>>>
+    }
+    '/api/search/multi/:index': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/search/multi/[index]').default>>>>
+    }
+    '/api/notifications/:id/read': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/shared/server/api/notifications/[id]/read.post').default>>>>
+    }
+    '/api/notifications': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/shared/server/api/notifications/index.get').default>>>>
+    }
+    '/api/notifications/read-all': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/shared/server/api/notifications/read-all.post').default>>>>
+    }
+    '/api/notifications/stream': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/shared/server/api/notifications/stream.get').default>>>>
+    }
+    '/api/:endpoint': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/[endpoint]').default>>>>
+    }
+    '/api/:transport/route': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/[transport]/route').default>>>>
+    }
+    '/api/auth/**:all': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/auth/[...all]').default>>>>
+    }
+    '/api/auth/create-session': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/auth/create-session').default>>>>
+    }
+    '/api/auth/link-mastodon': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/auth/link-mastodon').default>>>>
+    }
+    '/api/auth/oauth-authorization-server/:issuer-path/route': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/auth/oauth-authorization-server/[issuer-path]/route').default>>>>
+    }
+    '/api/masto/**:all': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/masto/[...all]').default>>>>
+    }
+    '/api/migrate': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/migrate').default>>>>
+    }
+    '/api/profile/route': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../layers/auth/server/api/profile/route').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
+    }
+    '/__site-config__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-site-config/dist/runtime/server/routes/__site-config__/debug').default>>>>
+    }
+    '/robots.txt': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/robots-txt').default>>>>
+    }
+    '/__robots__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/__robots__/debug').default>>>>
+    }
+    '/__robots__/debug-path.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/robots/dist/runtime/server/routes/__robots__/debug-path').default>>>>
+    }
+    '/__sitemap__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/__sitemap__/debug').default>>>>
+    }
+    '/__sitemap__/style.xsl': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xsl').default>>>>
+    }
+    '/sitemap.xml': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/@nuxtjs/sitemap/dist/runtime/server/routes/sitemap.xml').default>>>>
+    }
+    '/__link-checker__/inspect': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-link-checker/dist/runtime/server/routes/__link-checker__/inspect').default>>>>
+    }
+    '/__link-checker__/links': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-link-checker/dist/runtime/server/routes/__link-checker__/links').default>>>>
+    }
+    '/__link-checker__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-link-checker/dist/runtime/server/routes/__link-checker__/debug').default>>>>
+    }
+    '/_og/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-og-image/dist/runtime/server/routes/debug.json').default>>>>
+    }
+    '/_og/d/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
+    '/_og/s/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-og-image/dist/runtime/server/routes/image').default>>>>
+    }
+    '/__schema-org__/debug.json': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../../../../node_modules/nuxt-schema-org/dist/runtime/server/routes/__schema-org__/debug').default>>>>
     }
     '/_i18n/:hash/:locale/messages.json': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxtjs/i18n/dist/runtime/server/routes/messages').default>>>>
