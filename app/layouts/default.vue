@@ -26,13 +26,11 @@
         </v-main>
       </v-app>
 
-      <GlobalAlert />
     </v-responsive>
   </div>
 </template>
 
 <script setup lang="ts">
-  import GlobalAlert from '../components/blocks/GlobalAlert.vue'
   import Footer from '../components/menus/Footer.vue'
   import sidebarnav from '../components/menus/sidebarnav.vue'
   import Header from '../components/menus/Header.vue'

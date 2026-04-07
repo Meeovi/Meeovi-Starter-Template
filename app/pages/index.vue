@@ -1,82 +1,85 @@
 <template>
-    <section class="panel hero">
-        <div>
-            <p class="eyebrow">Weekend launch demo</p>
-            <h1>Minimal search demo, ready to deploy.</h1>
-            <p class="hero-copy">
-                This starter-template now runs as a focused Nuxt app with app-based routes,
-                a clean layout, lightweight server endpoints, and a search experience that
-                works even when no external backend is configured.
-            </p>
+    <div>
+        <section class="header7 cid-t7VDHQ5IKP mbr-fullscreen" id="header7-0">
+            <div class="text-right container">
+                <div class="row justify-content-end">
+                    <div class="col-12 col-lg-5">
+                        <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>M Framework
+                                Starter</strong></h1>
 
-            <form class="search-form" @submit.prevent="submitSearch">
-                <input
-                    v-model="query"
-                    class="search-input"
-                    type="search"
-                    name="q"
-                    placeholder="Search products, articles, or demo content"
-                    autocomplete="off"
-                >
-
-                <select v-model="selectedIndex" class="search-select" name="index">
-                    <option v-for="indexName in indexes" :key="indexName" :value="indexName">
-                        {{ indexName }}
-                    </option>
-                </select>
-
-                <button class="button" type="submit">Search</button>
-            </form>
-        </div>
-
-        <div class="hero-meta">
-            <div class="status-pill">
-                <span>Health</span>
-                <span>{{ healthLabel }}</span>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Welcome to the M Framework Starter Template. This template is left to be simplistic and is
+                            ready for general use.</p>
+                        <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4"
+                                href="https://framework.meeovi.com/docs" target="_blank">Download M FrameworkCMS</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="status-grid">
-                <article class="status-card">
-                    <strong>Routes</strong>
-                    <p class="muted">App routes live under app/pages and render through a single default layout.</p>
-                </article>
-                <article class="status-card">
-                    <strong>API</strong>
-                    <p class="muted">Server endpoints are limited to health checks and search APIs under server/api.</p>
-                </article>
-                <article class="status-card">
-                    <strong>Search</strong>
-                    <p class="muted">If no backend env vars are set, the app seeds a small in-memory demo index automatically.</p>
-                </article>
+        <section class="features1 cid-t7VEe9Onzb" id="features1-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                            <strong>Features</strong>
+                        </h3>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card col-12 col-md-6 col-lg-3">
+                        <div class="card-wrapper">
+                            <div class="card-box align-center">
+                                <div class="iconfont-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-search mobi-mbri"
+                                        style="color: rgb(68, 121, 217); fill: rgb(68, 121, 217);"></span>
+                                </div>
+                                <h5 class="card-title mbr-fonts-style display-7"><strong>Mellisearch
+                                        Integration</strong></h5>
+                                <p class="card-text mbr-fonts-style display-7">This template is integrated with
+                                    Mellisearch for powerful search functionality. Just follow the <a
+                                        href="https://docs.meilisearch.com/learn/getting_started/quick_start.html#setup-and-installation"
+                                        class="text-primary" target="_blank">steps here</a> to get started with
+                                    Mellisearch.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-6 col-lg-3">
+                        <div class="card-wrapper">
+                            <div class="card-box align-center">
+                                <div class="iconfont-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-responsive-2 mobi-mbri"></span>
+                                </div>
+                                <h5 class="card-title mbr-fonts-style display-7"><strong>Mobile Friendly</strong></h5>
+                                <p class="card-text mbr-fonts-style display-7">All of our templates are responsive by
+                                    design to support display across various screens.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card col-12 col-md-6 col-lg-3">
+                        <div class="card-wrapper">
+                            <div class="card-box align-center">
+                                <div class="iconfont-wrapper">
+                                    <span class="mbr-iconfont mobi-mbri-website-theme-2 mobi-mbri"></span>
+                                </div>
+                                <h5 class="card-title mbr-fonts-style display-7"><strong>Vuetify Integrations</strong>
+                                </h5>
+                                <p class="card-text mbr-fonts-style display-7">Easy styling with powerful components
+                                    that are styled with <a href="https://vuetifyjs.com/en/" class="text-primary"
+                                        target="_blank">Vuetify</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
-<script setup lang="ts">
-const config = useRuntimeConfig()
-const indexes = computed(() => {
-    const value = config.public.alternateSearchIndexes
-    return Array.isArray(value) && value.length > 0 ? value : ['products']
-})
+<script setup>
 
-const route = useRoute()
-const query = ref(typeof route.query.q === 'string' ? route.query.q : '')
-const selectedIndex = ref(indexes.value[0] || 'products')
 
-const { data: health } = await useFetch<{ status: string }>('/api/health', {
-    default: () => ({ status: 'unknown' }),
-})
-
-const healthLabel = computed(() => health.value?.status || 'unknown')
-
-async function submitSearch() {
-    await navigateTo({
-        path: '/results',
-        query: {
-            ...(query.value.trim() ? { q: query.value.trim() } : {}),
-            index: selectedIndex.value,
-        },
-    })
-}
 </script>

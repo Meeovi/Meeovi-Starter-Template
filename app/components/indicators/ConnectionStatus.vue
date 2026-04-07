@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useNetworkStatus } from '#shared/app/composables/globals/useNetworkStatus'
+import { useNetworkStatus } from '#layers/shared/app/composables/globals/useNetworkStatus'
 
 const props = withDefaults(
   defineProps<{

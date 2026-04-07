@@ -15,10 +15,6 @@
     const {
         data: page
     } = await useAsyncData('page', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItems !== 'function') {
-            return null
-        }
-
         return $directus.request($readItems('pages', {
             filter: {
                 slug: {
@@ -27,7 +23,7 @@
             },
             fields: ['*'],
             limit: 1
-        })).then(response => response?.[0]).catch(() => null) // Get first item from response
+        })).then(response => response?.[0]) // Get first item from response
     })
      
     useHead({

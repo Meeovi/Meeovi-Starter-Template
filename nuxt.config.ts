@@ -1,9 +1,6 @@
-import process from 'node:process'
 import {
   useLayers
 } from 'nuxt-layers-utils'
-
-const sw = process.env.SW === 'true'
 
 const layers = useLayers(__dirname, {
   shared: '../../../layers/shared',
@@ -57,109 +54,14 @@ export default defineNuxtConfig({
     'assets/bootstrap/css/bootstrap-reboot.min.css',
     'assets/theme/css/style.css',
     'assets/mobirise/css/mbr-additional.css',
-    'assets/styles/app.css',
-    'assets/styles/main.css',
     'assets/styles/mobile.css',
     'assets/styles/styles.css',
-    'assets/styles/header-stability.css',
   ],
-
-  modules: [
-    'vuetify-nuxt-module',
-    '@nuxtjs/i18n',
-    '@vite-pwa/nuxt',
-    '@mframework/api-client/nuxt',
-    '@storefront-ui/nuxt'
-  ],
-
-  mApi: {
-    endpoint: '/api/graphql',
-  },
-
-  vuetify: {
-    vuetifyOptions: {
-      icons: {
-        defaultSet: 'fa',
-        sets: [{
-          name: 'fa',
-          cdn: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css'
-        }]
-      },
-      theme: {
-        defaultTheme: 'light',
-        themes: {
-          light: {},
-          dark: {}
-        }
-      }
-    }
-  },
-
-  i18n: {
-    locales: [{
-      code: 'en-US',
-      language: 'en-US',
-      name: 'English (US)',
-      dir: 'ltr',
-    }, ],
-    defaultLocale: 'en-US',
-    strategy: 'no_prefix',
-  },
-
-  pwa: {
-    strategies: sw ? 'injectManifest' : 'generateSW',
-    srcDir: sw ? 'service-worker' : undefined,
-    filename: sw ? 'sw.ts' : undefined,
-    registerType: 'autoUpdate',
-    manifest: {
-      name: process.env.NUXT_PUBLIC_SITE_NAME || 'M Framework Starter Template',
-      short_name: process.env.NUXT_PUBLIC_SITE_NAME || 'M Framework Starter Template',
-      theme_color: '#ffffff',
-      icons: [{
-          src: 'pwa-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },
-        {
-          src: 'pwa-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
-        {
-          src: 'pwa-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-          purpose: 'any maskable',
-        },
-      ],
-    },
-    workbox: {
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-    },
-    injectManifest: {
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-    },
-    client: {
-      installPrompt: true,
-      // you don't need to include this: only for testing purposes
-      // if enabling periodic sync for update use 1 hour or so (periodicSyncForUpdates: 3600)
-      periodicSyncForUpdates: 20,
-    },
-
-    devOptions: {
-      enabled: true,
-      suppressWarnings: true,
-      navigateFallback: '/',
-      navigateFallbackAllowlist: [/^\/$/],
-      type: 'module',
-    },
-  },
 
   runtimeConfig: {
     meeoviSecret: process.env.MEEOVI_SECRET,
     public: {
-      meeoviProvider: process.env.MEEOVI_PROVIDER || (process.env.OPENSEARCH_HOST ? 'opensearch' : 'directus'),
+      meeoviProvider: process.env.MEEOVI_PROVIDER || 'opensearch',
       directus: {
         url: process.env.DIRECTUS_URL || '',
         staticToken: process.env.DIRECTUS_STATIC_TOKEN || ''
@@ -168,38 +70,25 @@ export default defineNuxtConfig({
         baseUrl: process.env.MAGENTO_BASE_URL || '',
         accessToken: process.env.MAGENTO_ACCESS_TOKEN || ''
       },
-      appName: process.env.APP_NAME || 'M Framework Starter',
-      // expose a public search index name for client-side components (optional)
       search: {
         index: process.env.NUXT_PUBLIC_SEARCH_INDEX || process.env.NUXT_PUBLIC_OPENSEARCH_INDEX || process.env.NUXT_PUBLIC_SEARCHKIT_INDEX || process.env.OPENSEARCH_INDEX || process.env.SEARCH_INDEX || ''
       }
     }
   },
 
-  compatibilityDate: '2026-02-15',
-
-  build: {
-    transpile: ['vuetify', '@fortawesome/vue-fontawesome']
-  },
-
-  vite: {
-    optimizeDeps: {
-      include: [
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
-        'workbox-window',
-        'grapesjs',
-        '@better-auth/stripe/client',
-        'better-auth/client/plugins',
-        'better-auth/vue',
-        'better-auth/client',
-      ]
+  vuetify: {
+    vuetifyOptions: {
+      icons: {
+        defaultSet: 'fa',
+        sets: [
+          {
+            name: 'fa',
+            cdn: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css'
+          }
+        ]
+      }
     }
   },
 
-  nitro: {
-    experimental: {
-      wasm: true,
-    },
-  },
+  compatibilityDate: '2026-02-15'
 })

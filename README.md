@@ -25,7 +25,13 @@ A production-ready, backend-agnostic starter template with built-in authenticati
 Copy `.env.example` and set at minimum:
 
 - `MAPI_ENDPOINT`
-- `NUXT_PUBLIC_SEARCH_INDEX` (optional default index)
+- `MEEOVI_PROVIDER` (`opensearch`, `directus`, or `magento`; defaults to `opensearch`)
+
+Adapter-related variables (set based on your selected provider):
+
+- `NUXT_PUBLIC_SEARCH_INDEX` (or `OPENSEARCH_INDEX`) for `opensearch`
+- `DIRECTUS_URL` and `DIRECTUS_STATIC_TOKEN` for `directus`
+- `MAGENTO_BASE_URL` and `MAGENTO_ACCESS_TOKEN` for `magento`
 
 ## Run
 

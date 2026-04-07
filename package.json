@@ -17,7 +17,7 @@
    "scripts": {
       "starter-commit": "git add . && git commit -m \"ready for update\"",
       "starter-update": "git pull \"https://github.com/Meeovi/Meeovi-Starter-Template\"",
-      "dev": "nuxt dev --host 0.0.0.0 --port 3001",
+      "dev": "nuxt dev --host 0.0.0.0",
       "dev-sw": "SW=true nuxi dev",
       "build": "nuxt build",
       "build-sw": "SW=true nuxi build",
@@ -27,17 +27,13 @@
       "postinstall": "nuxt prepare"
    },
    "dependencies": {
-      "@nuxtjs/i18n": "^10.2.3",
-      "@vite-pwa/nuxt": "^1.1.1",
-      "alternate-search": "file:../../../packages/modules/alternate-search",
-      "instantsearch.css": "^8.6.0",
+      "@mframework/adapter-opensearch": "file:../../../packages/adapters/adapter-opensearch",
+      "@mframework/layer-shared": "file:../../layers/shared",
       "nuxt": "^4.4.2",
       "playwright-core": "^1.59.1",
-      "typescript": "^5.9.3",
-      "vue-instantsearch": "^4.24.0"
+      "typescript": "^5.9.3"
    },
    "devDependencies": {
-      "@storefront-ui/nuxt": "^3.3.0",
       "nuxt-layers-utils": "^0.3.1"
    }
 }

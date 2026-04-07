@@ -1,14 +1,14 @@
 <template>
     <div>
-        <NuxtLink class="logobrand" href="/">
+        <NuxtLink class="logobrand sf-header__logo-link" href="/">
             <div v-if="blocksSiteoverview?.media?.directus_files_id">
-                <v-btn :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="text">
+                <v-btn class="sf-header__logo-img" :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="text">
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
                 </v-btn>
             </div>
 
             <div v-else start>
-                <v-btn :avatar="{ src: '/images/logo.png' }" size="md" color="neutral" variant="text">
+                <v-btn class="sf-header__logo-img" :avatar="{ src: '/images/logo.png' }" size="md" color="neutral" variant="text">
                     {{ blocksSiteoverview?.name || 'Meeovi' }}
                 </v-btn>
             </div>
