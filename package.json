@@ -29,6 +29,9 @@
    "dependencies": {
       "@mframework/adapter-opensearch": "file:../../../packages/adapters/adapter-opensearch",
       "@mframework/layer-shared": "file:../../layers/shared",
+      "@mframework/api-client": "file:../../../backups/api-client",
+      "@mframework/adapter-directus": "file:../../../packages/adapters/adapter-directus",
+      "@graphql-mesh/compose-cli": "^1.5.14",
       "nuxt": "^4.4.2",
       "playwright-core": "^1.59.1",
       "typescript": "^5.9.3"

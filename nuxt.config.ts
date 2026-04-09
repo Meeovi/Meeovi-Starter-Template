@@ -5,6 +5,7 @@ import {
 const layers = useLayers(__dirname, {
   shared: '../../../layers/shared',
   auth: '../../../layers/auth',
+  social: '../../../layers/social',
 })
 
 export default defineNuxtConfig({
@@ -56,6 +57,7 @@ export default defineNuxtConfig({
     'assets/mobirise/css/mbr-additional.css',
     'assets/styles/mobile.css',
     'assets/styles/styles.css',
+    'assets/styles/search.css',
   ],
 
   runtimeConfig: {

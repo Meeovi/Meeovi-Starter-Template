@@ -1,76 +1,116 @@
 <template>
-    <section class="results-amz page">
-        <v-toolbar>
-            <v-toolbar-title class="amz-title">Results for "{{ searchQuery || 'all items' }}"</v-toolbar-title>
+    <section class="results-page page">
+        <v-container fluid class="results-page__container">
+            <v-card class="results-shell" elevation="0">
+                <v-toolbar class="results-header" color="blue" density="comfortable" flat>
+                    <v-toolbar-title class="amz-title">
+                        Results for "{{ searchQuery || 'all items' }}"
+                    </v-toolbar-title>
 
-            <v-spacer></v-spacer>
+                    <v-spacer></v-spacer>
 
-            <p>{{ totalLabel }}</p>
-        </v-toolbar>
+                    <v-chip class="resultsTotalBadge" color="amber-lighten-5" label>
+                        {{ totalLabel }}
+                    </v-chip>
+                </v-toolbar>
 
-        <filters :query="searchQuery" :pending="pending" v-model:sort-by="sortBy"
-            v-model:selected-categories="selectedCategories" v-model:selected-brands="selectedBrands"
-            v-model:selected-price-band="selectedPriceBand" :sort-options="sortOptions"
-            :category-options="categoryOptions" :brand-options="brandOptions" :price-bands="priceBands"
-            @apply="applyFilters" @clear="clearAllFilters" />
+                <v-divider />
 
-        <main class="amz-results">
-            <div v-if="error" class="empty-card">
-                <strong>Search failed</strong>
-                <p class="muted">{{ error.message }}</p>
-            </div>
-
-            <div v-else-if="pending" class="empty-card">
-                <strong>Searching</strong>
-                <p class="muted">Fetching products and ranking results.</p>
-            </div>
-
-            <div v-else-if="!visibleItems.length" class="empty-card">
-                <strong>No matches</strong>
-                <p class="muted">{{ emptyMessage }}</p>
-            </div>
-
-            <div v-else class="amz-list">
-                <article v-for="item in visibleItems" :key="String(item.id || item._id || item.title)" class="amz-card">
-                    <div class="amz-card__media">
-                        <div class="amz-media-placeholder">{{ getTitle(item).charAt(0) }}</div>
-                    </div>
-                    <div class="amz-card__content">
-                        <p class="amz-card__index">{{ activeIndex }}</p>
-                        <h2>{{ getTitle(item) }}</h2>
-                        <p class="muted amz-card__desc">{{ getDescription(item) }}</p>
-
-                        <div class="amz-card__meta">
-                            <strong v-if="getPrice(item) !== null"
-                                class="amz-price">{{ formatPrice(getPrice(item)) }}</strong>
-                            <span v-if="item.brand">{{ item.brand }}</span>
-                            <span v-if="item.category">{{ item.category }}</span>
+                <v-row no-gutters>
+                    <v-col cols="12" md="3" class="results-sidebar">
+                        <div class="d-md-none pa-3">
+                            <v-btn block color="primary" variant="outlined" prepend-icon="fas fa-sliders-h"
+                                @click="mobileFiltersOpen = true">
+                                Filters
+                            </v-btn>
                         </div>
 
-                        <a v-if="getLink(item)" :href="String(getLink(item))" class="result-link" target="_blank"
-                            rel="noreferrer">
-                            View details
-                        </a>
-                    </div>
-                </article>
-            </div>
+                        <div class="d-none d-md-block">
+                            <filters :query="searchQuery" :pending="pending" v-model:sort-by="sortBy"
+                                v-model:selected-categories="selectedCategories" v-model:selected-brands="selectedBrands"
+                                v-model:selected-price-band="selectedPriceBand" :sort-options="sortOptions"
+                                :category-options="categoryOptions" :brand-options="brandOptions"
+                                :price-bands="priceBands" @apply="applyFilters" @clear="clearAllFilters" />
+                        </div>
+                    </v-col>
 
-            <footer class="amz-pagination" v-if="pageCount > 1">
-                <button type="button" class="button-secondary" :disabled="page <= 1" @click="changePage(page - 1)">
-                    Previous
-                </button>
+                    <v-col cols="12" md="9" class="results-main pa-4 pa-md-6">
+                        <div class="results-meta mb-4">
+                            <div class="results-count">{{ visibleItems.length }} showing</div>
+                            <div class="d-flex ga-2 flex-wrap">
+                                <v-chip v-if="selectedCategories.length" size="small" variant="outlined" color="primary">
+                                    {{ selectedCategories.length }} categories
+                                </v-chip>
+                                <v-chip v-if="selectedBrands.length" size="small" variant="outlined" color="primary">
+                                    {{ selectedBrands.length }} brands
+                                </v-chip>
+                                <v-chip v-if="selectedPriceBand" size="small" variant="outlined" color="primary">
+                                    {{ selectedPriceBand }}
+                                </v-chip>
+                            </div>
+                        </div>
 
-                <button v-for="pageNumber in pageNumbers" :key="`page-${pageNumber}`" type="button" class="amz-page-btn"
-                    :class="{ 'is-active': pageNumber === page }" @click="changePage(pageNumber)">
-                    {{ pageNumber }}
-                </button>
+                        <v-alert v-if="error" type="error" variant="tonal" class="mb-4">
+                            <strong>Search failed</strong>
+                            <div>{{ error.message }}</div>
+                        </v-alert>
 
-                <button type="button" class="button-secondary" :disabled="page >= pageCount"
-                    @click="changePage(page + 1)">
-                    Next
-                </button>
-            </footer>
-        </main>
+                        <v-alert v-else-if="pending" type="info" variant="tonal" class="mb-4">
+                            <strong>Searching</strong>
+                            <div>Fetching products and ranking results.</div>
+                        </v-alert>
+
+                        <v-alert v-else-if="!visibleItems.length" type="warning" variant="tonal" class="mb-4">
+                            <strong>No matches</strong>
+                            <div>{{ emptyMessage }}</div>
+                        </v-alert>
+
+                        <v-list v-else class="amz-list pa-0" lines="two" bg-color="transparent">
+                            <v-list-item v-for="item in visibleItems" :key="String(item.id || item._id || item.title)"
+                                class="amz-card">
+                                <template #prepend>
+                                    <div class="amz-card__media">
+                                        <div class="amz-media-placeholder">{{ getTitle(item).charAt(0) }}</div>
+                                    </div>
+                                </template>
+
+                                <v-list-item-title class="amz-card__title">{{ getTitle(item) }}</v-list-item-title>
+
+                                <v-list-item-subtitle class="amz-card__subtitle">
+                                    <span class="amz-card__index">{{ activeIndex }}</span>
+                                    <span v-if="item.brand">{{ item.brand }}</span>
+                                    <span v-if="item.category">{{ item.category }}</span>
+                                </v-list-item-subtitle>
+
+                                <p class="amz-card__desc">{{ getDescription(item) }}</p>
+
+                                <div class="amz-card__actions">
+                                    <strong v-if="getPrice(item) !== null" class="amz-price">{{ formatPrice(getPrice(item)) }}</strong>
+
+                                    <v-btn v-if="getLink(item)" :href="String(getLink(item))" target="_blank"
+                                        rel="noreferrer" color="primary" variant="text" class="px-0">
+                                        View details
+                                    </v-btn>
+                                </div>
+                            </v-list-item>
+                        </v-list>
+
+                        <div class="d-flex justify-center mt-6" v-if="pageCount > 1">
+                            <v-pagination :model-value="page" :length="pageCount" :total-visible="7" rounded="circle"
+                                @update:model-value="changePage" />
+                        </div>
+                    </v-col>
+                </v-row>
+            </v-card>
+        </v-container>
+
+        <v-navigation-drawer v-model="mobileFiltersOpen" location="left" temporary width="320" class="d-md-none">
+            <filters :query="searchQuery" :pending="pending" v-model:sort-by="sortBy"
+                v-model:selected-categories="selectedCategories" v-model:selected-brands="selectedBrands"
+                v-model:selected-price-band="selectedPriceBand" :sort-options="sortOptions"
+                :category-options="categoryOptions" :brand-options="brandOptions" :price-bands="priceBands"
+                @apply="applyFilters" @clear="clearAllFilters" />
+        </v-navigation-drawer>
     </section>
 </template>
 
@@ -178,16 +218,6 @@
         return Number.isFinite(value) && value > 0 ? value : requestedPageSize
     })
     const pageCount = computed(() => Math.max(1, Math.ceil(total.value / effectivePageSize.value)))
-    const pageNumbers = computed(() => {
-        const maxButtons = 7
-        const start = Math.max(1, page.value - Math.floor(maxButtons / 2))
-        const end = Math.min(pageCount.value, start + maxButtons - 1)
-        const adjustedStart = Math.max(1, end - maxButtons + 1)
-        const numbers: number[] = []
-        for (let i = adjustedStart; i <= end; i += 1) numbers.push(i)
-        return numbers
-    })
-
     const facets = computed(() => data.value?.facets)
     const categoryOptions = computed(() => {
         const fromFacet = facetToOptions(facets.value, 'category')
@@ -287,25 +317,12 @@
         return `No matches were found for "${searchQuery.value}".`
     })
 
-    async function submitSearch() {
-        await navigateWithState(1)
-    }
-
     async function changePage(nextPage: number) {
         await navigateWithState(nextPage)
     }
 
     async function applyFilters() {
         await navigateWithState(1)
-    }
-
-    async function applySort() {
-        await navigateWithState(1)
-    }
-
-    async function clearPriceFilter() {
-        selectedPriceBand.value = ''
-        await applyFilters()
     }
 
     async function clearAllFilters() {

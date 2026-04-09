@@ -1,71 +1,100 @@
 <template>
-  <aside class="query-filters" :aria-busy="pending ? 'true' : 'false'">
-    <header class="query-filters__header">
-      <h4 class="query-filters__title">Filter results</h4>
-      <p v-if="query" class="query-filters__query">for "{{ query }}"</p>
-    </header>
+  <v-card class="query-filters" flat rounded="0" :loading="pending">
+    <v-card-text class="pa-4">
+      <div class="query-filters__header">
+        <h4 class="query-filters__title">Filter results</h4>
+        <p v-if="query" class="query-filters__query">for "{{ query }}"</p>
+      </div>
 
-    <section class="query-filters__group">
-      <label class="query-filters__label" for="query-filters-sort">Sort by</label>
-      <select id="query-filters-sort" class="query-filters__select" v-model="sortByModel" @change="emitApply">
-        <option v-for="option in sortOptions" :key="option.value" :value="option.value">
-          {{ option.label }}
-        </option>
-      </select>
-    </section>
+      <v-select
+        v-model="sortByModel"
+        class="mb-4"
+        :items="sortOptions"
+        item-title="label"
+        item-value="value"
+        label="Sort by"
+        density="comfortable"
+        variant="outlined"
+        hide-details
+        @update:model-value="emitApply"
+      />
 
-    <section class="query-filters__group" v-if="categoryOptions.length">
-      <h5 class="query-filters__section-title">Category</h5>
-      <label v-for="option in categoryOptions" :key="`cat-${option.value}`" class="query-filters__option">
-        <input
-          type="checkbox"
-          :value="option.value"
-          :checked="selectedCategoriesModel.includes(option.value)"
-          @change="toggleCategory(option.value)"
-        />
-        <span>{{ option.value }}</span>
-        <small>{{ option.count }}</small>
-      </label>
-    </section>
+      <section class="query-filters__group" v-if="categoryOptions.length">
+        <h5 class="query-filters__section-title">Category</h5>
+        <v-list class="pa-0" density="compact" bg-color="transparent">
+          <v-list-item
+            v-for="option in categoryOptions"
+            :key="`cat-${option.value}`"
+            class="query-filters__item"
+            density="compact"
+          >
+            <template #prepend>
+              <v-checkbox-btn
+                :model-value="selectedCategoriesModel.includes(option.value)"
+                :value="option.value"
+                @update:model-value="toggleCategory(option.value)"
+              />
+            </template>
+            <v-list-item-title>{{ option.value }}</v-list-item-title>
+            <template #append>
+              <small class="query-filters__count">{{ option.count }}</small>
+            </template>
+          </v-list-item>
+        </v-list>
+      </section>
 
-    <section class="query-filters__group" v-if="brandOptions.length">
-      <h5 class="query-filters__section-title">Brand</h5>
-      <label v-for="option in brandOptions" :key="`brand-${option.value}`" class="query-filters__option">
-        <input
-          type="checkbox"
-          :value="option.value"
-          :checked="selectedBrandsModel.includes(option.value)"
-          @change="toggleBrand(option.value)"
-        />
-        <span>{{ option.value }}</span>
-        <small>{{ option.count }}</small>
-      </label>
-    </section>
+      <section class="query-filters__group" v-if="brandOptions.length">
+        <h5 class="query-filters__section-title">Brand</h5>
+        <v-list class="pa-0" density="compact" bg-color="transparent">
+          <v-list-item
+            v-for="option in brandOptions"
+            :key="`brand-${option.value}`"
+            class="query-filters__item"
+            density="compact"
+          >
+            <template #prepend>
+              <v-checkbox-btn
+                :model-value="selectedBrandsModel.includes(option.value)"
+                :value="option.value"
+                @update:model-value="toggleBrand(option.value)"
+              />
+            </template>
+            <v-list-item-title>{{ option.value }}</v-list-item-title>
+            <template #append>
+              <small class="query-filters__count">{{ option.count }}</small>
+            </template>
+          </v-list-item>
+        </v-list>
+      </section>
 
-    <section class="query-filters__group" v-if="priceBands.length">
-      <h5 class="query-filters__section-title">Price</h5>
-      <label v-for="band in priceBands" :key="`price-${band.id}`" class="query-filters__option">
-        <input
-          type="radio"
-          name="query-filters-price"
-          :value="band.id"
-          :checked="selectedPriceBandModel === band.id"
-          @change="setPriceBand(band.id)"
-        />
-        <span>{{ band.label }}</span>
-        <small>{{ band.count }}</small>
-      </label>
-    </section>
+      <section class="query-filters__group" v-if="priceBands.length">
+        <h5 class="query-filters__section-title">Price</h5>
+        <v-radio-group
+          class="query-filters__price-group"
+          :model-value="selectedPriceBandModel"
+          color="primary"
+          density="compact"
+          hide-details
+          @update:model-value="setPriceBand"
+        >
+          <v-radio label="Any" value="" />
+          <v-radio
+            v-for="band in priceBands"
+            :key="`price-${band.id}`"
+            :label="`${band.label} (${band.count})`"
+            :value="band.id"
+          />
+        </v-radio-group>
+      </section>
+    </v-card-text>
 
-    <footer class="query-filters__actions">
-      <button type="button" class="button-secondary query-filters__button" @click="clearAll" :disabled="pending">
-        Clear all
-      </button>
-      <button type="button" class="button query-filters__button" @click="emitApply" :disabled="pending">
-        Apply filters
-      </button>
-    </footer>
-  </aside>
+    <v-divider />
+
+    <v-card-actions class="pa-4 d-flex ga-2">
+      <v-btn block variant="outlined" @click="clearAll" :disabled="pending">Clear all</v-btn>
+      <v-btn block color="primary" variant="flat" @click="emitApply" :disabled="pending">Apply</v-btn>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script setup lang="ts">
@@ -147,8 +176,8 @@ function toggleBrand(value: string) {
   selectedBrandsModel.value = next
 }
 
-function setPriceBand(value: string) {
-  selectedPriceBandModel.value = selectedPriceBandModel.value === value ? '' : value
+function setPriceBand(value: string | null) {
+  selectedPriceBandModel.value = value || ''
 }
 
 function clearAll() {

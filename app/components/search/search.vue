@@ -8,7 +8,7 @@
       wrapper-class="sf-search-input-wrapper"
       size="base"
       variant="solo-inverted"
-      inner-append-icon="fas fa-search"
+      append-inner-icon="fas fa-search"
     >
     </v-text-field>
   </form>
