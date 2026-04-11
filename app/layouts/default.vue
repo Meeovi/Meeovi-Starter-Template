@@ -34,7 +34,7 @@
   import Footer from '../components/menus/Footer.vue'
   import sidebarnav from '../components/menus/sidebarnav.vue'
   import Header from '../components/menus/Header.vue'
-  import OfflineAlert from '../components/alerts/OfflineAlert.vue'
+  import OfflineAlert from '#shared/app/components/alerts/OfflineAlert.vue'
   import {
     ref,
     watch
