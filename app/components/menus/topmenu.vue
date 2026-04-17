@@ -15,27 +15,26 @@
 </template>
 
 <script setup>
-  const {
-    $directus,
-    $readItems
-  } = useNuxtApp()
+  const gateway = useGateway()
+  const content = gateway.content
 
   const {
     data: topmenu
   } = await useAsyncData('topmenu', () => {
-    if (!$directus || typeof $directus.request !== 'function' || typeof $readItems !== 'function') {
+    if (!content || typeof content.readItems !== 'function') {
       return []
     }
 
-    return $directus.request(
-      $readItems('about_departments', {
+    return content.readItems('about_departments', {
         fields: ['*', 'image.*', 'pages.pages_id.*'],
         deep: {
           pages: {
             _sort: ['pages_id.name'] // Sort pages alphabetically by their name
           }
         }
-      })
-    ).catch(() => [])
+      }).catch(() => [])
+  }, {
+    server: false,
+    default: () => [],
   })
 </script>

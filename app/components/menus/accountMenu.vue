@@ -54,11 +54,9 @@
         onMounted,
     } from 'vue'
     import UserAvatar from '#social/app/components/user/UserAvatar.vue'
-    
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
+
+    const gateway = useGateway()
+    const content = gateway.content
 
     const auth = useAuth()
     const session = auth.session
@@ -78,15 +76,18 @@
     const {
         data: navAccount
     } = useAsyncData('navAccount', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 menus: [],
             }
         }
 
-        return $directus.request($readItem('navigation', '2')).catch(() => ({
+        return content.readItem('navigation', '2').catch(() => ({
             menus: [],
         }))
+    }, {
+        server: false,
+        default: () => ({ menus: [] }),
     })
 
     async function handleLogout() {

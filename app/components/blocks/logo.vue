@@ -2,7 +2,7 @@
     <div>
         <NuxtLink class="logobrand sf-header__logo-link" href="/">
             <div v-if="blocksSiteoverview?.media?.directus_files_id">
-                <v-btn class="sf-header__logo-img" :avatar="{src: `${$directus.url}assets/${blocksSiteoverview?.media?.[0]?.directus_files_id?.filename_disk}`}" size="xl" color="neutral" variant="text">
+                <v-btn class="sf-header__logo-img" :avatar="{ src: logoAssetSrc }" size="xl" color="neutral" variant="text">
                     {{ blocksSiteoverview?.name || 'Starter Template' }}
                 </v-btn>
             </div>
@@ -18,33 +18,43 @@
 
 <script setup>
     import {
-        ref
+        computed
     } from 'vue'
-    import {
-        useNuxtApp,
-        useAsyncData
-    } from '#app'
 
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
+    const gateway = useGateway()
+    const content = gateway.content
 
     const {
         data: blocksSiteoverview
     } = await useAsyncData('blocksSiteoverview', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 name: 'Starter Template',
                 media: [],
             }
         }
 
-        return $directus.request($readItem('page_blocks', '19', {
+        return content.readItem('page_blocks', '19', {
             fields: ['*', 'media.*.*'],
-        })).catch(() => ({
+        }).catch(() => ({
             name: 'Starter Template',
             media: [],
         }))
+    }, {
+        server: false,
+        default: () => ({
+            name: 'Starter Template',
+            media: [],
+        }),
+    })
+
+    const logoAssetSrc = computed(() => {
+        const file = blocksSiteoverview.value?.media?.[0]?.directus_files_id
+
+        if (!file || !content || typeof content.getAssetUrl !== 'function') {
+            return '/images/logo.png'
+        }
+
+        return content.getAssetUrl(file)
     })
 </script>

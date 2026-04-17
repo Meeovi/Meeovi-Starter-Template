@@ -66,16 +66,23 @@
 
     defineEmits(['toggleDrawer'])
 
-    const theme = useTheme()
+    let theme = null
+    try {
+        theme = useTheme()
+    } catch {
+        theme = null
+    }
 
     // Local storage key
     const STORAGE_KEY = 'elite-theme'
 
     // isDark reflects the current theme name
-    const isDark = computed(() => theme.global.name.value === 'dark')
+    const isDark = computed(() => theme?.global?.name?.value === 'dark')
 
     // Determine initial mode
     onMounted(() => {
+        if (!theme?.global?.name) return
+
         const stored = localStorage.getItem(STORAGE_KEY)
 
         if (stored) {
@@ -89,12 +96,13 @@
     })
 
     const toggleDark = () => {
+        if (!theme?.global?.name) return
         theme.global.name.value = isDark.value ? 'light' : 'dark'
     }
 
     // Save preference whenever theme name changes
     watch(
-        () => theme.global.name.value,
+        () => theme?.global?.name?.value,
         (val) => {
             if (val) localStorage.setItem(STORAGE_KEY, val)
         }

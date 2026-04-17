@@ -1,71 +1,97 @@
 <template>
-    <div class="dynamic-page">
-        <!-- Render social feature component if resolved -->
-        <component v-if="featureComponent" :is="featureComponent" />
-
-        <!-- Fall back to Directus page content -->
-        <div v-else-if="directusPage?.content" v-html="directusPage.content" />
-
-        <!-- 404 fallback -->
-        <div v-else class="p-8 text-center">
-            <p class="text-gray-500">Page not found</p>
-        </div>
-    </div>
+  <div>
+    <component v-if="currentComponent" :is="currentComponent" :page="page?.value" />
+    <div v-else v-html="page?.value?.content" />
+  </div>
 </template>
 
-<script setup lang="ts">
-    import {
-        useSocialFeatureComponent
-    } from '#social/app/composables/useSocialFeatureRegistry'
+<script setup>
+  import {
+    defineAsyncComponent,
+    shallowRef
+  } from 'vue'
+  import { pageComponentMap } from '#shared/app/types/pageComponentMap'
+  import {
+    useRoute
+  } from 'vue-router'
+  import { useGateway } from '#imports'
 
-    const route = useRoute()
-    const {
-        $directus,
-        $readItems
-    } = useNuxtApp()
+  const route = useRoute()
+  const { content } = useGateway()
 
-    // Extract slug as string (handle array from [...slug] routing)
-    const slug = computed(() => {
-        const raw = route.params.slug
-        return Array.isArray(raw) ? raw.join('/') : raw
-    })
+  // normalize slug (catch-all route can be array)
+  const rawSlug = route.params.slug
+  const slug = Array.isArray(rawSlug) ? rawSlug.join('/') : rawSlug
+  const slugString = String(slug || '')
+  const slugTail = slugString.includes('/') ? slugString.split('/').filter(Boolean).at(-1) || slugString : slugString
+  const slugCandidates = Array.from(new Set([slugString, slugTail].filter(Boolean)))
 
-    // Try to resolve as a social feature component first
-    const featureComponent = ref < any > (null)
-    const directusPage = ref < any > (null)
+  function withTimeout(promise, ms = 5000) {
+    return Promise.race([
+      promise,
+      new Promise((_, reject) => setTimeout(() => reject(new Error(`content lookup timed out after ${ms}ms`)), ms)),
+    ])
+  }
 
-    onMounted(async () => {
-        // 1. Try social feature registry (e.g., 'radio', 'channels', 'spaces')
-        const slugBase = slug.value.split('/')[0] // Get first segment
-        const resolved = await useSocialFeatureComponent(slugBase)
-        if (resolved) {
-            featureComponent.value = resolved
-            return
-        }
+  // fetch page from Directus safely
+  const {
+    data: page
+  } = await useAsyncData(`page:${slugString || 'index'}`, async () => {
+    try {
+      if (import.meta.server) {
+        return null
+      }
 
-        // 2. Fall back to Directus pages
-        try {
-            const response = await $directus.request(
-                $readItems('pages', {
-                    filter: {
-                        slug: {
-                            _eq: slug.value
-                        }
-                    },
-                    fields: ['*'],
-                    limit: 1,
-                })
-            )
-            directusPage.value = response?.[0] || null
-        } catch (err) {
-            console.warn(`[...slug] Failed to load Directus page for slug "${slug.value}":`, err)
-        }
-    })
+      if (!content || typeof content.readItems !== 'function') {
+        return null
+      }
 
-    useHead({
-        title: () => {
-            if (featureComponent.value) return 'Social Feature'
-            return directusPage.value?.name || 'Page'
-        },
-    })
+      for (const candidate of slugCandidates) {
+        const resp = await withTimeout(content.readItems('pages', {
+          filter: {
+            slug: {
+              _eq: candidate
+            }
+          },
+          fields: ['*'],
+          limit: 1
+        }))
+
+        // Directus responses vary; try common shapes
+        const pageResult = resp?.data?.[0] || resp?.[0] || null
+        if (pageResult) return pageResult
+      }
+
+      return null
+    } catch (e) {
+      console.error('Failed to load page', e)
+      return null
+    }
+  }, {
+    server: false,
+    default: () => null,
+  })
+
+  useHead({
+    title: page?.value?.name || 'Page'
+  })
+
+
+  const currentComponent = shallowRef(null)
+
+  // decide component after page resolves
+  if (page?.value) {
+    const normalizeKey = (value = '') => value.toLowerCase().trim().replace(/[\s_-]+/g, '')
+    const nameKey = normalizeKey(page.value.name || '')
+    const slugKey = normalizeKey(page.value.slug || '')
+
+    const importer = pageComponentMap[nameKey] || pageComponentMap[slugKey]
+    if (importer) {
+      currentComponent.value = defineAsyncComponent(importer)
+    } else {
+      currentComponent.value = null // fallback to raw HTML
+    }
+  } else {
+    currentComponent.value = null
+  }
 </script>

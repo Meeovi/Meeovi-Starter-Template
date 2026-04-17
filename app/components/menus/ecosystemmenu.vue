@@ -34,23 +34,24 @@
     import {
         computed
     } from 'vue'
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
+    const gateway = useGateway()
+    const content = gateway.content
 
     const {
         data: eco
     } = await useAsyncData('eco', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 menus: [],
             }
         }
 
-        return $directus.request($readItem('navigation', '12')).catch(() => ({
+        return content.readItem('navigation', '12').catch(() => ({
             menus: [],
         }))
+    }, {
+        server: false,
+        default: () => ({ menus: [] }),
     })
 
     // Add this computed property to filter active menus

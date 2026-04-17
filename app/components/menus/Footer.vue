@@ -29,54 +29,61 @@
 </template>
 
 <script setup>
-    const {
-        $directus,
-        $readItem
-    } = useNuxtApp()
+    const gateway = useGateway()
+    const content = gateway.content
 
     const {
         data: about
     } = await useAsyncData('about', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 menus: [],
             }
         }
 
-        return $directus.request($readItem('navigation', '74')).catch(() => ({
+        return content.readItem('navigation', '74').catch(() => ({
             menus: [],
         }))
+    }, {
+        server: false,
+        default: () => ({ menus: [] }),
     })
 
     const {
         data: blocksCopyright
     } = await useAsyncData('blocksCopyright', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 content: [],
                 name: '',
             }
         }
 
-        return $directus.request($readItem('page_blocks', '5', {
+        return content.readItem('page_blocks', '5', {
             fields: ['*', 'media.*.*'],
-        })).catch(() => ({
+        }).catch(() => ({
             content: [],
             name: '',
         }))
+    }, {
+        server: false,
+        default: () => ({ content: [], name: '' }),
     })
 
     const {
         data: copyright
     } = await useAsyncData('copyright', () => {
-        if (!$directus || typeof $directus.request !== 'function' || typeof $readItem !== 'function') {
+        if (!content || typeof content.readItem !== 'function') {
             return {
                 menus: [],
             }
         }
 
-        return $directus.request($readItem('navigation', '10')).catch(() => ({
+        return content.readItem('navigation', '10').catch(() => ({
             menus: [],
         }))
+    }, {
+        server: false,
+        default: () => ({ menus: [] }),
     })
 </script>

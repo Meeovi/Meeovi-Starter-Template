@@ -30,6 +30,7 @@
       "@mframework/adapter-directus": "file:../../../packages/adapters/adapter-directus",
       "@mframework/adapter-opensearch": "file:../../../packages/adapters/adapter-opensearch",
       "@mframework/api-client": "file:../../../backups/api-client",
+      "alternate-auth": "file:../../../packages/modules/alternate-auth",
       "@mframework/layer-shared": "file:../../layers/shared",
       "nuxt": "^4.4.2",
       "playwright-core": "^1.59.1",

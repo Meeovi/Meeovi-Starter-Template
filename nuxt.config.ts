@@ -62,6 +62,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     meeoviSecret: process.env.MEEOVI_SECRET,
+    databaseProvider: process.env.DATABASE_PROVIDER || 'postgresql',
     public: {
       meeoviProvider: process.env.MEEOVI_PROVIDER || 'opensearch',
       directus: {
@@ -73,22 +74,26 @@ export default defineNuxtConfig({
         accessToken: process.env.MAGENTO_ACCESS_TOKEN || ''
       },
       search: {
-        index: process.env.NUXT_PUBLIC_SEARCH_INDEX || process.env.NUXT_PUBLIC_OPENSEARCH_INDEX || process.env.NUXT_PUBLIC_SEARCHKIT_INDEX || process.env.OPENSEARCH_INDEX || process.env.SEARCH_INDEX || ''
+        index: process.env.ALTERNATE_SEARCH_INDEX || process.env.NUXT_PUBLIC_SEARCH_INDEX || process.env.SEARCH_INDEX || ''
+      },
+      payments: {
+        provider: process.env.PAYMENT_PROVIDER || process.env.NUXT_PAYMENT || 'stripe'
+      },
+      storage: {
+        provider: process.env.STORAGE_PROVIDER || process.env.NUXT_APP_STORAGE || 'local'
+      },
+      image: {
+        optimizer: process.env.IMAGE_OPTIMIZER || process.env.IMAGE_PROVIDER || 'netlify',
+        cdnDomain: process.env.IMAGE_CDN_DOMAIN || process.env.TWICPICS_DOMAIN || ''
       }
     }
   },
 
-  vuetify: {
-    vuetifyOptions: {
-      icons: {
-        defaultSet: 'fa',
-        sets: [
-          {
-            name: 'fa',
-            cdn: 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css'
-          }
-        ]
-      }
+
+  nitro: {
+    externals: {
+      trace: false,
+      inline: ['vue', '@vue/server-renderer']
     }
   },
 

@@ -3,7 +3,9 @@
     <NuxtLoadingIndicator />
     <v-responsive class="border rounded">
       <v-app :theme="theme?.global?.name?.value" class="auto-text">
-        <Header :drawer="drawer" @toggle-drawer="drawer = !drawer" />
+        <ClientOnly>
+          <Header :drawer="drawer" @toggle-drawer="drawer = !drawer" />
+        </ClientOnly>
         <OfflineAlert />
 
 
@@ -11,7 +13,9 @@
           <v-card>
             <v-layout>
               <v-navigation-drawer v-model="drawer" temporary>
-                <sidebarnav />
+                <ClientOnly>
+                  <sidebarnav />
+                </ClientOnly>
                 <v-spacer />
               </v-navigation-drawer>
 
@@ -22,7 +26,9 @@
             </v-layout>
           </v-card>
 
-          <Footer />
+          <ClientOnly>
+            <Footer />
+          </ClientOnly>
         </v-main>
       </v-app>
 
@@ -44,14 +50,19 @@
   } from 'vuetify'
 
   const drawer = ref(false)
-  const theme = useTheme()
+  let theme: any = null
+  try {
+    theme = useTheme()
+  } catch {
+    theme = null
+  }
 
   const STORAGE_KEY = 'elite-theme'
 
   // Theme is now initialized via plugins (server + client)
   // This watcher just ensures persistence when user toggles theme
   watch(
-    () => theme.global.name.value,
+    () => theme?.global?.name?.value,
     (value) => {
       if (typeof localStorage === 'undefined') return
       if (value) {

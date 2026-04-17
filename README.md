@@ -29,7 +29,7 @@ Copy `.env.example` and set at minimum:
 
 Adapter-related variables (set based on your selected provider):
 
-- `NUXT_PUBLIC_SEARCH_INDEX` (or `OPENSEARCH_INDEX`) for `opensearch`
+- `ALTERNATE_SEARCH_INDEX` (or `NUXT_PUBLIC_SEARCH_INDEX`) for `opensearch`
 - `DIRECTUS_URL` and `DIRECTUS_STATIC_TOKEN` for `directus`
 - `MAGENTO_BASE_URL` and `MAGENTO_ACCESS_TOKEN` for `magento`
 
