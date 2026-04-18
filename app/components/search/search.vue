@@ -6,7 +6,6 @@
       class="sf-search-input"
       placeholder="Search"
       wrapper-class="sf-search-input-wrapper"
-      size="base"
       variant="solo-inverted"
       append-inner-icon="fas fa-search"
     >

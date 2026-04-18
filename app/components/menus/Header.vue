@@ -87,17 +87,17 @@
 
         if (stored) {
             // Use saved preference
-            theme.global.name.value = stored
+            theme.change(stored)
         } else {
             // No preference — follow system
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            theme.global.name.value = prefersDark ? 'dark' : 'light'
+            theme.change(prefersDark ? 'dark' : 'light')
         }
     })
 
     const toggleDark = () => {
         if (!theme?.global?.name) return
-        theme.global.name.value = isDark.value ? 'light' : 'dark'
+        theme.change(isDark.value ? 'light' : 'dark')
     }
 
     // Save preference whenever theme name changes
