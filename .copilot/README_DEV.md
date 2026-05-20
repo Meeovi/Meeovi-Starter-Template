@@ -8,7 +8,7 @@
 - Frontend code must use:
     const gateway = useGateway()
     const content = gateway.content
-- Do not inject `$directus`, `$dataClient`, `$readItems`, or any global Directus helpers.
+- Do not inject `$directus`, `$directus`, `$readItems`, or any global Directus helpers.
 - Do not create `/app/plugins/directus.ts`.
 
 ## Gateway Pattern

@@ -3,8 +3,8 @@ import {
 } from 'nuxt-layers-utils'
 
 const layers = useLayers(__dirname, {
-  shared: '../../../layers/shared',
   auth: '../../../layers/auth',
+  shared: '../../../layers/shared',
   social: '../../../layers/social',
 })
 
@@ -60,9 +60,59 @@ export default defineNuxtConfig({
     'assets/styles/search.css',
   ],
 
+  modules: [
+    '@mframework/alternate-auth'
+  ],
+
+  betterAuth: {
+    databaseProvider: 'drizzle',
+    databaseUrl: process.env.DATABASE_URL,
+    // Configure social providers
+    socialProviders: [{
+        name: 'google',
+        clientId: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      },
+      {
+        name: 'github',
+        clientId: process.env.GITHUB_CLIENT_ID,
+        clientSecret: process.env.GITHUB_CLIENT_SECRET
+      },
+      {
+        name: 'discord',
+        clientId: process.env.DISCORD_CLIENT_ID,
+        clientSecret: process.env.DISCORD_CLIENT_SECRET,
+        scope: ['email', 'identify']
+      },
+    ],
+    // Configure plugins
+    plugins: [{
+        name: 'twoFactor',
+        options: {
+          issuer: 'My App'
+        }
+      },
+      {
+        name: 'username',
+        options: {}
+      },
+      {
+        name: 'organization',
+        options: {}
+      },
+    ]
+  },
+
   runtimeConfig: {
     meeoviSecret: process.env.MEEOVI_SECRET,
     databaseProvider: process.env.DATABASE_PROVIDER || 'postgresql',
+    betterAuth: {
+      provider: process.env.BETTER_AUTH_DATABASE_PROVIDER,
+      url: process.env.BETTER_AUTH_DATABASE_URL,
+    },
+    auth: {
+      secret: process.env.BETTER_AUTH_SECRET
+    },
     public: {
       meeoviProvider: process.env.MEEOVI_PROVIDER || 'opensearch',
       directus: {
