@@ -11,7 +11,7 @@
         </v-app-bar-title>
 
         <v-app-bar-title v-else>
-            <NuxtLink class="logobrand" :href="blocksSiteoverview?.slug">
+            <NuxtLink class="logobrand" :to="blocksSiteoverview?.url">
                 <v-icon start color="orange">
                     <NuxtImg provider="cloudinary" src="/images/logo512alpha.png" :alt="blocksSiteoverview?.name" />
                 </v-icon>
@@ -29,7 +29,7 @@ import { getAssetURL } from '#shared/app/utils/get-asset-url'
 const hasAsset = (file) => Boolean(getAssetURL(file))
 
 const { data: blocksSiteoverview } = await useAsyncData('blocksSiteoverview', async () => {
-    const resp = await $directus.request($readItem('websites', '24', {
+    const resp = await $directus.request($readItem('websites', '25', {
         fields: ['*'],
     }))
     return resp?.data || resp || {}
