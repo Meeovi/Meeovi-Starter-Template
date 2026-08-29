@@ -1,42 +1,44 @@
 <template>
     <div>
-        <v-app-bar id="topnav" density="compact">
+        <v-app-bar id="topnav">
             <template v-slot:prepend>
-                <v-btn variant="flat" @click="$emit('toggleDrawer')">
+                <v-btn class="mainMenu" variant="flat" color="transparent" @click="$emit('toggleDrawer')">
                     <v-icon start icon="fas fa-bars"></v-icon> Menu
                 </v-btn>
             </template>
-
-            <logo />
-            <v-spacer></v-spacer>
-
-            <mobilesearch />
-
-            <ClientOnly>
-                <Search />
-            </ClientOnly>
-
-            <v-spacer></v-spacer>
-
-            <div class="d-flex align-center flex-column flex-sm-row fill-height">
-                <v-col cols="3">
-                    <v-btn @click="toggleDark()" variant="text">
-                        <v-icon>
-                            {{ isDark ? 'fas fa-moon' : 'fas fa-sun' }}
-                        </v-icon>
-                    </v-btn>
+            <v-row>
+                <v-col cols="2">
+                    <div class="d-flex align-center flex-column flex-sm-row fill-height leftTopNav">
+                        <logo />
+                    </div>
                 </v-col>
-                <!--<v-col>
-                    <LayoutNotifications />
-                </v-col>-->
 
-                <v-col>
-                    <ecosystemmenu />
+                <v-col cols="8">
+                    <ClientOnly>
+                        <Search />
+                    </ClientOnly>
                 </v-col>
-                <v-col>
-                    <accountMenu />
+
+                <v-col cols="2">
+                    <div class="d-flex align-center flex-column flex-sm-row fill-height rightTopNav">
+                        <v-col class="notificationsHeader">
+                            <LayoutNotifications />
+                        </v-col>
+
+                        <v-col class="ecosystemMenuIcon">
+                            <ecosystemmenu />
+                        </v-col>
+
+                        <v-col class="myaccounttopmenu">
+                            <myaccounttopmenu />
+                        </v-col>
+
+                        <v-col class="shoppingCart">
+                            <cart />
+                        </v-col>
+                    </div>
                 </v-col>
-            </div>
+            </v-row>
         </v-app-bar>
     </div>
 </template>
@@ -51,11 +53,13 @@
         useTheme
     } from 'vuetify'
     import logo from '../blocks/logo.vue'
-    import ecosystemmenu from './ecosystemmenu.vue'
-    import Search from '../search/search.vue'
+    import LayoutNotifications from './topmenu/LayoutNotifications.vue'
+    import ecosystemmenu from './topmenu/ecosystemmenu.vue'
+    import Search from '#search/app/components/searchBar.vue'
+    import cart from '#commerce/app/components/menus/cart.vue'
     //import LayoutNotifications from './Notifications.vue'
-    import mobilesearch from './mobilesearch.vue'
-    import accountMenu from './accountMenu.vue'
+    import mobilesearch from '#search/app/components/menus/mobilesearch.vue'
+    import myaccounttopmenu from './topmenu/myaccounttopmenu.vue'
 
     defineProps({
         drawer: {
@@ -66,45 +70,42 @@
 
     defineEmits(['toggleDrawer'])
 
-    let theme = null
-    try {
-        theme = useTheme()
-    } catch {
-        theme = null
+    const drawer = ref(null);
+
+    const theme = useTheme()
+    const themeName = computed(() => theme.global.name.value)
+    const isDark = computed(() => theme.global.current.value.dark)
+    const setTheme = (name) => {
+        theme.change(name)
     }
 
     // Local storage key
     const STORAGE_KEY = 'elite-theme'
 
-    // isDark reflects the current theme name
-    const isDark = computed(() => theme?.global?.name?.value === 'dark')
-
     // Determine initial mode
     onMounted(() => {
-        if (!theme?.global?.name) return
-
         const stored = localStorage.getItem(STORAGE_KEY)
 
-        if (stored) {
+        if (stored === 'light' || stored === 'dark') {
             // Use saved preference
-            theme.change(stored)
+            setTheme(stored)
         } else {
             // No preference — follow system
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-            theme.change(prefersDark ? 'dark' : 'light')
+            setTheme(prefersDark ? 'dark' : 'light')
         }
     })
 
+    // Toggle between themes
     const toggleDark = () => {
-        if (!theme?.global?.name) return
-        theme.change(isDark.value ? 'light' : 'dark')
+        setTheme(theme.global.current.value.dark ? 'light' : 'dark')
     }
 
-    // Save preference whenever theme name changes
+    // Save preference whenever theme changes
     watch(
-        () => theme?.global?.name?.value,
+        () => theme.global.name.value,
         (val) => {
-            if (val) localStorage.setItem(STORAGE_KEY, val)
+            localStorage.setItem(STORAGE_KEY, val)
         }
     )
 </script>

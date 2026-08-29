@@ -1,50 +1,50 @@
 <template>
   <div>
+    <NuxtPwaManifest />
     <NuxtLoadingIndicator />
     <v-responsive class="border rounded">
-      <v-app :theme="theme?.global?.name?.value" class="auto-text">
+          <v-app :theme="theme?.global?.name?.value" class="auto-text">
         <ClientOnly>
           <Header :drawer="drawer" @toggle-drawer="drawer = !drawer" />
         </ClientOnly>
         <OfflineAlert />
-
+        <v-alert v-if="pwa?.offlineReady" type="success" density="compact" class="mb-2">
+          App ready to work offline
+        </v-alert>
 
         <v-main>
-          <v-card>
-            <v-layout>
-              <v-navigation-drawer v-model="drawer" temporary>
-                <ClientOnly>
-                  <sidebarnav />
-                </ClientOnly>
-                <v-spacer />
-              </v-navigation-drawer>
+          <div class="page-wrapper">
+            <v-navigation-drawer v-model="drawer" temporary>
+              <sidebarnav />
+              <v-spacer />
+            </v-navigation-drawer>
 
-              <v-main id="sidebarNav" />
-              <main id="mainSection">
+            <div id="sidebarNav"></div>
+            <div id="mainSection">
+              <!--<announcements />-->
+
+              <div class="contentPage">
                 <slot />
-              </main>
-            </v-layout>
-          </v-card>
+              </div>
+            </div>
+          </div>
 
-          <ClientOnly>
-            <Footer />
-          </ClientOnly>
+          <FooterNav />
+          <!---->
         </v-main>
       </v-app>
-
+      
+      <mobileNav />      
     </v-responsive>
   </div>
 </template>
 
 <script setup lang="ts">
-  import Footer from '../components/menus/Footer.vue'
-  import sidebarnav from '../components/menus/sidebarnav.vue'
   import Header from '../components/menus/Header.vue'
+  import sidebarnav from '../components/menus/sidebar/sidebarnav.vue'
+  import FooterNav from '../components/menus/FooterNav.vue'
+  import mobileNav from '../components/menus/mobile/mobileNav.vue'
   import OfflineAlert from '#shared/app/components/alerts/OfflineAlert.vue'
-  import {
-    ref,
-    watch
-  } from 'vue'
   import {
     useTheme
   } from 'vuetify'
@@ -58,6 +58,7 @@
   }
 
   const STORAGE_KEY = 'elite-theme'
+  const pwa = usePWA()
 
   // Theme is now initialized via plugins (server + client)
   // This watcher just ensures persistence when user toggles theme
@@ -71,4 +72,41 @@
       }
     },
   )
+
+  useHead({
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        key: 'theme-color',
+        name: 'theme-color',
+        content: process.env.NUXT_PUBLIC_APP_THEME_COLOR || '#ffffff'
+      }
+    ],
+    link: [{
+      rel: 'icon',
+      href: '/favicon.ico'
+    }],
+    htmlAttrs: {
+      lang: 'en'
+    }
+  })
+
+  const title = process.env.NUXT_PUBLIC_APP_NAME || 'Nuxt AI Chatbot Template'
+  const description = process.env.NUXT_PUBLIC_APP_DESCRIPTION ||
+    'A full-featured, hackable Nuxt AI chatbot template made with Nuxt UI.'
+
+
+  useSeoMeta({
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    ogImage: process.env.NUXT_PUBLIC_APP_OG_IMAGE || 'https://ui.nuxt.com/assets/templates/nuxt/chat-light.png',
+    twitterCard: 'summary_large_image'
+  })
 </script>

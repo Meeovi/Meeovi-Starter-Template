@@ -1,97 +1,84 @@
 <template>
-  <div>
-    <component v-if="currentComponent" :is="currentComponent" :page="page?.value" />
-    <div v-else v-html="page?.value?.content" />
+  <div class="contentPage">
+    <Pagebar v-if="page?.type !== 'Page'" />
+
+    <br>
+
+    <div class="contentSection">
+      <v-card elevation="0">
+        <v-img class="align-end text-white" height="200" src="assets/images/background4.jpg" cover>
+          <v-card-title style="font-size: 35px;">{{ page?.name }}</v-card-title>
+        </v-img>
+
+        <v-card-subtitle class="pt-4">
+          Published: {{ page?.date_created ? new Date(page.date_created).toLocaleDateString() : '' }}
+        </v-card-subtitle>
+
+        <v-card-text v-html="page?.content"></v-card-text>
+
+        <v-card-actions>
+          <share />
+        </v-card-actions>
+      </v-card>
+    </div>
   </div>
 </template>
 
 <script setup>
   import {
-    defineAsyncComponent,
-    shallowRef
+    ref,
+    watch
   } from 'vue'
-  import { pageComponentMap } from '#shared/app/types/pageComponentMap'
-  import {
-    useRoute
-  } from 'vue-router'
-  import { useGateway } from '#imports'
+  import Pagebar from '../components/menus/page/pagebar.vue'
+  import share from '#social/app/components/blocks/share.vue'
 
   const route = useRoute()
-  const { content } = useGateway()
+  const {
+    $directus,
+    $readItems,
+  } = useNuxtApp()
 
-  // normalize slug (catch-all route can be array)
-  const rawSlug = route.params.slug
-  const slug = Array.isArray(rawSlug) ? rawSlug.join('/') : rawSlug
-  const slugString = String(slug || '')
-  const slugTail = slugString.includes('/') ? slugString.split('/').filter(Boolean).at(-1) || slugString : slugString
-  const slugCandidates = Array.from(new Set([slugString, slugTail].filter(Boolean)))
-
-  function withTimeout(promise, ms = 5000) {
-    return Promise.race([
-      promise,
-      new Promise((_, reject) => setTimeout(() => reject(new Error(`content lookup timed out after ${ms}ms`)), ms)),
-    ])
-  }
-
-  // fetch page from Directus safely
   const {
     data: page
-  } = await useAsyncData(`page:${slugString || 'index'}`, async () => {
-    try {
-      if (import.meta.server) {
-        return null
-      }
+  } = await useAsyncData('page', async () => {
+    const result = await $directus.request($readItems('pages', {
+      filter: {
+        slug: {
+          _eq: `${route.params.slug}`
+        }
+      },
+      fields: '*',
+      limit: 1
+    }))
+    return Array.isArray(result) ? result[0] : null
+  })
 
-      if (!content || typeof content.readItems !== 'function') {
-        return null
-      }
-
-      for (const candidate of slugCandidates) {
-        const resp = await withTimeout(content.readItems('pages', {
-          filter: {
-            slug: {
-              _eq: candidate
-            }
-          },
-          fields: ['*'],
-          limit: 1
-        }))
-
-        // Directus responses vary; try common shapes
-        const pageResult = resp?.data?.[0] || resp?.[0] || null
-        if (pageResult) return pageResult
-      }
-
-      return null
-    } catch (e) {
-      console.error('Failed to load page', e)
-      return null
-    }
-  }, {
-    server: false,
-    default: () => null,
+  watch(() => route.params.slug, async () => {
+    await refreshNuxtData('page')
   })
 
   useHead({
-    title: page?.value?.name || 'Page'
+    title: () => page.value?.name || 'Page',
   })
 
+  useSeoMeta({
+    title: () => page.value?.name || 'Page',
+    description: () => page.value?.description || 'E-Commerce application built with Nuxt & Shopify',
+    ogTitle: () => page.value?.name || 'Page',
+    ogDescription: () => page.value?.description || 'E-Commerce application built with Nuxt & Shopify',
+    twitterCard: 'summary_large_image',
+  })
 
-  const currentComponent = shallowRef(null)
+  defineOgImageComponent('Nuxt', {
+    title: () => page.value?.name || 'Nuxt Commerce',
+    description: () => page.value?.description ||
+      'A high-performance, server-rendered E-commerce app built with Nuxt & Shopify',
+    theme: '#4ADE80',
+    headline: '',
+    colorMode: 'dark',
+  })
 
-  // decide component after page resolves
-  if (page?.value) {
-    const normalizeKey = (value = '') => value.toLowerCase().trim().replace(/[\s_-]+/g, '')
-    const nameKey = normalizeKey(page.value.name || '')
-    const slugKey = normalizeKey(page.value.slug || '')
-
-    const importer = pageComponentMap[nameKey] || pageComponentMap[slugKey]
-    if (importer) {
-      currentComponent.value = defineAsyncComponent(importer)
-    } else {
-      currentComponent.value = null // fallback to raw HTML
-    }
-  } else {
-    currentComponent.value = null
-  }
+  definePageMeta({
+    layout: 'nolive',
+  })
 </script>
